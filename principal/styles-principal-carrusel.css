@@ -1,0 +1,10 @@
+body {
+    background-color: #F5E2BE;
+    font-family: "Josefin Sans";
+    font-weight: 400;
+}
+
+#logo {
+    width: 250px;
+    height: 80px;
+}
