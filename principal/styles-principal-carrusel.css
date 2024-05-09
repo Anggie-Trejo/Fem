@@ -1,5 +1,5 @@
 body {
-    background-color: #F5E2BE;
+    background-color: #F8C0A9;
     font-family: "Josefin Sans";
     font-weight: 400;
 }
@@ -7,4 +7,12 @@ body {
 #logo {
     width: 250px;
     height: 80px;
+}
+
+img {
+    width: 10;
+    height: 400px;
+    margin: 15px;
+    padding: 10;
+    border-radius: 20px;
 }
