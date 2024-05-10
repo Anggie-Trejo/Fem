@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
@@ -14,7 +15,27 @@
   <script src="https://kit.fontawesome.com/060659d31d.js" crossorigin="anonymous"></script>
   <script src="./contactoScript.js"></script>
   <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario' async defer></script>
-  <script src="./map.js"></script>
+  <script type='text/javascript'>
+    var map;
+
+    function loadMapScenario() {
+        map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+            credentials: 'AprNHB9lZdQGNTrSN7NKqxDXKdZ7fsuSVvL8iu3bd2MG9qILw3Yi4s5kSKftnC1x'
+        });
+
+        var empresaLocation = new Microsoft.Maps.Location(19.432605564119942, -99.13334082939002); // localización
+        var pin = new Microsoft.Maps.Pushpin(empresaLocation);
+        map.entities.push(pin);
+    }
+</script>
+<style>
+    #myMap {
+        width: 250px;
+        height: 100px;
+    }
+</style>
+
+
   <title>Contacto</title>
 </head>
 <body>
@@ -23,9 +44,8 @@
       <div class="container-fluid">
         <!--Esta parte contiene el logo de nuestro producto-->
         <a class="navbar-brand" href="#">
-          <img src="../logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
+          <img src="./logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
         </a>
-        <!--Toggler es el botón que se despliega como menú colapsable cuando la pantalla está chiquita-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,7 +69,7 @@
               <a class="nav-link" href="#">Regístrate</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Incia Sesión</a>
+              <a class="nav-link" href="#">Inicia sesión</a>
             </li>
           </ul>
         </div>
@@ -61,28 +81,30 @@
         <div class="row ">
             <div class="col-sm " id="col-izq">
                 <h1>Contáctanos</h1>
-                <p id="parrafo">Comparte con nosotras cualquier duda, inquietud o recomendación para mejorar tu experiencia en FemTrek, alguien de nuestro equipo lo revisará y se pondrá en contacto contigo. </p>
-                
+
+                <p id="parrafo"">
+                  Contribuye a nuestro crecimiento. Comparte con nosotras cualquier duda, inquietud o recomendación para mejorar tu experiencia en FemTrek, ya sea escribiendo un correo electrónico o completando el siguiente formulario, alguien de nuestro equipo lo revisará y se pondrá en contacto contigo.</p>
+                <br>
                 <div class="contact-info">
-                  <div class="icon-circle">
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                  <div class="info">contacto@femtrek.com</div>
+
+                  <div class="info"><i class="fas fa-envelope"></i>     contacto@femtrek.com</div>
                 </div>
+
+                <br>
+
                 <div class="contact-info">
-                  <div class="icon-circle">
-                    <i class="fas fa-phone"></i>
-                  </div>
-                  <div class="info">+52 55 1234 1234</div>
+
+                  <div class="info"><i class="fas fa-phone"></i>+52 55 1234 1234</div>
                 </div>
+                <br>
+
                 <div class="contact-info">
-                  <div class="icon-circle">
-                    <i class="fas fa-map-marker-alt"></i>
-                  </div>
-                  <div class="info ">Plaza de la constitución, Col. Centro. Ciudad de México.</div>
-                  <div id="myMap"></div> 
+
+                <div class="info"> <i class="fas fa-map-marker-alt"></i> Plaza de la constitución, Col. Centro. Ciudad de México. </div>
                 </div>
-              
+                <br>
+
+                <div id="myMap"></div> 
 
             </div>
 
@@ -90,16 +112,17 @@
                 <form id="form">
                     <div class="mb-3">
                       <label for="name" class="form-label">Nombre</label>
-                      <input type="text" class="form-control" id="name" placeholder="Nombre">
+                      <input type="text" class="form-control" id="name" >
+                      
                     
                     </div>
                     <div class="mb-3">
-                      <label for="email" class="form-label">Correo Electronico</label>
-                      <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                      <label for="email" class="form-label">Correo Electrónico</label>
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="textarea" class="form-label" >Mensaje</label>
-                        <textarea class="form-control" id="textarea" rows="3" placeholder="Escribe tu mensaje aquí"></textarea>
+                        <textarea class="form-control" id="textarea" rows="3"></textarea>
                       </div>
                    
                     <div class="form-check d-flex justify-content-center mb-4">
