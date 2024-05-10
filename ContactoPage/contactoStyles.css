@@ -24,26 +24,22 @@ body {
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 100;
     font-style: normal;
-    font-size: 18px;
+    font-size: 22px;
     background: #F5E2BE;
 }
-
-#parrafo {
-    text-align: justify;
-  }
 
 h1 {
     font-family: "Hammersmith One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 30px;
+    font-size: 38px;
 }
 
 h2 {
     font-family: "Hammersmith One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 28px;
+    font-size: 30px;
 }
 
 h3 {
@@ -59,6 +55,7 @@ h3 {
     border-radius: 3%;
     background: #f5e2be; /* 7c946c f3ab91 f5e2be f8c0a9*/
 }
+
 
 .form-label{
     color: black;
@@ -85,15 +82,30 @@ h3 {
 
 .info {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: center;
 }
 
-.warnings{
-    width: 200px;
+.warnings {
+    color: red; /* Color del texto de advertencia */
+    font-size: 14px; /* Tamaño de la fuente */
+    margin-top: 10px; /* Espacio desde la parte superior del contenedor */
     text-align: center;
-    margin: auto;
-    color: black;
-    padding-top:20px ;
+}
+#myMap {
+    width: 95%; 
+    height: 220px;
+}
+.col-sm {
+    margin-bottom: 20px; 
 }
 
+#parrafo {
+    text-align: justify; 
+    margin-right: 20px; 
+}
+
+#col-der {
+    max-width: 470px; 
+    margin-bottom: 0; 
+}
 
