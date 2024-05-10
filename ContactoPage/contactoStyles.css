@@ -86,10 +86,11 @@ h3 {
 }
 
 .warnings{
-    font-size: 14px;
+    width: 200px;
     text-align: center;
-    margin-top: 10px;
-    color: red;
+    margin: auto;
+    color: black;
+    padding-top:20px ;
 }
 #myMap {
     width: 95%; 
