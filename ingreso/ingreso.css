@@ -1,0 +1,94 @@
+
+/*Estilos para la Navbar*/
+.header .navbar-brand {
+    color: white !important;
+}
+
+.header .nav-link {
+    color: white !important;
+    font-size: 16.5px;
+}
+
+.header .nav-link:hover {
+    color: rgb(99, 56, 56) !important;
+}
+
+@media(max-width: 700px){
+    .nav-link{text-align: center;}
+}
+
+.header .navbar {
+    background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+}
+
+
+/*Estilos en general para todo nuestro documento, incluye las fuentes que se usaran en todos los elementos*/
+    body {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    h1,h2 {
+        font-family: "Hammersmith One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding: 20px;
+    }
+
+    p{text-align: justify;}
+
+
+/* Estilos para inicio de sesión*/
+#saludo{
+    display:flexbox;
+    margin-top: 30px;
+    
+}
+
+@media (max-width: 700px) {
+    #saludo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      
+    }
+    
+   
+  }
+
+.centered-image {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#logodos{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 365px;
+    margin-top: 80px;
+    
+}
+
+.col-sm{
+    display:flexbox;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+@media (max-width: 576px) {
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+}
+]/
