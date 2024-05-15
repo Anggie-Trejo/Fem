@@ -56,23 +56,50 @@
       </nav>
   </section>
 
-   <!-- Contenido principal -->
-  
-   <div class="container">
-    <!-- Barra lateral izquierda-->
-            <div class="left-sidebar">
-                <!--foto de perfil de usuario-->
-                <li class="photo-profile" > 
-                    <img src="mujer.png">
-                </li>
-              <div class="imp-links"> 
-                <h3>Mi perfil</h3> 
-                <a href="# ">  <img src="chat1.png"> Comunidad</a>
-                <a href="# ">  <img src="chat1.png">  Viaja en tu ciudad</a>
-                <a href="#" class="btn Exterior" role="button" data-bs-toggle="button" aria-pressed="true">Viaje al Exterior</a>
-            </div>
-              
-            </div>
+ 
+ <!--Empeiza la sección del NavBar-->
+ <section class="header">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary ms-auto">
+      <div class="container-fluid">
+
+          <!--Esta parte contiene el logo de nuestro producto-->
+          <a class="navbar-brand" href="#">
+              <img src="./logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
+            </a>
+            <!--Toggler es el botón que se despliega como menú colapsable cuando la pantalla está chiquita-->
+            <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <!--La lista de las secciones del NavBar-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/principal/principal-carrusel.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/About Us/about us.html">Acerca de Nosotras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Pagina-registro/pagina-registro.html">Regístrate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Iniciar_sesión/ingreso.html">Inicia Sesión</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/Configurar-perfil/configurar.html">Configurar perfil</a> <!--nos lleva configurar-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</section>
+
+
 
 </body>
 </html>
