@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!--Link a boostrap--> 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!--Link a todas las fuentes de Google-->
@@ -123,7 +125,7 @@
               <option value="Reseña de viaje">Reseña de viaje</option>
             </select>
 
-                <!--Subir p.ublicaciones-->
+                <!--Subir publicaciones-->
                 <div class="add-post mt-3">
                   <button class="btn btn-primary me-2 d-flex align-items-center" onclick="addPost()">
                     <img src="" alt="" class="me-2"> Publicar
@@ -171,20 +173,6 @@
   <img src="TS.jpg" class="card-img-top" height="200px" alt="TS">
   <!-- mover solo height -->
 
-  <!--div para botón menú desplegable de la publicación-->
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      More
-    </button>
-    <ul class="dropdown-menu dropdown-menu-dark">
-      <li><a class="dropdown-item active" href="#">Guardar publicación</a></li>
-      <li><a class="dropdown-item" href="#">Eliminar publicación</a></li>
-      <li><a class="dropdown-item" href="#">Reportar publicación</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Compartir</a></li>
-    </ul>
-  </div>
-
     <h5 class="card-title"> Taylor Swift llega a Quito</h5>
     
     <p class="card-text">Como muchas saben, en 1 mes Taylor Swift hará su concierto en Quito, sin embargo, por tenciones políticas ahorita hay toque de queda en las principales avenidas después de las 12; el concierto termina hasta las 11, sin embargo, si están a más de 40 minutos del palacio de Cristal, les recomiendo retirarse antes.. </p>
@@ -193,9 +181,9 @@
   <div class="card-body">
                 <!-- Etiquetas como botones pero no queda  la linea -->
                 <div class="etiquetas mb-3">
-                    <button type="button" class="btn btn-primary btn-sm">Quito</button>
+                    <!-- <button type="button" class="btn btn-primary btn-sm">Quito</button>
                     <button type="button" class="btn btn-secondary btn-sm">Recomendación</button>
-                    <button type="button" class="btn btn-success btn-sm">Extranjero</button>
+                    <button type="button" class="btn btn-success btn-sm">Extranjero</button> -->
                 </div>
   </div>
   <div class="leer mas">
@@ -211,7 +199,37 @@
 <div class="card" style="width: 80%;">
   <img src="TS.jpg" class="card-img-top" height="200px" alt="TS">
   <div class="card-body">
-    <h5 class="card-title">Taylor Swift llega a Quito</h5>
+   
+    <!--div para hacer un grid-->
+    <div class="row">
+      <div class="col">
+         <h5 class="card-title">Taylor Swift llega a Quito</h5>
+      </div>
+  
+      <div class="col-md-auto"> </div>
+  
+      <div class="col col-lg-2">
+
+        <!--div para botón menú desplegable de la publicación-->
+        <div class="container py-4">
+      
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-three-dots-vertical"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item active" href="#"><i class="bi bi-bookmark-plus"></i>  Guardar publicación</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-trash3"></i>  Eliminar publicación</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle"></i>  Reportar publicación</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-share"></i>  Compartir</a></li>
+      </ul>
+    </div>
+    </div>
+      </div>
+    </div>
+  </div>
+
      <p><a href="#" class="card-link"> Sandra Fuentes </a> <br>Agosto 22, 2024</p>  
     
 
@@ -219,17 +237,17 @@
   </div>
 
   <ul class="list-group list-group-flush">
-    <button class="button button1">Quito</button> 
+    <!-- <button class="button button1">Quito</button> 
     <button class="button button2">Extranjero</button>
-  <button class="button button3">Recomendación</button> 
+  <button class="button button3">Recomendación</button>  -->
 
   </ul>
 
   <div class="card-body">
-    <a href="#" class="card-link">Leer más </a>
-    <a href="#" class="card-link">Comentar</a>
-    <a href="#" class="card-link">Guardar</a>
-    <a href="#" class="card-link">Me gusta</a>
+    <button href="#" class="card-link-btn"><i class="bi bi-hand-thumbs-up"></i>  Me gusta</button>
+    <button href="#" class="card-link-btn"><i class="bi bi-chat-dots"></i>  Comentar</button>
+    <button href="#" class="card-link-btn"><i class="bi bi-arrow-90deg-up"></i>  Repostear</button>
+    <button href="#" class="card-link-btn"><i class="bi bi-arrow-right-circle"></i>  Leer más </button>
   </div>
 </div> <!-- fin de la tajeta 2 -->
 
@@ -249,8 +267,8 @@
   </footer>
 
   <!--Dependencias de Bootstrap-->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
 
 
 </body>
