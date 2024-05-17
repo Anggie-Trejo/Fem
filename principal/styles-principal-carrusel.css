@@ -73,12 +73,8 @@
     }
 
 /*Estilo para imágenes del carrusel*/
-/*img {
-    max-width: 1000px;
-    height: 500px;
-    margin: 15px;
-    padding: 10;
-    border-radius: 20px;
-    position: relative;
-
+.carousel-inner{
+    max-width: 100%; 
+        height: auto;
+        display: block;
 }

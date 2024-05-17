@@ -1,33 +1,17 @@
-//Evento para llamar al carrusel
+//Evento para llamar al carrusel sólo hasta que cargue el DOM completo
 document.addEventListener('DOMContentLoaded', function () {
-   let carouselElement = document.getElementById ('carouselHome');
-   let carousel = new bootstrap.Carousel (carouselElement);
+   let items= document.querySelectorAll ('carousel-item');
+   let totalItems = items.length; //Para que lea cada imagen
+   let index = 0; //Para llamar cada imagen por su indice en la sig función
 
-   //Función para cambiar la  imagen cada 6 segundos
-   function autoMov() {
-      carousel.next();
-      setTimeout(autoMov, 6000);
+   //Función para remover la primer imagen del carrusel y así sucesivamente
+   function nextItem() {
+      items[index].classList.remove('active');
+      index = (index + 1) % totalItems;
+      items[index].classList.add('active');
     }
-    autoMov();
 
-    //Evento para corregir temporizador al hacer click
-
-    //Anterior
-    let prevButton = carouselElement.querySelector('.carousel-control-prev');
-    prevButton.addEventListener('click', function() {
-      carousel.prev();
-
-      clearTimeout(autoMov, 6000);
-      autoMov();
-    });
-
-    //Siguiente
-    var nextButton = carouselElement.querySelector('.carousel-control-next');
-  nextButton.addEventListener('click', function() {
-    carousel.next();
-
-    clearTimeout(autoMov, 6000);
-    autoMov();
-    });
+    //Para marcar el intervalo (10 seg) entre una imagen y otra
+    setInterval(nextItem, 10000);
 
 });
