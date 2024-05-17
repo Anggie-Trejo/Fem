@@ -19,7 +19,7 @@
 }
 
 .header .navbar {
-    background-image: linear-gradient(to right,#f6eaed, #ef1188);
+    background-image: linear-gradient(to right, #F5E2BE, #e07A76);
     
 }
 
@@ -102,7 +102,7 @@ height: 20px;
 }
 
 
-/*Estilos del fedd*/
+/*Estilos del feed*/
 .publish-container{
     width: 100%;
     background-color: #ffff;
@@ -170,3 +170,54 @@ width: 20px;
 margin-right: 30px;
 }
 
+
+/* mis humildes aportes */
+
+/*  tamaño del recuadro para publicar*/ 
+.fixed-size-textarea {
+    width: 80%; /* Revisar al final */
+    height: 90px; /* Altura fija */
+    resize: none; /* Deshabilitar el redimensionamiento */
+}
+
+/* Para que los links no esten subrayados */
+.no-underline {
+    text-decoration: none;
+    color: black;
+}
+/*colores boton */
+.btn-custom {
+    background-color: #7c947c; /* Color de fondo */
+    border-color:  #7c947c; /* Color del texto */
+    border-radius: 5px;/* redondeo*/
+    color: white;
+}
+.btn-custom:hover {
+    background-color: #e07a76;
+    border-color:#e07a76; /* Color de fondo al pasar el mouse */
+}
+
+
+.list-group-item-custom {
+
+    background-blend-mode: darken;
+    color: #000; 
+}
+
+/* pruebas para etiquetas*/
+.button {
+    border: none;
+    color: white; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px 4px 10px; 
+    /* Arriba | Derecha | Abajo | Izquierda */
+    cursor: pointer;
+  }
+  
+  .button1 {background-color: #7c947c;} /* Green */
+  .button2 {background-color: #e07a76;} /* Blue */
+  .button3 {background-color: #f3ab91;} /* Blue */
+  

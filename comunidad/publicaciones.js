@@ -60,3 +60,5 @@ function addPost() {
       alert('Por favor, escribe algo antes de publicar.');
     }
   }
+
+ 
