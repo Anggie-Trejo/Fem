@@ -19,6 +19,10 @@
 
             .header .navbar {
                 background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+                position: fixed; /* Makes the navbar stick to the top */
+                top: 0;          /* Aligns the navbar at the top */
+                width: 100%;     /* Ensures the navbar spans the full width */
+                z-index: 1000;   /* Keeps the navbar on top of other content */
             }
 
 
@@ -54,7 +58,7 @@
         /*Formato para la imagen de perfil*/
 
         .imgLeft {
-            padding: 25px 20px;
+            padding: 20px 20px;
             text-align: center;
             max-width: 350px;
             position: relative;
@@ -63,7 +67,7 @@
 
 
             .imgContainer {
-                top: -30px;
+                top: -35px;
                 position: absolute;
                 left: 10%;
                 margin-left: 100px;
@@ -73,41 +77,47 @@
             /*Cambios en la imagen*/
             .imgContainer img {
                 width: 220px;
-                height: 220px;
+                height: 225px;
                 object-fit: cover;
                 border-radius: 50%;
                 display: block;
                 box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
             }
 
+            .imgContainer img:hover {
+                scale: 1.15;
+                transition: 330ms 330ms ease-in-out;
+            }
 
 
             /*Mi profile class*/
             .MyProfileCard {
-                background-color: #f0e6e6;
+                background-color: #f5e2be59;
                 border-radius: 15px;
                 padding: 15px 10px 10px 10px;
                 margin-top: 150px;
+                margin-bottom: 50px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
             }
 
 
             #userName {
                 font-weight: 400;
-                font-size: 33px;
+                font-size: 30px;
                 margin-top: 4px;
                 text-align: center;
                 padding: 0;
               }
 
               #userId {
-                font-size: 20px;
+                font-size: 18px;
                 color: #818181;
                 margin: 0;
                 text-align: center;
               }
 
               #userDesc {
-                font-size: 18px;
+                font-size: 16px;
                 color: #818181;
                 margin: 0;
                 text-align: center;
@@ -164,4 +174,72 @@
               }
 
 
-            
+            /*Estilos Gabi*/
+            /*Estilos del fedd*/
+.publish-container{
+    width: 100%;
+    background-color: #ffff;
+    border-radius: 6px;
+    padding: 20px;
+    columns: #626262;
+    margin-top:  70px;
+}
+
+.user-profile {
+    display: flex;
+    
+    align-items: center;
+}
+
+.user-profile img{
+    width: 45px;
+   border-radius: 50%;
+   margin-right: 10px;
+}
+
+.user-profile p{
+margin-bottom: -5px;
+font-weight: 500;
+color: #626262;
+}
+
+.user-profile small{
+    font-size: 12px;
+}
+
+.user-profile span{
+    font-size: 10px;
+    
+}
+
+.post-input-container{
+    padding: 10px;
+    padding-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 20px;
+}
+
+.post-input-container textarea{
+    width: 100%;
+    outline: 1px solid #64636dcc;
+    border-bottom: 1px solid #64636dd5;
+    background-color: transparent;
+    resize: none;
+    
+}
+.add-post{
+display: flex;
+margin-top: 10px;
+}
+.add-post a{
+text-decoration: none;
+display: flex;
+align-items: center;
+color: #626262;
+margin-right: 30px;
+font-size: 13px;
+}
+.add-post a img{
+width: 20px;
+margin-right: 30px;
+}
