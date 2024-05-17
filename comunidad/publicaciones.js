@@ -1,7 +1,20 @@
+function toggleImageInput(){
+  const imageInput = document.getElementById('postImage');
+      const includeImageSwitch = document.getElementById('includeImageSwitch');
+      if (includeImageSwitch.checked) {
+        imageInput.style.display = 'block';
+      } else {
+        imageInput.style.display = 'none';
+        imageInput.value = ''; // Limpiar el valor del input si se desactiva el switch
+      }
+    }
+
 function addPost() {
     // Obtener el contenido del textarea
     const postContent = document.getElementById('postContent').value;
     const postImage = document.getElementById('postImage').files[0];
+    const postType = document.getElementById('postType').value;
+
     // Verificar si el contenido no está vacío
     if (postContent.trim() !== '') {
       // Crear un nuevo elemento de publicación
@@ -18,9 +31,12 @@ function addPost() {
             <span class="text-muted d-block">Hace un momento</span>
           </div>
         </div>
+        <h5>${postType}</h5>
         <p class="post-text">${postContent}</p>
         <hr>
       `;
+
+      // Si hay una imagen y el switch está activado, agregarla a la publicación
       if (postImage) {
         const reader = new FileReader();
         reader.onload = function(e) {
@@ -38,6 +54,8 @@ function addPost() {
       // Limpiar el textarea
       document.getElementById('postContent').value = '';
       document.getElementById('postImage').value = '';
+      document.getElementById('postImage').style.display = 'none';
+      document.getElementById('includeImageSwitch').checked = false;
     } else {
       alert('Por favor, escribe algo antes de publicar.');
     }

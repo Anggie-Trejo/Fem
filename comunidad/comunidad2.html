@@ -94,13 +94,23 @@
 
               <div class="post-input-container mb-3">
                 <textarea id="postContent" class="form-control" rows="3" placeholder="¿Que quieres compartir hoy?/Crea una publicación...." ></textarea>
-                <input type="file" id="postImage" class="form-control mt-3">
+                <div class="form-check form-switch mt-3">
+                  <input class="form-check-input" type="checkbox" id="includeImageSwitch" onclick="toggleImageInput()">
+                  <label class="form-check-label" for="includeImageSwitch">Incluir Imagen</label>
+                </div>
+
+                <input type="file" id="postImage" class="form-control mt-3"  style="display: none;">
+                <select id="postType" class="form-control mt-3">
+                  <option value="Recomendaciones de viaje">Recomendaciones de viaje</option>
+              <option value="Advertencia de seguridad">Advertencia de seguridad</option>
+              <option value="Reseña de viaje">Reseña de viaje</option>
+            </select>
+
                 <!--Subir p.ublicaciones-->
                 <div class="add-post mt-3">
                   <button class="btn btn-primary me-2 d-flex align-items-center" onclick="addPost()">
                     <img src="" alt="" class="me-2"> Publicar
                   </button>
-
 
                <!-- <a href="#" class="btn me-2 d-flex align-items-center"><img src="" alt="" class="me-2"> Foto/Video </a> 
                 <a href="#" class="btn d-flex align-items-center"><img src="" alt=""> Actividad </a> --> 
