@@ -53,3 +53,4 @@ const MyPosts = [
   
   console.log(MyPosts);
   
+    // Aquí podrías agregar código para enviar la información al servidor
