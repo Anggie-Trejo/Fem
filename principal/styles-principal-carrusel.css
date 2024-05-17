@@ -40,10 +40,29 @@
 
 
     /*Tamaño del otro logo*/
-#logo {
-    width: 250px;
-    height: 80px;
-}
+    .logobody {
+        display: grid;
+            place-items: center; 
+            height: auto;       
+        }
+    #logo {
+        max-width: 100%; 
+        height: 300px;
+        display: block;
+    }
+
+    .signIn-signUp {
+        display: grid;
+            place-items: center; 
+            height: auto; 
+    }
+
+    .btn {
+        display: grid;
+            place-items: center; 
+            height: auto; 
+            background-color: #7C946C;
+    }
 
 /*Estilo para imágenes del carrusel*/
 /*img {
