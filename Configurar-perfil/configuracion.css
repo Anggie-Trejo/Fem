@@ -44,64 +44,11 @@ h3 {
     font-size: 30px;
 }
 
-/*
+/* Contenedor principal*/
 
-.config-container{
-    width: 450px;
-    height: 500px;
-    margin: 0 auto 20px;
-    overflow: hidden;
-    background: rgb(240, 250, 199);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-
-
-}
-.user-profile {
-    width: 115px;
-    height: 100px;
-    background: rgb(229, 52, 108);
-    padding: 20px;
-    border-radius: 5px;
-
-    display: flex;
-    align-items: center;
-}
-
-
-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #ed0eb9;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-button:hover {
-    background: #0056b3;
-}
-
-.delateAccount{
-    margin-top: 10px;
-    padding: 10px 20px;
-    width: 450;
-    height: 20px;
-    margin: 0 auto 20px;
-    overflow: hidden;
-    background: rgb(216, 236, 134);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-
-
-}*/
 .container {
     margin-top: 40px;
-    background: rgb(221, 169, 169);
+    background: rgb(234, 238, 226);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(114, 5, 5, 0.1);
@@ -110,47 +57,78 @@ button:hover {
    
 }
 
-.config-container {
-    margin-top: 40px;
-    }
-    
-    .profile-pic-container{
-    position: relative;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 20px;
-    overflow: hidden;
-    border-radius: 50%;
-    border: 3px solid #f021a0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
+
+/* Estilos básicos para el formulario y el botón */
+ .profile-pic-container {
+    text-align: center;
 }
 
 .profile-pic-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
 
-.upload-btn-wrapper {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
+.profile-pic-container input[type="file"] {
+    display: none;
 }
 
-.upload-btn-wrapper .btn {
-    color: white;
-    background-color: #f03164;
+.profile-pic-container label {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ea1896;
+    color: #fff;
     border: none;
-    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
 }
+
+.profile-pic-container label:hover {
+    background-color: #66c506;
+}
+
+/*  Cambiar foto  de portada */
+
+.portada-pic-container { 
+    text-align: center;
+}
+
+.portada-pic-container img {
+    margin-top: 5px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;  /*para asegurarse de que la imagen se ajuste correctamente.*/
+}    
+    
+.portada-pic-container input[type="file"] {
+    display: none;
+}
+
+.portada-pic-container label {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #df0db8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.portada-pic-container label:hover {
+    background-color: #2db300;
+}
+
+
+
+
+
+
 
 form {
     display: flex;

@@ -53,36 +53,45 @@
   </section>
 
   <!--Empieza la sección del formulario de configuración de perfil-->
-  <div class="container">
-    <h2 > Configuración de Perfil</h2>
-    <div class="config-container">
-        <label for="profilePic">Cambiar foto de perfil:</label>
+
+   <div class="container">
+      <h2 > Configuración de Perfil</h2> 
+      
+      <!--formulario datos del usuario-->
+      <form method="post" action="#" onctype="multipart/form-data"> <!-- para permitir la subida de archivos--> 
+         <!-- Cambiar foto de perfil -->         
         <div class="profile-pic-container">
-        <!--<input type="file" id="profilePic" name="profilePic" accept="image/*" onchange="previewProfilePic(event)">-->
-      </div>   
-        
-        <!--formulario datos del usuario-->
-        <form id="profileForm" enctype="multipart/form-data">
+          <img src="/Configurar-perfil/assets/mujer.png" alt="avatar" id="img"/>
+          <input type="file" name="profilePic" id="profilePic" accept="image/*" />
+          <label for="profilePic">Cambiar foto de perfil</label>
+      
+        </div>
+<!-- Cambiar foto de portada -->
+        <div class="portada-pic-container">
+          <img src="/Configurar-perfil/assets/mujer.png" alt="avatar" id="portadaImg"/>
+          <input type="file" name="portadaPic" id="portadaPic" accept="image/*" />
+          <label for="portadaPic">Cambiar foto de portada</label>
+      
+        </div>
           <label for="username">Nombre:</label>
           <input type="text" id="username" name="username" required>
-          <label for="lastname">Apellido:</label>
+          <label for="lastame">Apellido:</label>
           <input type="text" id="lastname" name="lastname" required>
           <label for="location">Locación:</label>
           <input type="text" id="location" name="location" required>
-          <button type="button" onclick="uploadProfilePic()">Subir</button>
-      </form>
+              </form>
       <!--borrar cuenta-->
-           <p>Borrar cuenta</p>
-          <p>Al eliminar tu cuenta borraremos toda tu información</p>
-          <button id="deleteAccountButton" onclick="deleteAccount()">Borrar Cuenta</button>
-      </div>
+      <p>Borrar cuenta</p>
+      <p>Al eliminar tu cuenta borraremos toda tu información</p>
+      <button id="deleteAccountButton" onclick="deleteAccount()">Borrar Cuenta</button>
+      
       <!--guardar cambios-->
       <button type="button" onclick="saveChanges()">Guardar Cambios</button>
   </div>
-</div>
-<script src="scripts.js"></script>
-        
 
 
 
+
+
+<script src="configuracion.js"></script>
 </body>      
