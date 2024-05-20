@@ -1,33 +1,37 @@
-//Evento para llamar al carrusel
+//Evento para llamar al carrusel sólo hasta que cargue el DOM completo
 document.addEventListener('DOMContentLoaded', function () {
-   let carouselElement = document.getElementById ('carouselHome');
-   let carousel = new bootstrap.Carousel (carouselElement);
+  let items= document.querySelectorAll ('carousel-item');
+  let totalItems = items.length; //Para que lea cada imagen
+  let index = 0; //Para llamar cada imagen por su indice en la sig función
 
-   //Función para cambiar la  imagen cada 6 segundos
-   function autoMov() {
-      carousel.next();
-      setTimeout(autoMov, 6000);
-    }
-    autoMov();
+//Botones Prev & Next:
+const carouselIndicators = document.getElementById("carousel-indicators");
+const slide = document.querySelector(".carousel-slide");
+const prevButton = document.getElementById("carousel-control-prev");
+const nextButton = document.getElementById("carousel-control-next");
 
-    //Evento para corregir temporizador al hacer click
+prevButton.addEventListener('click', () => {
+  const slideWidth = slide.clientWidth;
+  slideContainer.scrollLeft -= slideWidth;
+});
 
-    //Anterior
-    let prevButton = carouselElement.querySelector('.carousel-control-prev');
-    prevButton.addEventListener('click', function() {
-      carousel.prev();
+nextButton.addEventListener('click', () => {
+  const slideWidth = slide.clientWidth;
+  slideContainer.scrollLeft += slideWidth;
+});
 
-      clearTimeout(autoMov, 6000);
-      autoMov();
-    });
+  //Función para remover la primer imagen del carrusel y así sucesivamente
+  function nextItem() {
+     items[index].classList.remove('active');
+     index = (index + 1) % totalItems;
+     items[index].classList.add('active');
+   }
 
-    //Siguiente
-    var nextButton = carouselElement.querySelector('.carousel-control-next');
-  nextButton.addEventListener('click', function() {
-    carousel.next();
+   //Para marcar el intervalo (10 seg) entre una imagen y otra
+   setInterval(nextItem, 6000);
 
-    clearTimeout(autoMov, 6000);
-    autoMov();
-    });
+     // set up events
+  buttonPrevious.addEventListener('click', handlePrevious);
+  buttonNext.addEventListener('click', handleNext);
 
 });
