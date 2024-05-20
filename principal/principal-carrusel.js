@@ -4,22 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   let totalItems = items.length; //Para que lea cada imagen
   let index = 0; //Para llamar cada imagen por su indice en la sig función
 
-//Botones Prev & Next:
-const carouselIndicators = document.getElementById("carousel-indicators");
-const slide = document.querySelector(".carousel-slide");
-const prevButton = document.getElementById("carousel-control-prev");
-const nextButton = document.getElementById("carousel-control-next");
-
-prevButton.addEventListener('click', () => {
-  const slideWidth = slide.clientWidth;
-  slideContainer.scrollLeft -= slideWidth;
-});
-
-nextButton.addEventListener('click', () => {
-  const slideWidth = slide.clientWidth;
-  slideContainer.scrollLeft += slideWidth;
-});
-
   //Función para remover la primer imagen del carrusel y así sucesivamente
   function nextItem() {
      items[index].classList.remove('active');
