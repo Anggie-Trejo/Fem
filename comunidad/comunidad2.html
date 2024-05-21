@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Link a boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--Link a todas las fuentes de Google-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+
+
+    <!--Link a nuestro archivo de estilos-->
+    <link rel="stylesheet" href="./comunidad.css">
+    <title>Comunidad FemTrek</title>
+</head>
+<body>
+ <!--Empeiza la sección del NavBar-->
+<section class="header">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary ms-auto fixed-top">
+      <div class="container-fluid">
+
+          <!--Esta parte contiene el logo de nuestro producto-->
+          <a class="navbar-brand" href="#">
+              <img src="./logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
+            </a>
+            <!--Toggler es el botón que se despliega como menú colapsable cuando la pantalla está chiquita-->
+            <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <!--La lista de las secciones del NavBar-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/principal/principal-carrusel.html">Inicio</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/comunidad/comunidad.html">Conectar Viajes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mi perfil/miperfil.html">Mi perfil</a>
+            </li>
+            <!--icono de usuario-->
+        <li class="nav-user-icon" > 
+          <img src="./mujer.png"> 
+        </li>
+
+      </ul>
+        </div>
+      </div>
+    </nav>
+</section>
+
+
+
+   <!-- Contenido principal -->
+  
+  <div class="container mt-4">
+    
+    <!-- Barra lateral izquierda-->
+    <div class="col-md-3 mb-4">
+            <div class="left-sidebar p-3 rounded">
+              <div class="imp-links">
+                <h2>Viaja en tu ciudad</h2> 
+                <h3>Comunidad</h3> 
+                <a href="# " class="btn mb-2 d-flex align-items-center">  <img src="chat1.png" class="me-2"> Mis publicaciones</a>
+                <a href="# " class="btn mb-2 d-flex align-items-center">  <img src="chat1.png" class="me-2">  Actualizaciones</a>
+                <a href="#" class="btn Exterior"  role="button" data-bs-toggle="button" aria-pressed="true">Viaje al Exterior</a>
+            </div>
+          </div>
+        </div>
+       
+
+            
+        <!--La parte del feed-->
+        <div class="col-md-9">
+            <div class="publish-container bg-white p-4 rounded shadow-sm mb-4">
+
+              <div class="user-profile d-flex align-items-center mb-3">
+                <img src="mujer.png" alt="" class="rounded-circle me-3" width="50">
+                <div>
+                  <p class="mb-0"> Sandra F.</p>
+                  <small>Publico</small>
+                </div>
+              </div>
+
+              <div class="post-input-container mb-3">
+                <textarea id="postContent" class="form-control" rows="3" placeholder="¿Que quieres compartir hoy?/Crea una publicación...." ></textarea>
+                <div class="form-check form-switch mt-3">
+                  <input class="form-check-input" type="checkbox" id="includeImageSwitch" onclick="toggleImageInput()">
+                  <label class="form-check-label" for="includeImageSwitch">Incluir Imagen</label>
+                </div>
+
+                <input type="file" id="postImage" class="form-control mt-3"  style="display: none;">
+                <select id="postType" class="form-control mt-3">
+                  <option value="Recomendaciones de viaje">Recomendaciones de viaje</option>
+              <option value="Advertencia de seguridad">Advertencia de seguridad</option>
+              <option value="Reseña de viaje">Reseña de viaje</option>
+            </select>
+
+                <!--Subir p.ublicaciones-->
+                <div class="add-post mt-3">
+                  <button class="btn btn-primary me-2 d-flex align-items-center" onclick="addPost()">
+                    <img src="" alt="" class="me-2"> Publicar
+                  </button>
+
+               <!-- <a href="#" class="btn me-2 d-flex align-items-center"><img src="" alt="" class="me-2"> Foto/Video </a> 
+                <a href="#" class="btn d-flex align-items-center"><img src="" alt=""> Actividad </a> --> 
+                </div>
+              </div>
+            </div>
+                <!--Publicaciones-->
+              <div id= "feed"class="post-container bg-white p-4 rounded shadow-sm mb-4">
+                <!--<div class="user-profile d-flex align-items-center mb-3">
+                  <img src="mujer.png" alt="" class="rounded-circle me-3" width="50">
+                  <div>
+                    <p class="mb-0"> Sandra F.</p>
+                    <small>Publico</small>
+                    <span class="text-muted d-block"> 12 de mayo de 2024, 6:20p.m</span>
+  
+                  </div>
+                </div>
+                <p class="post-text">Como muchas saben, en 1 mes Taylor Swift hará su concierto en Quito, sin embargo, por tenciones 
+                  políticas ahorita hay toque de queda en las principales avenidas después de las 12...</p><img src="TS..jpg" alt="" class="img-fluid rounded mb-3">
+  
+                  <div class="user-profile d-flex align-items-center mt-4 mb-3">
+                    <img src="mujer.png" alt="" class="rounded-circle me-3" width="50">
+                    <div>
+                      <p class="mb-0"> Giselle F.</p>
+                      <small>Publico</small>
+                      <span> 10 de mayo de 2024, 6:20p.m</span>
+    
+                    </div>
+                  </div>
+                  <p class="post-text">Como muchas saben, en 1 mes Taylor Swift hará su concierto en Quito, sin embargo, por tenciones 
+                    políticas ahorita hay toque de queda en las principales avenidas después de las 12...</p><img src="TS..jpg" alt="" class="img-fluid rounded">-->
+              </div>
+          </div> 
+  </div> 
+</div>  
+ <!--<div class="left-sidebar"></div>-->
+
+<!--Link para JS de publicaciones-->
+<!--<script src="./publicaciones.js"></script>-->
+
+<!--arraypub-->
+<script src="./arraypub.js"></script>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container text-center">
+      <span class="text-muted">© 2024 FemTrek</span>
+    </div>
+  </footer>
+</body>
+</html>
