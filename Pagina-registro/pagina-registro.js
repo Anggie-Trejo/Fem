@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", ()=> {
+
 const formRegister = document.querySelector(".form-register");
 const inputUser = document.getElementById("userNames");
 const inputLastNames = document.getElementById("userLastNames");
@@ -7,11 +9,6 @@ const inputPasswordcopy = document.getElementById("passwordClone");
 const alertaError= document.querySelector(".alerta-error");
 const alertaExito = document.querySelector(".alerta-exito");
 
-formRegister.addEventListener("submit", e =>{
-    e.preventDefault();
-    enviarFormulario();
-
-} );
 
 /*Expresiones regulares. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
 const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜ]{3,10}(?:\s[a-zA-ZáéíóúÁÉÍÓÚüÜ]{0,10})?$/;
@@ -24,19 +21,15 @@ const estadoValidacion = {
     userLastNames: false,
     userEmail: false,
     userPassword: false,
+    userPasswordCopy: false,
 
 
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-    formRegister.addEventListener("submit", e => {
-        e.preventDefault();
-        enviarFormulario();
-    });
 
     inputUser.addEventListener("input", () =>{
         validarCampo(nameRegex, inputUser, "El nombre debe tener mínimo 3 caracteres, sin caracteres especiales.");
-    })
+    });
 
     inputLastNames.addEventListener ("input", () =>{
         validarCampo(nameRegex, inputLastNames, "El apellido debe tener mínimo 3 caracteres, sin caracteres especiales");
@@ -48,9 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     inputPassword.addEventListener("input", () =>{
         validarCampo(passwordRegex, inputPassword, "La contraseña debe tener mínimo una letra mayúscula, minúscula y algún digito numérico.")
-    })
-
     });
+
+    inputPasswordcopy.addEventListener("input", validPassword);
+
+    formRegister.addEventListener("submit", e => {
+        e.preventDefault();
+        enviarFormulario();
+    });
+
+    
 
 
 function validarCampo(regularExpresion, campo, mensaje) {
@@ -88,13 +88,28 @@ function eliminarAlerta(referencia) {
     }
 }
 
+//Validar contraseña
+function validPassword(){
+
+    if(inputPassword.value !== inputPasswordcopy.value){
+        mostrarAlerta(inputPasswordcopy.parentElement, "No coinciden las contraseñas");
+        estadoValidacion.userPasswordCopy = false;
+
+    } else{
+        eliminarAlerta(inputPasswordcopy.parentElement);
+        estadoValidacion.userPasswordCopy = true;
+    
+    }
+
+}
+
+
 
 
 // Validamos el envío del formulario
 function enviarFormulario() {
-    if(estadoValidacion.userNames && estadoValidacion.userLastNames && estadoValidacion.userEmail && estadoValidacion.userPassword) {
+    if(estadoValidacion.userNames && estadoValidacion.userLastNames && estadoValidacion.userEmail && estadoValidacion.userPassword && estadoValidacion.userPasswordCopy) {
 
- 
         formRegister.reset();
         alertaExito.classList.add("alertaExito");
         alertaError.classList.remove("alertaError");
@@ -111,5 +126,6 @@ function enviarFormulario() {
         
     }
 }
+});
 
 console.log(alertaExito);
