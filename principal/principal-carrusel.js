@@ -1,4 +1,5 @@
 //Evento para llamar al carrusel sólo hasta que cargue el DOM completo
+//Evento para llamar al carrusel sólo hasta que cargue el DOM completo
 document.addEventListener('DOMContentLoaded', function () {
   let items= document.querySelectorAll ('carousel-item');
   let totalItems = items.length; //Para que lea cada imagen
