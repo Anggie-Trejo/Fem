@@ -44,7 +44,7 @@ function addToList(traveler) {
     var carousel = document.createElement("div");
     carousel.id = "carouselExampleSlidesOnly" + traveler.userName.replace(/\s+/g, '');
     carousel.className = "carousel slide";
-    carousel.setAttribute("data-ride", "carousel");
+    carousel.setAttribute("data-bs-ride", "carousel");
 
     var carouselIndicators = document.createElement("ol");
     carouselIndicators.className = "carousel-indicators";
@@ -62,8 +62,8 @@ function addToList(traveler) {
         img.alt = `Slide ${index + 1}`;
 
         var indicator = document.createElement("li");
-        indicator.setAttribute("data-target", "#carouselExampleIndicators" + traveler.userName.replace(/\s+/g, ''));
-        indicator.setAttribute("data-slide-to", index.toString());
+        indicator.setAttribute("data-target", "#carouselExampleIndicators" + traveler.userName.replace(/\s+/g, '')); 
+        indicator.setAttribute("data-bs-slide-to", index.toString());
         if (index === 0) {
             indicator.className = "active";
         }
