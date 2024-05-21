@@ -1,0 +1,57 @@
+/*Estilos para la Navbar*/
+.header .navbar-brand {
+    color: white !important;
+}
+
+.header .nav-link {
+    color: white !important;
+    font-size: 16.5px;
+}
+
+.header .nav-link:hover {
+    color: rgb(99, 56, 56) !important;
+}
+
+@media(max-width: 700px){
+    .nav-link{text-align: center;}
+}
+
+.header .navbar {
+    background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+}
+
+
+/*Estilos en general para todo nuestro documento, incluye las fuentes que se usaran en todos los elementos*/
+    body {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    h1,h2 {
+        font-family: "Hammersmith One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding: 20px;
+    }
+
+    p{text-align: justify;}
+
+
+    /*Estilos contenido */
+    .container{
+        margin-top: 20px;
+    }
+
+    #titulo{
+        text-align: center;
+    }
+
+    #logodos{
+        align-items: center;
+        margin-top: 80px;
+        margin-left: 40px;
+    }
+
+   
