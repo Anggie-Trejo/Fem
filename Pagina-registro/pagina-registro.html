@@ -14,7 +14,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
     <!--Link a nuestro archivo de estilos-->
-    <link rel="stylesheet" href="/About Us/styles/Styles.css">
+    <link rel="stylesheet" href="/Pagina-registro/pagina-registro.css">
+
+    <script src="/Pagina-registro/pagina-registro.js" async defer></script>
     <title>FemTrek</title>
   </head>
 
@@ -64,18 +66,19 @@
 
 
     <div class="row">
-      <div class="col-md-3">col-sm-3
+      <div class="col-md-3" id="left">
+        <img src="/Pagina-registro/Femtrek_registro.jpg" alt="Imagen red social" id="prueba2">
 
 
       </div>
 
 
-      <div class="col-md-9">col-sm-9
+      <div class="col-md-9" >
     
       <h1>Formulario de registro</h1>
       <p> Ya casi eres parte de la comunidad, sólo llena este breve formulario para comenzar </p>
  
-       <form>
+       <form class="form-register">
 
         <div class="mb-3">
             <label class="form-label">Nombre(s)</label>
@@ -88,7 +91,7 @@
           </div>
 
         <div class="mb-3">
-        <label class="form-label">Email address</label>
+        <label class="form-label">Correo electrónico</label>
         <input type="email" class="form-control" id="userEmail" placeholder="nombre@ejemplo.com">
       </div>
 
@@ -138,19 +141,23 @@
 
       <div class="mb-3">
         <label class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="Password">
-        <p><small>Recuerda colocar una contraseña que contenga al menos un núero, una mayúscula, y un caracter especial</small></p>
+        <input type="password" class="form-control" id="passwords">
+        <p><small>Recuerda colocar una contraseña que contenga al menos un número, una mayúscula, y un caracter especial</small></p>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Repetir contraseña</label>
-        <input type="password" class="form-control" id="PasswordClone">
+        <input type="password" class="form-control" id="passwordClone">
         <p><small>Vuelve a escribir tu contraseña</small></p>
       </div>
 
-      <button type="submit" class="btn btn-outline-success">Siguiente</button>
-      <br><br>
-       </form>
+      <button type="submit" class="btn btn-outline-success">Registrarme</button>
+      <br>
+      
+                 
+       <div class="alerta-error">Todos los campos son obligatorios</div>
+       <div class ="alerta-exito">Se ha realizado el registro con éxito</div>
+      </form>
     </div>
     
 
