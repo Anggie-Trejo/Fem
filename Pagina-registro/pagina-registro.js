@@ -1,6 +1,7 @@
+// El código se ejecuta hasta que todo el html esté cargado
 document.addEventListener("DOMContentLoaded", ()=> {
 
-const formRegister = document.querySelector(".form-register");
+const formRegister = document.querySelector(".form-register"); // Referencia al formulario de registro completo
 const inputUser = document.getElementById("userNames");
 const inputLastNames = document.getElementById("userLastNames");
 const inputEmail= document.getElementById("userEmail");
@@ -10,23 +11,14 @@ const alertaError= document.querySelector(".alerta-error");
 const alertaExito = document.querySelector(".alerta-exito");
 
 
-/*Expresiones regulares. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
+/*Expresiones regulares. Son reglas de validación. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
 const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜ]{3,10}(?:\s[a-zA-ZáéíóúÁÉÍÓÚüÜ]{0,10})?$/;
 const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const passwordRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-//Para ocupar en función validarCampo
-const estadoValidacion = {
-    userNames: false,
-    userLastNames: false,
-    userEmail: false,
-    userPassword: false,
-    userPasswordCopy: false,
 
 
-};
-
-
+//El add.EventListener se dispara cada que el usuario escribe y llama a la función validarCampo
     inputUser.addEventListener("input", () =>{
         validarCampo(nameRegex, inputUser, "El nombre debe tener mínimo 3 caracteres, sin caracteres especiales.");
     });
@@ -45,14 +37,25 @@ const estadoValidacion = {
 
     inputPasswordcopy.addEventListener("input", validPassword);
 
+    // La función que se ejecutará cuando el formulario se envíe. Típicamente, esta función realiza validaciones finales y previene el envío del formulario si hay errores.
     formRegister.addEventListener("submit", e => {
         e.preventDefault();
         enviarFormulario();
     });
 
+//Estado de validación para ocupar en función validarCampo
+const estadoValidacion = {
+    userNames: false,
+    userLastNames: false,
+    userEmail: false,
+    userPassword: false,
+    userPasswordCopy: false,
+
+
+};
     
-
-
+//Se ocupa .test() para verificar si el valor del campo cumple las restricciones/reglas
+// classList.add añade la clase error
 function validarCampo(regularExpresion, campo, mensaje) {
     const validarCampo = regularExpresion.test(campo.value);
     if (validarCampo) {
@@ -69,13 +72,15 @@ function validarCampo(regularExpresion, campo, mensaje) {
     }
 }
 
+//Gestión de creación y eliminación de las alertas
+//La referencia es donde quiero mostrar mi alerta
 
 function mostrarAlerta(referencia, mensaje) {
     eliminarAlerta(referencia);
-    const alertaDiv = document.createElement("div");
-    alertaDiv.classList.add("alerta");
-    alertaDiv.textContent = mensaje;
-    referencia.append(alertaDiv);
+    const alertaDiv = document.createElement("div"); //Se crea elemento div donde se mostrará la alerta
+    alertaDiv.classList.add("alerta"); // al div se le añade la clase alerta
+    alertaDiv.textContent = mensaje; //Agrega texto a la alerta
+    referencia.append(alertaDiv); //Se añade como hijo del elemento referencia
 }
 
 
@@ -128,4 +133,4 @@ function enviarFormulario() {
 }
 });
 
-console.log(alertaExito);
+//console.log(alertaExito);
