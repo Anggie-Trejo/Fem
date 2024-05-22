@@ -6,6 +6,7 @@
 .header .nav-link {
     color: white !important;
     font-size: 16.5px;
+    
 }
 
 .header .nav-link:hover {
@@ -13,7 +14,16 @@
 }
 
 @media(max-width: 700px){
-    .nav-link{text-align: center;}
+    .navbar { /*Se ajusta a disposición vertical en pantallas pequeñas.*/
+        flex-direction: column;
+        align-items: center;
+    } 
+    .nav-link{text-align: center;
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+    
+    }
 }
 
 .header .navbar {
@@ -43,65 +53,130 @@ h3 {
     font-size: 30px;
 }
 
+/* Contenedor principal*/
 
-.custom-card{
-	width: 300px;
-	height: 500px;
-}
-
-    p{text-align: justify;} 
-    
-.img-fluid {
-
-    max-width:100%;
-    height:auto;
-
-}
-
-.card-body{
-    flex:1 1 auto;padding:1rem 1rem
-}
+.container {
    
+    margin-top: 40px;
+    background: rgb(251, 251, 251);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(114, 5, 5, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px; /* para adaptarse a diferentes tamaños de pantalla*/
+   
+}
 
-.card-text:last-child{
 
-    margin-bottom:0
+/* Estilos básicos para el formulario y el botón */
+ .profile-pic-container {
+    text-align: center;
+}
+
+.profile-pic-container img {
+    display: block;
+    margin: 0 auto;
+    width: 100%; /*para mantener proporciones*/
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.profile-pic-container input[type="file"] {
+    display: none;
+}
+
+.profile-pic-container label {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #e07a76;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile-pic-container label:hover {
+    background-color: #f3ab91;
+}
+
+/*  Cambiar foto  de portada */
+
+.portada-pic-container { 
+    text-align: center;
+}
+
+.portada-pic-container img {
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;  /*para asegurarse de que la imagen se ajuste correctamente.*/
+}    
     
+.portada-pic-container input[type="file"] {
+    display: none;
 }
 
-.card-text{
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15px;
+.portada-pic-container label {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #e07a76;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
+.portada-pic-container label:hover {
+    background-color: #f3ab91;
 }
 
 
- #team-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
+form {
+    display: flex;
+    flex-direction: column;
+}
 
-        .team-member {
-            width: 300px;
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-            position: relative;
-        }
+form label {
+    margin-top: 10px;
+    text-align: left;
+}
 
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            position: absolute;
-            top: -75px;
-            left: 75px;
-            border: 4px solid #fff;
-        }
+form input {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #f3d8d8;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #7c946c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background: #f3ab91;
+}
+
+.deleteAccount {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.deleteAccount p {
+    margin: 5px 0;
+}
