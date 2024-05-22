@@ -101,5 +101,39 @@ const travelers = [
     }
   ];
   
+
+  const feedContainer = document.getElementById('blog-container');
+
+  travelers.forEach(post => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+
+      const title = document.createElement('h2');
+      title.textContent = `${post.userName} ${post.userLastName}`;
+      title.classList.add('userNAME');
+
+      const advice = document.createElement('p');
+      advice.textContent = post.travelAdvice;
+
+      const location = document.createElement('p');
+      location.textContent = `Ubicación: ${post.location}`;
+
+      const tags = document.createElement('ul');
+      tags.classList.add('tags');
+      post.tags.forEach(tag => {
+          const tagItem = document.createElement('li');
+          tagItem.textContent = tag;
+          tags.appendChild(tagItem);
+      });
+
+      card.appendChild(title);
+      card.appendChild(advice);
+      card.appendChild(location);
+      card.appendChild(tags);
+
+      feedContainer.appendChild(card);
+  });
+
+
   console.log(travelers);
   
