@@ -37,6 +37,8 @@ function addPost() {
       <hr>
   `;
 
+  
+
   // Si hay una imagen y el switch está activado, agregarla a la publicación
   if (postImage) {
       const reader = new FileReader();
@@ -45,32 +47,13 @@ function addPost() {
           newPost.innerHTML = postHTML + '<hr>';
           document.getElementById('feed').prepend(newPost);
 
-         //Agregar un dropdown a la publicación
-          const dropdown = document.createElement("div");
-          dropdown.classList.add("dropdown", "mb-3");
-
-          dropdown.innerHTML = `
-          <div class="container py-4">
-      
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-three-dots-vertical"></i>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item active" href="#"><i class="bi bi-bookmark-plus"></i>  Guardar publicación</a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-trash3"></i>  Eliminar publicación</a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle"></i>  Reportar publicación</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-share"></i>  Compartir</a></li>
-            </ul>
-          </div>
-          </div> `;
-
-          newPost.appendChild(dropdown);
       
       };
       reader.readAsDataURL(postImage);
-  } else {
+  }  else {
+    
+      
+      //Agregar otros botones
       newPost.innerHTML = postHTML + '<hr>';
       document.getElementById('feed').prepend(newPost);
 
@@ -85,6 +68,28 @@ function addPost() {
 
       newPost.appendChild(additionalButtons);
       newPost.appendChild(additionalDiv);
+
+      //Agregar un dropdown a la publicación
+     const dropdown = document.createElement("div");
+     dropdown.classList.add("dropdown", "mb-3");
+     dropdown.innerHTML = `
+    <div class="container py-4">
+
+      <div class="dropdown">
+         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <i class="bi bi-three-dots-vertical"></i>
+         </button>
+       <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item active" href="#"><i class="bi bi-bookmark-plus"></i>  Guardar publicación</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-trash3"></i>  Eliminar publicación</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle"></i>  Reportar publicación</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-share"></i>  Compartir</a></li>
+       </ul>
+      </div>
+    </div> `;
+
+      newPost.appendChild(dropdown);
   }
 
   // Limpiar el textarea
