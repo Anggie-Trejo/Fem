@@ -45,7 +45,7 @@ function addPost() {
           newPost.innerHTML = postHTML + '<hr>';
           document.getElementById('feed').prepend(newPost);
 
-         /* //Agregar un dropdown a la publicación
+         //Agregar un dropdown a la publicación
           const dropdown = document.createElement("div");
           dropdown.classList.add("dropdown", "mb-3");
 
@@ -66,7 +66,7 @@ function addPost() {
           </div>
           </div> `;
 
-          newPost.appendChild(dropdown); */
+          newPost.appendChild(dropdown);
       
       };
       reader.readAsDataURL(postImage);
