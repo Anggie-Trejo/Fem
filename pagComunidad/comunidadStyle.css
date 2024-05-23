@@ -64,9 +64,14 @@ h3 {
     font-style: normal;
     font-size: 26px;
 }
-#textarea{
-    resize: none;
+
+#postContent{
+    width: 100% ; /* Ancho fijo de 300px */
+    height: 100px;
+    resize: none;  
 }
+
+
 .bg-green{
     border-radius: 3%;
     background: #f5e2be; /* 7c946c f3ab91 f5e2be f8c0a9*/
@@ -126,29 +131,21 @@ h3 {
 }
 /* mis humildes aportes */
 
-/*  tamaño del recuadro para publicar*/ 
-.fixed-size-textarea {
-    width: 80%; /* Revisar al final */
-    height: 90px; /* Altura fija */
-    resize: none; /* Deshabilitar el redimensionamiento */
-}
-
 /* Para que los links no esten subrayados */
 .no-underline {
     text-decoration: none;
     color: black;
 }
-/*colores boton */
-.btn-custom {
-    background-color: #7c947c; /* Color de fondo */
-    border-color:  #7c947c; /* Color del texto */
-    border-radius: 5px;/* redondeo*/
+/*colores tag */
+span.tag {
+    background-color: #DC9693;
+    margin-right: 5px;
+    margin-bottom: 10px; /* Espacio debajo de cada etiqueta */
+    margin-top: 10px;
+    border-radius: 80px;/* redondeo*/
     color: white;
 }
-.btn-custom:hover {
-    background-color: #e07a76;
-    border-color:#e07a76; /* Color de fondo al pasar el mouse */
-}
+
 
 
 .list-group-item-custom {
@@ -239,24 +236,12 @@ h3 {
 
 .card-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 .card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    width: 300px;
-}
-.card img {
-    width: 100%;
-    border-radius: 5px;
-}
-.card h2 {
-    margin: 0;
-}
-.card p {
-    margin: 10px 0;
+    width: 80%; /* Ajustar el ancho de las tarjetas al 80% */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
 }
 .tags {
     display: flex;
@@ -269,3 +254,54 @@ h3 {
     border-radius: 3px;
     font-size: 0.9em;
 }
+.card-profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-img-top{
+    height: 250px;
+    width: 80%;
+}
+
+
+/* Colores especificos para los botones*/
+.badge-recomendacion {
+    background-color: #6C825E; 
+    color: #fff;
+    border-radius: 0.25rem;
+}
+
+.badge-advertencia {
+    background-color: #B72E2A; 
+    color: #fff;
+}
+
+.badge-resena {
+    background-color: #D49521; 
+    color: #fff;
+
+}
+
+/* botones de conexion*/
+
+button.bn-sl{
+    background-color: #F49E7C;
+    border: none;
+
+}
+
+button.bn-sl:hover{
+    background-color: black; /* consultar qué color */
+
+
+}
+
+button.bn-mg{
+    background-color: #ECC783;
+    border: none;
+
+}
+
