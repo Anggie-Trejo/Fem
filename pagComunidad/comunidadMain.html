@@ -208,3 +208,20 @@
 </html>
 
 
+
+
+function App() {
+
+return (
+  <div className = "App">
+    <Navbar />
+
+    <Routes>
+      <Route path ="/" element = { <Main /> }/>
+      <Route path ="products" element = { <Products /> }/>
+      <Route path ="services" element = { <Services /> }/>
+      <Route path ="profile" element = { <Profile /> }/>
+    </Routes>
+  </div>
+)
+};

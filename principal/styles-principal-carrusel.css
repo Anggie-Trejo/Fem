@@ -123,11 +123,17 @@ p{text-align: center;}
     }
 
 /*Estilo para imágenes del carrusel*/
-.carousel-inner{
+
+.carouselslide, .carousel-inner, .img-fluid, .carousel-item, .images-container {
     width: 100%; 
     height: auto;
     display: block;
+    position: relative;
+    transition: opacity 100ms;
+    border-radius: 10px;
 }
+
+
 
 .carousel-control {
     position: absolute;
