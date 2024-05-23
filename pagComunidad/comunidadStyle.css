@@ -1,0 +1,270 @@
+@media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px)
+  and (orientation:landscape) 
+{
+    /* iPad landscape style here */
+}
+@media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px)
+  and (orientation:portrait) 
+{
+    /* iPad portrait style here */
+}
+
+
+.header .navbar-brand {
+    color: white !important;
+}
+
+.header .nav-link {
+    color: white !important;
+    font-size: 16.5px;
+}
+
+.header .nav-link:hover {
+    color: rgb(99, 56, 56) !important;
+}
+
+@media(max-width: 700px){
+    .nav-link{text-align: center;}
+}
+
+.header .navbar {
+    background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+}
+
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 22px;
+
+}
+
+h1 {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 38px;
+}
+
+h2 {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+
+h3 {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+}
+#textarea{
+    resize: none;
+}
+.bg-green{
+    border-radius: 3%;
+    background: #f5e2be; /* 7c946c f3ab91 f5e2be f8c0a9*/
+}
+
+
+.form-label{
+    color: black;
+}
+
+.icon-circle {
+    
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f8c0a9; 
+   
+    line-height: 30px;
+    margin-right: 10px; 
+    
+}
+
+.icon-circle i {
+    color: white; 
+}
+
+.info {
+    display: inline-block;
+    vertical-align: center;
+}
+
+.warnings {
+    color: red; /* Color del texto de advertencia */
+    font-size: 14px; /* Tamaño de la fuente */
+    margin-top: 10px; /* Espacio desde la parte superior del contenedor */
+    text-align: center;
+}
+#myMap {
+    width: 95%; 
+    height: 220px;
+}
+.col-sm {
+    margin-bottom: 20px; 
+}
+
+#parrafo {
+    text-align: justify; 
+    margin-right: 20px; 
+}
+
+#col-der {
+    max-width: 470px; 
+    margin-bottom: 0; 
+}
+/* mis humildes aportes */
+
+/*  tamaño del recuadro para publicar*/ 
+.fixed-size-textarea {
+    width: 80%; /* Revisar al final */
+    height: 90px; /* Altura fija */
+    resize: none; /* Deshabilitar el redimensionamiento */
+}
+
+/* Para que los links no esten subrayados */
+.no-underline {
+    text-decoration: none;
+    color: black;
+}
+/*colores boton */
+.btn-custom {
+    background-color: #7c947c; /* Color de fondo */
+    border-color:  #7c947c; /* Color del texto */
+    border-radius: 5px;/* redondeo*/
+    color: white;
+}
+.btn-custom:hover {
+    background-color: #e07a76;
+    border-color:#e07a76; /* Color de fondo al pasar el mouse */
+}
+
+
+.list-group-item-custom {
+
+    background-blend-mode: darken;
+    color: #000; 
+}
+
+/* pruebas para etiquetas*/
+.button {
+    border: none;
+    color: white; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px 4px 10px; 
+    /* Arriba | Derecha | Abajo | Izquierda */
+    cursor: pointer;
+  }
+  
+  .button1 {background-color: #7c947c;} /* Green */
+  .button2 {background-color: #e07a76;} /* Blue */
+  .button3 {background-color: #f3ab91;} /* Blue */
+
+.left-sidebar{
+ background-color: #f5e2be59;
+    padding: 15px 10px 10px 10px;
+    height: 100%; /*  para que use todo el largo*/ 
+  }
+  
+
+  .tag {
+    display: inline-block;
+    background-color: #7c946c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+
+.tag:hover {
+    background-color: #F1D7A7;
+    cursor: pointer;
+}
+
+#postType{
+    width: 80%;
+}
+ 
+/* alerta de publicar */
+.alert {
+    display: none;
+}
+
+/*  */
+.card-link-btn {
+    background-color: #7c947c;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  #post-btn {
+    display: grid;
+        place-items: center; 
+        height: auto; 
+        background-color: #7C946C;
+        border-radius: 10px;
+        border: none;
+        gap: 10px;
+        padding: 8px;
+        margin: 10px;
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: white !important;
+        font-size: 16.5px;
+    
+}
+
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card {
+    width: 80%; /* Ajustar el ancho de las tarjetas al 80% */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+}
+.tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.tag {
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+.card-profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-img-top{
+    height: 250px;
+    width: 80%;
+}
