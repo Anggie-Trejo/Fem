@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Link a nuestros archivos de estilos-->
+  <link rel="stylesheet" href="./styles-principal-carrusel.css">
+
+
+    <!--Links de Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!--Link a nuestros archivos de estilos-->
+  <link rel="stylesheet" href="./styles-principal-carrusel.css">
+
+
+    <!--Links de Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <title>Home</title>
+    <title>Home</title>
+</head>
+<body>
+
+  <!--Empieza la sección del NavBar-->
+  <section class="header">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary ms-auto">
+          <div class="container-fluid">
+
+             <!--Esta parte contiene el logo de nuestro producto-->
+            <a class="navbar-brand">
+                <img src="./assets/logo-vectorizado.png" alt="Logo FemTrek" width="130" height="50" class="d-inline-block align-text-top">
+            </a>
+              <!--Toggler es el botón que se despliega como menú colapsable cuando la pantalla está chiquita-->
+            <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            
+                <!--La lista de las secciones del NavBar-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="/About Us/about us.html">Acerca de Nosotras</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/ContactoPage/contactoMain.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Pagina-registro/pagina-registro.html">Regístrate</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Iniciar_sesión/ingreso.html">Inicia Sesión</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+  </section>
+
+   <!-- Logo para visibilizar-->
+  <div class="images-container">
+  <div class="logobody">
+  <!--INSERTAR VIDEO
+      autoplay = comenzar automaticamente.
+      img-fluid = escalar proporcionalmente.
+      d-none = evita reproduccion automatica
+      d-md-block = permite reproduccion en pantallas grandes y medianas-->
+  <video id="logo" class="img-fluid" autoplay alt="Logo con movimiento">
+    <!-- tipo = especificar mp4 para que sea reconocido y visible---> 
+    <source src="./assets/1_logo_video.mp4" type="video/mp4">
+  </video>
+  </div>
+
+  <!--Empieza CARRUSEL-->
+  <section class="carousel">
+    <!--data-ride permite iniciar el carrusel tan pronto se carga la pagina-->
+    <div id="carouselHome" class="carousel slide" data-ride="carousel">
+      <!--INDICADORES: Botones al inferior del carrusel-->
+      <ol class="carousel-indicators">
+        <!--1) data-target = identifacion del carrusel
+            2) data-slide-to = a que diapositiva ir cuando se da click
+            3) active = se debe agregar a alguna diapositiva para que sea visible-->
+        <li data-target="#carouselHome" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselHome" data-slide-to="1"></li>
+        <li data-target="#carouselHome" data-slide-to="2"></li>
+        <li data-target="#carouselHome" data-slide-to="3"></li>
+        <li data-target="#carouselHome" data-slide-to="4"></li>
+        <li data-target="#carouselHome" data-slide-to="5"></li>
+      </ol>
+
+      <!--DIAPOSITIVAS: Imagenes que se muestran en el carrusel-->
+      <div class="carousel-inner">
+      <!--DIAPOSITIVA 1-->
+        <!--active = necesario en un solo elemento para que sea visible el carrusel-->
+        <div class="carousel-item active">
+          <video id="2" class="img-fluid" autoplay alt="Video viajemos juntas">
+            <source src="./assets/2_travel-video.mp4" type="video/mp4">
+          </video>
+        </div> 
+      <!--DIAPOSITIVA 2-->
+        <div class="carousel-item">
+          <!--d-block w-100 = para el ancho total de la pantalla-->
+          <img id="3" src="./assets/3_map.png" class="d-block w-100" alt="Mapa">
+        </div>
+      <!--DIAPOSITIVA 3-->
+        <div class="carousel-item">
+          <img id="4" src="./assets/4_friends.png" class="d-block w-100" alt="Amigas viajando">
+        </div>
+      <!--DIAPOSITIVA 4-->
+        <div class="carousel-item">
+          <img id="5" src="./assets/5_taxi.png" class="d-block w-100" alt="Taxi seguro">
+        </div>
+      <!--DIAPOSITIVA 5-->
+        <div class="carousel-item">
+          <img id="6" src="./assets/6_comunity.png" class="d-block w-100" alt="Conexión de amigas">
+        </div>
+      <!--DIAPOSITIVA 6-->
+        <div class="carousel-item">
+          <img id="7" src="./assets/7_find_FemTrek.png" class="d-block w-100" alt="Encuéntralo en FemTrek">
+        </div>
+      </div>
+
+      <!--BOTONES FLECHA para cambiar de diapositiva a cada lado del carrusel:-->
+      <!--Boton del lado IZQUIERDO (PREVIOUS)-->
+      <a class="carousel-control" id="carousel-control-prev" href="#carouselHome" role="button" data-slide="prev">
+        <!--span = se usar por convencion, a diferencia de <div> que es un elemento de bloqueo, <span> es un elemento 'inline'.-->
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <!--Boton del lado DERECHO (NEXT)-->
+      <a class="carousel-control" id="carousel-control-next" href="#carouselHome" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+  </div>
+    <!--Ques es FemTrek / Que hace-->
+  <div class="about-FemTrek">
+    <h1 class="Que es FemTrek">
+      De mujeres para mujeres
+      <br>
+      Una app para viajar seguras
+    </h1>
+      <h3>
+        Generemos una comunidad de apoyo 
+        <br>
+        para no restringirnos de una vida plena.
+      </h3>
+  </div>
+  <div class="identidad-FemTrek">
+    <h1 class="Misión">
+      Misión
+    </h1>
+      <p>
+        Generar un espacio seguro, interactivo e innovador que permita la convivencia sana entre mujeres y las apoye en su movilidad, mejorando su sentimiento de seguridad a donde sea que vayan.
+      </p>
+    <h1 class="Visión">
+      Visión
+    </h1>
+      <p>
+        Ser la primera red social exclusivamente para mujeres latinoamericanas que les permita sentirse seguras en cuanto a movilidad, comunicación y convivencia.
+      </p>
+    <h1 class="Valores">
+      Valores
+    </h1>
+      <p>
+        Sororidad - Seguridad - Respeto - Transparencia
+      </p>
+  </div>
+
+    <!--Para agregar campos de registro o inicio de sesión-->
+    <div class="signIn-signUp">
+      <form action="/Pagina-registro/pagina-registro.html">
+        <button type="submit" id="btn">Regístrate</button>
+      </form>
+      <form action="/Iniciar_sesión/ingreso.html">
+        <button type="submit" id="btn">Inicia Sesión</button>
+      </form>
+    </div>
+
+    <!--Pie de pagina-->
+    <div class="last-part">
+      <footer class="footer_container">
+        <!--Botones para descargar app-->
+        <section class="footer_install">
+          <a class="link-android-apple" href="#">
+            <button id="btn-android-apple" type="button">
+              <img src="https://cdn.peanut-app.io/static/media/robot.e4ab3d69.svg" alt="Play Store">
+            </button>
+          </a>
+          <a class="link-android-apple" href="#">
+            <button id="btn-android-apple" type="button">
+              <img src="https://cdn.peanut-app.io/static/media/apple.2fbc6a2d.svg" alt="Apple Store">
+            </button>
+          </a>
+        </section>
+        <!--Redes sociales-->
+        <section class="footer_social">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="https://cdn.peanut-app.io/static/media/facebook.164dd68c.svg" alt="Facebook">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="https://cdn.peanut-app.io/static/media/instagram.c511f6bb.svg" alt="Instagram">
+              </a>
+            </li>
+          </ul>
+        </section>
+        <!--Contacto-->
+        <section class="footer_contact">
+          <ul>
+            <li>
+              FemTrek para empresas
+              <a href="#">empresarial@femtrek.com</a>
+            </li>
+            <li>
+              Prensa
+              <a href="#">prensa@femtrek.com</a>
+            </li>
+            <li>
+              ¿Algo más?
+              <a href="#">info@femtrek.com</a>
+            </li>
+          </ul>
+        </section>
+        <!--Copyright-->
+        <section class="footer_copyright">
+          <p>
+            © 2021 FemTrek. Todos los derechos reservados.
+          </p>
+        </section>
+      </footer>
+    </div>
+
+     <script src="./principal-carrusel.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html> 
