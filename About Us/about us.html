@@ -218,6 +218,8 @@
 
 <!--Tarjetas-->
 
+<!--Tarjetas de equipo : muestra tarjetas para los miembros del equipo, cada una con una foto, nombre, función y un botón que activa un modal con información más detallada. Esto se hace utilizando la tarjeta de Bootstrap y los componentes modales.-->
+
 <div class="container">
   <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12">
@@ -445,7 +447,7 @@
               </div>
           </div>
       </div>
-
+<!--Tarjetas de equipo : muestra tarjetas para los miembros del equipo, cada una con una foto, nombre, función y un botón que activa un modal con información más detallada. Esto se hace utilizando la tarjeta de Bootstrap y los componentes modales.-->
       <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card team-member">
               <img src="./pics/iconoflor.jpg" alt="iconoflor" class="card-img-top">
@@ -484,6 +486,8 @@
                   <h5 class="card-title">Angelica Trejo</h5>
                   <p class="card-text">Desarrolladora Java</p>
                   <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bioModalAngie" >Su Bio</a>
+
+                  <!--Modales : al hacer clic en el botón 'Su Bio' (Su biografía) en cada tarjeta, se abre un modal con información más detallada sobre cada miembro del equipo, incluida una imagen y una breve biografía, con enlaces a sus perfiles de LinkedIn.-->
                   <div class="modal fade" id="bioModalAngie" tabindex="-1" aria-labelledby="bioModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -520,7 +524,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 
-  
+ <!--incluye JavaScript necesario para que los componentes de Bootstrap funcionen correctamente, como los modales y la barra de navegación plegable.--> 
 
     <footer>
       <p> Copyright © 2024 Todos los derechos reservados - FemTrek </p>
