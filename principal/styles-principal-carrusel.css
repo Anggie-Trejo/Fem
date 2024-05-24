@@ -133,6 +133,13 @@ p{text-align: center;}
     border-radius: 10px;
 }
 
+/* Ajusta el video y las imágenes para que ocupen todo el espacio del item */
+.carousel-item video, .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la relación de aspecto y recorta si es necesario */
+    display: block;
+}
 
 
 .carousel-control {
