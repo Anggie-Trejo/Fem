@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/Pagina-registro/pagina-registro.css">
 
     <script src="/Pagina-registro/pagina-registro.js" async defer></script>
+    <script src="/Pagina-registro/datos.js" async defer></script>
     <title>FemTrek</title>
   </head>
 
@@ -96,53 +97,69 @@
       </div>
 
       <div class="mb-3">
+        <label class="form-label">Número de teléfono</label>
+        <input type="number" class="form-control" id="userPhone" name="txt_lastnames" placeholder="(+52)5544332211">
+      </div>
+
+      <div class="mb-3">
         <label class="form-label">Fecha de Nacimiento</label>
         <input type="date" class="form-control" id="userAge" name="txt_age" placeholder="Debes que tener al menos 18 años para unirte">
       </div>
 
       <div class="mb-3">
       <label class="form-label">País de residencia</label>
-      <select class="form-select" aria-label="Default select example">
+      <select class="form-select" aria-label="Default select example" id="userResidencia">
         <option selected>Seleccionar</option>
+        <option value="AYB">Antigua y Barbuda</option>
         <option value="ARG">Argentina</option>
+        <option value="BAH">Bahamas</option>
+        <option value="BAR">Barbados</option>
+        <option value="BEL">Belice</option>
         <option value="BOL">Bolivia</option>
         <option value="BRA">Brasil</option>
         <option value="CHL">Chile</option>
         <option value="COL">Colombia</option>
         <option value="COL">Costa Rica</option>
         <option value="CUB">Cuba</option>
+        <option value="DMA">Dominica</option>
         <option value="ECU">Ecuador</option>
         <option value="SLV">El Salvador</option>
+        <option value="GRA">Granada</option>
         <option value="GTM">Guatemala</option>
-        <option value="GUF">Guayana Francesa</option>
+        <option value="GUF">Guyana Francesa</option>
         <option value="HTI">Haití</option>
         <option value="HND">Honduras</option>
+        <option value="JAM">Jamaica</option>
         <option value="ANT">Las Antillas</option>
         <option value="MEX">México</option>
         <option value="NIC">Nicaragua</option>
         <option value="PAN">Panamá</option>
         <option value="PRY">Paraguay</option>
-        <option value="parte">Perú</option>
+        <option value="PER">Perú</option>
         <option value="PRI">Puerto Rico</option>
         <option value="DOM">República Dominicana</option>
-        <option>Uruguay</option>
+        <option value="SLA">Santa Lucía</option>
+        <option value="SKN">Saint Kitts y Nevis</option>
+        <option value="SVG">San Vicente y las Granadinas></option>
+        <option value="SUR">Suriname></option>
+        <option value="TYT">Trinidad y Tobago></option>
+        <option value="URU">Uruguay</option>
         <option value="VEN">Venezuela</option>
       </select>
     </div>
 
-        <!--Sección por desarrollar, estamos trabajando en el Javascrip para llamar a las ciudades-->
+        <!---->
     <div class="mb-3">
         <label class="form-label">Ciudad o Distrito</label>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Seleccionar</option>
-          <option value="CDMX">Ciudad de México</option>
-        </select>
+        <input type="text" class="form-control" id="userCity" name="txt_city" placeholder="Ciudad de México">
+
+       
       </div>
 
       <div class="mb-3">
         <label class="form-label">Contraseña</label>
         <input type="password" class="form-control" id="passwords" name="txt_password">
-        <p><small>Recuerda colocar una contraseña que contenga al menos un número, una mayúscula, y un número</small></p>
+        <p><small>Recuerda colocar una contraseña que contenga al menos una mayúscula, minúscula y un número</small></p>
       </div>
 
       <div class="mb-3">
@@ -155,8 +172,12 @@
       <br>
       
                  
-       <div class="alerta-error">Todos los campos son obligatorios</div>
-       <div class ="alerta-exito">Se ha realizado el registro con éxito</div>
+      <div class="alert alert-success " role="alert">
+        ¡Bienvenida, se ha registrado correctamente el formulario!
+      </div>
+      <div class="alert alert-danger " role="alert">
+        Hay errores o secciones vacías en el llenado del formulario. 
+      </div>
       </form>
     </div>
     

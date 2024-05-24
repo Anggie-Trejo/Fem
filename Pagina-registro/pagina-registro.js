@@ -5,16 +5,24 @@ const formRegister = document.querySelector(".form-register"); // Referencia al 
 const inputUser = document.getElementById("userNames");
 const inputLastNames = document.getElementById("userLastNames");
 const inputEmail= document.getElementById("userEmail");
+const inputPhone = document.getElementById("userPhone");
+const inputAge = document.getElementById("userAge");
+const selectResidence = document.getElementById("userResidencia");
+const inputCity = document.getElementById("userCity");
 const inputPassword = document.getElementById("passwords");
 const inputPasswordcopy = document.getElementById("passwordClone");
-const alertaError= document.querySelector(".alerta-error");
-const alertaExito = document.querySelector(".alerta-exito");
+
+const alertaError= document.querySelector(".alert-danger");
+const alertaExito = document.querySelector(".alert-success");
 
 
 /*Expresiones regulares. Son reglas de validación. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
 const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜ]{3,10}(?:\s[a-zA-ZáéíóúÁÉÍÓÚüÜ]{0,10})?$/;
 const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const passwordRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+const cityRegex= /^[a-zA-ZáéíóúÁÉÍÓÚüÜ\s]{5,}$/;
+const phoneRegex= /^\+?(\d{1,4})?[\s-]?(\(?\d{2,3}\)?)?[\s-]?\d{4,5}[\s-]?\d{4}$/;
+
 
 
 
@@ -25,14 +33,28 @@ const passwordRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
     inputLastNames.addEventListener ("input", () =>{
         validarCampo(nameRegex, inputLastNames, "El apellido debe tener mínimo 3 caracteres, sin caracteres especiales");
-    })
+    });
 
     inputEmail.addEventListener("input", () => {
         validarCampo(emailRegex, inputEmail, "Dirección de correo electrónico no válido.");
-    })
+    });
+
+    inputPhone.addEventListener("input", () => {
+        validarCampo(phoneRegex, inputPhone, "Formato de número inválido")
+    });
+
+    inputAge.addEventListener("input", validAge);
+    
+    selectResidence.addEventListener("change", () => {
+        validarResidence(selectResidence, "Selecciona un país de residencia.");
+    });
+
+    inputCity.addEventListener("input", () =>{
+        validarCampo(cityRegex, userCity, "Escribe el nombre de tu ciudad");
+    });
 
     inputPassword.addEventListener("input", () =>{
-        validarCampo(passwordRegex, inputPassword, "La contraseña debe tener mínimo una letra mayúscula, minúscula y algún digito numérico.")
+        validarCampo(passwordRegex, inputPassword, "La contraseña debe tener mínimo una letra mayúscula, minúscula, algún digito numérico y 8 caracteres.")
     });
 
     inputPasswordcopy.addEventListener("input", validPassword);
@@ -43,13 +65,17 @@ const passwordRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
         enviarFormulario();
     });
 
-//Estado de validación para ocupar en función validarCampo
+//Objeto de Estado de validación para ocupar en funciones validarCampo, validar contraseña, calcular edad, etc.
 const estadoValidacion = {
     userNames: false,
     userLastNames: false,
     userEmail: false,
-    userPassword: false,
-    userPasswordCopy: false,
+    userPhone: false,
+    userAge: false,
+    userResidencia: false,
+    userCity: false,
+    passwords: false,
+    passwordClone: false,
 
 
 };
@@ -70,7 +96,7 @@ function validarCampo(regularExpresion, campo, mensaje) {
         campo.classList.add("error");
         
     }
-}
+};
 
 //Gestión de creación y eliminación de las alertas
 //La referencia es donde quiero mostrar mi alerta
@@ -81,7 +107,7 @@ function mostrarAlerta(referencia, mensaje) {
     alertaDiv.classList.add("alerta"); // al div se le añade la clase alerta
     alertaDiv.textContent = mensaje; //Agrega texto a la alerta
     referencia.append(alertaDiv); //Se añade como hijo del elemento referencia
-}
+};
 
 
 //Para que no se repitan las alertas
@@ -91,43 +117,84 @@ function eliminarAlerta(referencia) {
         alerta.remove();
         
     }
-}
+};
 
 //Validar contraseña
 function validPassword(){
 
     if(inputPassword.value !== inputPasswordcopy.value){
         mostrarAlerta(inputPasswordcopy.parentElement, "No coinciden las contraseñas");
-        estadoValidacion.userPasswordCopy = false;
+        estadoValidacion.passwordClone = false;
+        inputPasswordcopy.classList.add("error");
 
     } else{
         eliminarAlerta(inputPasswordcopy.parentElement);
-        estadoValidacion.userPasswordCopy = true;
+        estadoValidacion.passwordClone = true;
+        inputPasswordcopy.classList.remove("error");
     
+    }
+
+}
+
+//Calcular edad de la usuaria
+function validAge(){
+ const birthday = new Date(inputAge.value);
+ const today = new Date();
+
+ let age= today.getFullYear() - birthday.getFullYear();
+ const monthDifference = today.getMonth - birthday.getMonth();
+ const dayDifference = today.getDate() - birthday.getDate();
+
+ //Ajustar la edad si el mes y día actual es menor que el mes y día de nacimiento, age-- ajusta la edad si la persona no ha cumplido años este año
+ if( monthDifference <0 || (monthDifference === 0 && dayDifference < 0)){
+     age--;
+ }
+
+ if (age >= 18) {
+    estadoValidacion.userAge =true;
+    eliminarAlerta(inputAge.parentElement);
+    inputAge.classList.remove("error");
+    } else{
+    mostrarAlerta(inputAge.parentElement, "Lo sentimos, debes ser mayor de 18 años para poder accesar.");
+    estadoValidacion.userAge=false;
+    inputAge.classList.add("error");
+ }
+
+}
+
+//Validar selección de país de residencia
+function validarResidence(campo, mensaje) {
+    if (campo.value !== "Seleccionar") {
+        eliminarAlerta(campo.parentElement);
+        estadoValidacion[campo.id]=true;
+        campo.classList.remove("error");
+    } else {
+        estadoValidacion[campo.id]=false;
+        mostrarAlerta(campo.parentElement, "Selecciona una opción");
+        campo.classList.add("error");
     }
 
 }
 
 
 
-
 // Validamos el envío del formulario
 function enviarFormulario() {
-    if(estadoValidacion.userNames && estadoValidacion.userLastNames && estadoValidacion.userEmail && estadoValidacion.userPassword && estadoValidacion.userPasswordCopy) {
+    if(estadoValidacion.userNames && estadoValidacion.userLastNames && estadoValidacion.userEmail && estadoValidacion.userPhone && estadoValidacion.userAge && estadoValidacion.userResidencia && estadoValidacion.userCity && estadoValidacion.passwords && estadoValidacion.passwordClone) {
 
         formRegister.reset();
         alertaExito.classList.add("alertaExito");
         alertaError.classList.remove("alertaError");
         setTimeout(() => {
             alertaExito.classList.remove("alertaExito");
-        }, 5000);
+        }, 3000);
         
     } else {
         alertaExito.classList.remove("alertaExito");
         alertaError.classList.add("alertaError");
         setTimeout(() =>{
             alertaError.classList.remove("alertaError");
-        }, 5000);
+        }, 3000);
         
     }
 }
