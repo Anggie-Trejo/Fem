@@ -19,7 +19,7 @@ const alertaExito = document.querySelector(".alert-success");
 /*Expresiones regulares. Son reglas de validación. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
 const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜ]{3,10}(?:\s[a-zA-ZáéíóúÁÉÍÓÚüÜ]{0,10})?$/;
 const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const passwordRegex =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+const passwordRegex = /^(?=.*[a-zñ])(?=.*[A-ZÑ])(?=.*\d)[a-zA-Z\dñÑ!@#$%^&*(),.?":{}|<>]{8,}$/;
 const cityRegex= /^[a-zA-ZáéíóúÁÉÍÓÚüÜ\s]{5,}$/;
 const phoneRegex= /^\+?(\d{1,4})?[\s-]?(\(?\d{2,3}\)?)?[\s-]?\d{4,5}[\s-]?\d{4}$/;
 
@@ -54,7 +54,7 @@ const phoneRegex= /^\+?(\d{1,4})?[\s-]?(\(?\d{2,3}\)?)?[\s-]?\d{4,5}[\s-]?\d{4}$
     });
 
     inputPassword.addEventListener("input", () =>{
-        validarCampo(passwordRegex, inputPassword, "La contraseña debe tener mínimo una letra mayúscula, minúscula, algún digito numérico y 8 caracteres.")
+        validarCampo(passwordRegex, inputPassword, "La contraseña debe tener mínimo 8 caracteres.")
     });
 
     inputPasswordcopy.addEventListener("input", validPassword);

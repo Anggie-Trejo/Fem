@@ -19,9 +19,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
     };
     //Objeto a JSON
     const userJson = JSON.stringify(user);
+    const pasedJson = JSON.parse(userJson);
 
     //Para ver el JSON en consola
     console.log(userJson);
+    console.log(pasedJson);
 
 });
      
