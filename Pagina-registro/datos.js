@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const pasedJson = JSON.parse(userJson);
 
     //Para ver el JSON en consola
-    console.log(userJson);
+    /*console.log(userJson);
     console.log(pasedJson);
+    */
 
 });
      

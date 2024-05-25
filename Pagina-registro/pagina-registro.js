@@ -15,6 +15,25 @@ const inputPasswordcopy = document.getElementById("passwordClone");
 const alertaError= document.querySelector(".alert-danger");
 const alertaExito = document.querySelector(".alert-success");
 
+formRegister.addEventListener("submit", (event) => {
+    event.preventDefault(); // Evitar el envío del formulario
+    
+    const formData = {
+        name: inputUser.value,
+        lastname: inputLastNames.value,
+        email: inputEmail.value,
+        phone: inputPhone.value,
+        age: inputAge.value,
+        country: selectResidence.value,
+        city: inputCity.value,
+        password: inputPassword.value,
+        passwordcopy: inputPasswordcopy.value
+    };
+
+    console.log(formData); // Imprimir los datos en la consola
+
+});
+
 
 /*Expresiones regulares. Son reglas de validación. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
 const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜ]{3,10}(?:\s[a-zA-ZáéíóúÁÉÍÓÚüÜ]{0,10})?$/;
@@ -60,10 +79,12 @@ const phoneRegex= /^\+?(\d{1,4})?[\s-]?(\(?\d{2,3}\)?)?[\s-]?\d{4,5}[\s-]?\d{4}$
     inputPasswordcopy.addEventListener("input", validPassword);
 
     // La función que se ejecutará cuando el formulario se envíe. Típicamente, esta función realiza validaciones finales y previene el envío del formulario si hay errores.
+    
     formRegister.addEventListener("submit", e => {
         e.preventDefault();
         enviarFormulario();
     });
+    
 
 //Objeto de Estado de validación para ocupar en funciones validarCampo, validar contraseña, calcular edad, etc.
 const estadoValidacion = {
