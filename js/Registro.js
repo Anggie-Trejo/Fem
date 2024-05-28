@@ -15,9 +15,23 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const alertaError= document.querySelector(".alert-danger");
     const alertaExito = document.querySelector(".alert-success");
     
-    formRegister.addEventListener("submit", (event) => {
-        event.preventDefault(); // Evitar el envío del formulario
+        // Cargar los datos del almacenamiento local al cargar la página
+        const storedFormData = JSON.parse(localStorage.getItem('formData'));
+        if (storedFormData) {
+            inputUser.value = storedFormData.name || '';
+            inputLastNames.value = storedFormData.lastname || '';
+            inputEmail.value = storedFormData.email || '';
+            inputPhone.value = storedFormData.phone || '';
+            inputAge.value = storedFormData.age || '';
+            selectResidence.value = storedFormData.country || '';
+            inputCity.value = storedFormData.city || '';
+            inputPassword.value = storedFormData.password || '';
+            inputPasswordcopy.value = storedFormData.passwordcopy || '';
+        }
         
+        formRegister.addEventListener("submit", (event) => {
+            event.preventDefault(); // Evitar el envío del formulario
+    
         const formData = {
             name: inputUser.value,
             lastname: inputLastNames.value,
@@ -29,6 +43,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
             password: inputPassword.value,
             passwordcopy: inputPasswordcopy.value
         };
+    
+        // Guardar los datos en el almacenamiento local
+        localStorage.setItem('formData', JSON.stringify(formData));
     
         console.log(formData); // Imprimir los datos en la consola
     
