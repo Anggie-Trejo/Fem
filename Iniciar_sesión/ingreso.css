@@ -1,4 +1,3 @@
-
 /*Estilos para la Navbar*/
 .header .navbar-brand {
     color: white !important;
@@ -89,6 +88,14 @@
     }
 }
 
-#boton{
+.btn{
+    background-color: #7C946C;
+    border: #7C946C;
+    color: white !important;
     text-align: center;
+}
+
+.btn:active{
+    background-color: #e07a76;
+    border: #e07a76;
 }
