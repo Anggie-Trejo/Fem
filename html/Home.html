@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Link a nuestros archivos de estilos-->
+  <link rel="stylesheet" href="../css/Home-Carrousel.css">
+
+
+    <!--Link a nuestros archivos de estilos-->
+  <link rel="stylesheet" href="../css/Home-Carrousel.css">
+
+
+    <!--Links de Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--Colocamos los Estilos-->
+    <link rel="icon" href="../public/Favicon.png">
+    <title>Home</title>
+</head>
+<body>
+
+  <section class="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ms-auto">
+        <div class="container-fluid">
+
+            <!--Esta parte contiene el logo de nuestro producto-->
+            <a class="navbar-brand" href="#">
+                <img src="../public/logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
+              </a>
+              <!--Toggler es el botón que se despliega como menú colapsable cuando la pantalla está chiquita-->
+              <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <!--La lista de las secciones del NavBar-->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../html/Home.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/About-Us.html">Acerca de Nosotras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/Contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/Registro.html">Regístrate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/Iniciar-Sesion.html">Inicia Sesión</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</section>
+
+   <!-- Logo para visibilizar-->
+  <div class="images-container">
+  <div class="logobody">
+  <!--INSERTAR VIDEO
+      autoplay = comenzar automaticamente.
+      img-fluid = escalar proporcionalmente.
+      d-none = evita reproduccion automatica
+      d-md-block = permite reproduccion en pantallas grandes y medianas-->
+  <video id="logo" class="img-fluid" autoplay muted loop alt="Logo con movimiento">
+    <!-- tipo = especificar mp4 para que sea reconocido y visible---> 
+    <source src="../public/Carrousel/1_logo_video.mp4" type="video/mp4">
+  </video>
+  </div>
+
+  <!--Empieza CARRUSEL-->
+  <section class="carousel">
+    <!--data-ride permite iniciar el carrusel tan pronto se carga la pagina-->
+    <div id="carouselHome" class="carouselslide" data-bs-ride="carousel">
+      <!--INDICADORES: Botones al inferior del carrusel-->
+      <ol class="carousel-indicators">
+        <!--1) data-bs-target = identificación del carrusel
+            2) data-bs-slide-to = a qué diapositiva ir cuando se da clic
+            3) class="active" = se debe agregar a alguna diapositiva para que sea visible-->
+        <li data-bs-target="#carouselHome" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carouselHome" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselHome" data-bs-slide-to="2"></li>
+        <li data-bs-target="#carouselHome" data-bs-slide-to="3"></li>
+        <li data-bs-target="#carouselHome" data-bs-slide-to="4"></li>
+        <li data-bs-target="#carouselHome" data-bs-slide-to="5"></li>
+      </ol>
+    
+
+      <!--DIAPOSITIVAS: Imagenes que se muestran en el carrusel-->
+      <div class="carousel-inner">
+      <!--DIAPOSITIVA 1-->
+      <div class="carousel-item active">
+        <!--active = necesario en un solo elemento para que sea visible el carrusel-->
+        <video id="0" class="img-fluid d-block w-100" autoplay muted loop alt="video intro">
+          <!-- tipo = especificar mp4 para que sea reconocido y visible---> 
+          <source src="../public/Carrousel/2_travel-video.mp4" type="video/mp4" class="img-fluid d-block w-100">
+        </video>
+      </div>
+       <!--DIAPOSITIVA 2-->
+        <div class="carousel-item">
+          <!--d-block w-100 = para el ancho total de la pantalla-->
+          <img id="1" src="../public/Carrousel/3_map.png" alt="Mapa" class="d-block w-100">
+        </div>
+      <!--DIAPOSITIVA 3-->
+        <div class="carousel-item">
+          <img id="2" src="../public/Carrousel/4_friends.png" alt="Amigas viajando" class="d-block w-100">
+        </div>
+      <!--DIAPOSITIVA 4-->
+        <div class="carousel-item">
+          <img id="3" src="../public/Carrousel/5_taxi.png" alt="Taxi seguro" class="d-block w-100">
+        </div>
+      <!--DIAPOSITIVA 5-->
+        <div class="carousel-item">
+          <img id="4" src="../public/Carrousel/6_comunity.png" alt="Conexión de amigas" class="d-block w-100">
+        </div>
+      <!--DIAPOSITIVA 6-->
+        <div class="carousel-item">
+          <img id="5" src="../public/Carrousel/7_find_FemTrek.png" alt="Encuéntralo en FemTrek" class="d-block w-100">
+        </div>
+      </div>
+
+      <!--BOTONES FLECHA para cambiar de diapositiva a cada lado del carrusel:-->
+      <!--Boton del lado IZQUIERDO (PREVIOUS)-->
+      <a class="carousel-control-prev"  href="#carouselHome" role="button" data-bs-slide="prev">
+        <!--span = se usar por convencion, a diferencia de <div> que es un elemento de bloqueo, <span> es un elemento 'inline'.-->
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <!--Boton del lado DERECHO (NEXT)-->
+      <a class="carousel-control-next"  href="#carouselHome" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+  </section>
+
+
+    <!--Ques es FemTrek / Que hace-->
+    <div id="fem" class="about-FemTrek">
+      <h1 class="Que es FemTrek">
+        De mujeres para mujeres
+        <br>
+        Una app para viajar seguras
+      </h1>
+        <h3>
+          Generemos una comunidad de apoyo 
+          <br>
+          para no restringirnos de una vida plena.
+        </h3>
+    </div>
+    <!--<div class="download">
+      <h1 class="Misión">
+        Misión
+      </h1>
+        <p>
+          Generar un espacio seguro, interactivo e innovador que permita la convivencia sana entre mujeres y las apoye en su movilidad, mejorando su sentimiento de seguridad a donde sea que vayan.
+        </p>
+      <h1 class="Visión">
+        Visión
+      </h1>
+        <p>
+          Ser la primera red social exclusivamente para mujeres latinoamericanas que les permita sentirse seguras en cuanto a movilidad, comunicación y convivencia.
+        </p>
+      <h1 class="Valores">
+        Valores
+      </h1>
+        <p>
+          Sororidad - Seguridad - Respeto - Transparencia
+        </p>
+    </div>-->
+  
+      <!--Para agregar campos de registro o inicio de sesión-->
+      <div class="signIn-signUp">
+        <form action="/Pagina-registro/pagina-registro.html">
+          <a href="/Pagina-registro/pagina-registro.html" type="submit" id="btn">Regístrate</a>
+        </form>
+        <form action="/Iniciar_sesión/ingreso.html">
+          <a href="/Iniciar_sesión/ingreso.html" type="submit" id="btn">Iniciar Sesión</a>
+        </form>
+      </div>
+      <br>
+      <br>
+  
+  
+
+      
+      <!--Pie de pagina-->
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-sm">
+               <!--Botones para descargar app-->
+               <section class="footer_install">
+                <a href="#">
+                <button class="download" id="btn-android-apple"   type="button">
+                  <i class="bi bi-google-play"> PlayStore</i>
+                </button>
+                </a>
+                <a href="#">
+                <button class="download" id="btn-android-apple" type="button">
+                  <i class="bi bi-apple"> iStore</i>
+                </button>
+                </a>
+                </section>  
+          </div>
+          <div class="col-sm">
+            <section class="footer_social">
+              <a id="facebook" href="#">
+                <i class="bi bi-facebook"> Facebook</i>
+              </a>
+              <a id="Instagram" href="#">
+                <i class="bi bi-instagram"> Instagram</i>
+              </a>
+       </section>
+          </div>
+          <div class="col-sm">
+          <!--Contacto-->
+          <section class="footer_contact">
+            <ul>
+            <li>
+               FemTrek para empresas
+              <a href="#">empresarial@femtrek.com</a>
+            </li>
+            <li>
+               Prensa
+              <a href="#">prensa@femtrek.com</a>
+            </li>
+            <li>
+               ¿Algo más?
+              <a href="#">info@femtrek.com</a>
+            </li>
+            </ul>
+         </section>
+  
+          </div>
+        </div>
+      </div>
+  
+          <!--Copyright--> 
+          <section class="footer_copyright">
+            <p>
+              © 2021 FemTrek. Todos los derechos reservados.
+            </p>
+          </section>
+        </footer>
+      </div> 
+
+     <script src="./principal-carrusel.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html> 
