@@ -1,5 +1,6 @@
 // El código se ejecuta hasta que todo el html esté cargado
 document.addEventListener("DOMContentLoaded", ()=> {
+    
 
     const formRegister = document.querySelector(".form-register"); // Referencia al formulario de registro completo
     const inputUser = document.getElementById("userNames");
@@ -15,6 +16,23 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const alertaError= document.querySelector(".alert-danger");
     const alertaExito = document.querySelector(".alert-success");
     
+    formRegister.addEventListener("submit", (event) => {
+        event.preventDefault(); // Evitar el envío del formulario
+
+        const formData = {
+            name: inputUser.value,
+            lastname: inputLastNames.value,
+            email: inputEmail.value,
+            phone: inputPhone.value,
+            age: inputAge.value,
+            country: selectResidence.value,
+            city: inputCity.value,
+            password: inputPassword.value,
+            passwordcopy: inputPasswordcopy.value
+        };
+
+        console.log(formData); // Imprimir los datos en la consola
+    
         // Cargar los datos del almacenamiento local al cargar la página
         const storedFormData = JSON.parse(localStorage.getItem('formData'));
         if (storedFormData) {
@@ -29,27 +47,14 @@ document.addEventListener("DOMContentLoaded", ()=> {
             inputPasswordcopy.value = storedFormData.passwordcopy || '';
         }
         
-        formRegister.addEventListener("submit", (event) => {
-            event.preventDefault(); // Evitar el envío del formulario
-    
-        const formData = {
-            name: inputUser.value,
-            lastname: inputLastNames.value,
-            email: inputEmail.value,
-            phone: inputPhone.value,
-            age: inputAge.value,
-            country: selectResidence.value,
-            city: inputCity.value,
-            password: inputPassword.value,
-            passwordcopy: inputPasswordcopy.value
-        };
-    
+       
         // Guardar los datos en el almacenamiento local
         localStorage.setItem('formData', JSON.stringify(formData));
+        console.log(formData);
     
-        console.log(formData); // Imprimir los datos en la consola
-    
+        
     });
+   
     
     
     /*Expresiones regulares. Son reglas de validación. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
@@ -237,5 +242,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
         }
     }
     });
+
     
     //console.log(alertaExito);
