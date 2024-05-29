@@ -34,29 +34,31 @@ document.addEventListener("DOMContentLoaded", ()=> {
         console.log(formData); // Imprimir los datos en la consola
     
         // Cargar los datos del almacenamiento local al cargar la página
-        const storedFormData = JSON.parse(localStorage.getItem('formData'));
-        if (storedFormData) {
-            inputUser.value = storedFormData.name || '';
-            inputLastNames.value = storedFormData.lastname || '';
-            inputEmail.value = storedFormData.email || '';
-            inputPhone.value = storedFormData.phone || '';
-            inputAge.value = storedFormData.age || '';
-            selectResidence.value = storedFormData.country || '';
-            inputCity.value = storedFormData.city || '';
-            inputPassword.value = storedFormData.password || '';
-            inputPasswordcopy.value = storedFormData.passwordcopy || '';
+        let storedFormData = JSON.parse(localStorage.getItem('formData')) || [];
+
+        // Verificar si storedFormData es un array
+        if (!Array.isArray(storedFormData)) {
+            console.error('Datos corruptos en localStorage.');
+            storedFormData = [];
         }
-        
-       
-        // Guardar los datos en el almacenamiento local
-        localStorage.setItem('formData', JSON.stringify(formData));
-        console.log(formData);
-    
-        
+
+        // Verificar si el usuario ya está registrado
+        const usuarioRegistrado = storedFormData.find(user => user.email === formData.email);
+        if (usuarioRegistrado) {
+            alert("Ya hay una cuenta registrada con ese correo");
+            
+            
+            
+        } else  {
+            // Agregar los nuevos datos al array y guardarlos en localStorage
+            storedFormData.push(formData);
+            localStorage.setItem('formData', JSON.stringify(storedFormData));
+           
+            alert("Registro exitoso");
+            window.location.href = "Iniciar-Sesion.html";
+        } 
     });
-   
-    
-    
+        
     /*Expresiones regulares. Son reglas de validación. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
     const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜ]{3,10}(?:\s[a-zA-ZáéíóúÁÉÍÓÚüÜ]{0,10})?$/;
     const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -226,7 +228,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         if(estadoValidacion.userNames && estadoValidacion.userLastNames && estadoValidacion.userEmail && estadoValidacion.userPhone && estadoValidacion.userAge && estadoValidacion.userResidencia && estadoValidacion.userCity && estadoValidacion.passwords && estadoValidacion.passwordClone) {
     
             formRegister.reset();
-            alertaExito.classList.add("alertaExito");
+            //alertaExito.classList.add("alertaExito");
             alertaError.classList.remove("alertaError");
             setTimeout(() => {
                 alertaExito.classList.remove("alertaExito");
