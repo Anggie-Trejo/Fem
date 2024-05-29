@@ -20,3 +20,18 @@ document.addEventListener('DOMContentLoaded', function() {
     carousel.next();
   });
 }); 
+
+
+//Función para validar datos del modal de inicio de sesión
+function acceso() {
+  const email=document.getElementById("email").value;
+  const password=document.getElementById("password").value;
+  
+  if(email=="algo@otracosa.com" && password==="probandoando")
+      {
+          window.location="Comunidad.html"
+      } else {
+          alert("Datos incorrectos")
+      }
+  
+  }

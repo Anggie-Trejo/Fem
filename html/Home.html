@@ -154,36 +154,59 @@
           para no restringirnos de una vida plena.
         </h3>
     </div>
-    <!--<div class="download">
-      <h1 class="Misión">
-        Misión
-      </h1>
-        <p>
-          Generar un espacio seguro, interactivo e innovador que permita la convivencia sana entre mujeres y las apoye en su movilidad, mejorando su sentimiento de seguridad a donde sea que vayan.
-        </p>
-      <h1 class="Visión">
-        Visión
-      </h1>
-        <p>
-          Ser la primera red social exclusivamente para mujeres latinoamericanas que les permita sentirse seguras en cuanto a movilidad, comunicación y convivencia.
-        </p>
-      <h1 class="Valores">
-        Valores
-      </h1>
-        <p>
-          Sororidad - Seguridad - Respeto - Transparencia
-        </p>
-    </div>-->
   
       <!--Para agregar campos de registro o inicio de sesión-->
       <div class="signIn-signUp">
         <form action="/Pagina-registro/pagina-registro.html">
-          <a href="/Pagina-registro/pagina-registro.html" type="submit" id="btn">Regístrate</a>
+          <a href="/html/Registro.html" id="botones" class="btn btn-primary custom-btn glow-effect" >Regístrate</a>
         </form>
         <form action="/Iniciar_sesión/ingreso.html">
-          <a href="/Iniciar_sesión/ingreso.html" type="submit" id="btn">Iniciar Sesión</a>
+          <a href="#" class="btn btn-primary custom-btn glow-effect" data-bs-toggle="modal" data-bs-target="#modalLogin" id="botones" >Iniciar Sesión</a>
+          <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLabelLogin" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalLabelLogin">Iniciar Sesión</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="name" placeholder="Nombre">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Correo Electrónico</label>
+                      <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                    </div>
+                       <!-- Submit button -->
+                    <div class="col d-flex justify-content-center">
+                          <button data-mdb-ripple-init type="button" id="boton" class="btn btn-success " onclick="acceso()">Ingresar</button>
+                    </div>
+                    <br>
+                    <hr>
+
+                       <!-- 2 column grid layout for inline styling -->
+                       <div class="row mb-4">
+                       <div class="col d-flex justify-content-center">
+                       
+                    <div class="text-center">
+                       <!-- Simple link -->
+                       <a href="../html/Recuperar-Password.html">¿Olvidaste tu contraseña?</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
+
+        
       <br>
       <br>
   
@@ -191,67 +214,106 @@
 
       
       <!--Pie de pagina-->
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-sm">
-               <!--Botones para descargar app-->
-               <section class="footer_install">
-                <a href="#">
-                <button class="download" id="btn-android-apple"   type="button">
-                  <i class="bi bi-google-play"> PlayStore</i>
-                </button>
-                </a>
-                <a href="#">
-                <button class="download" id="btn-android-apple" type="button">
-                  <i class="bi bi-apple"> iStore</i>
-                </button>
-                </a>
-                </section>  
-          </div>
-          <div class="col-sm">
-            <section class="footer_social">
-              <a id="facebook" href="#">
-                <i class="bi bi-facebook"> Facebook</i>
-              </a>
-              <a id="Instagram" href="#">
-                <i class="bi bi-instagram"> Instagram</i>
-              </a>
-       </section>
-          </div>
-          <div class="col-sm">
-          <!--Contacto-->
-          <section class="footer_contact">
-            <ul>
-            <li>
-               FemTrek para empresas
-              <a href="#">empresarial@femtrek.com</a>
-            </li>
-            <li>
-               Prensa
-              <a href="#">prensa@femtrek.com</a>
-            </li>
-            <li>
-               ¿Algo más?
-              <a href="#">info@femtrek.com</a>
-            </li>
-            </ul>
-         </section>
-  
-          </div>
+       <!-- Section: Social media -->
+    <footer>
+      <section class="d-flex justify-content-between p-4" id="FooterRibbon">
+        <!-- Left -->
+        <div class="me-5">
+          <p>Conecta con nosotras en redes sociales:</p>
         </div>
-      </div>
+        <!-- Left -->
   
-          <!--Copyright--> 
-          <section class="footer_copyright">
-            <p>
-              © 2021 FemTrek. Todos los derechos reservados.
-            </p>
-          </section>
-        </footer>
-      </div> 
+        <!-- Iconos para redes sociales -->
+        <div>
+          <a href="" class="text-white me-4">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+        </div>
+        <!-- Sección derecha -->
+      </section>
+      <!-- Section: Social media -->
+  
+      <!-- Section: Links  -->
+      <section>
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold">FemTrek</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+              <p>
+                De mujeres para mujeres. Generemos una comunidad de apoyo para no restringirnos de una vida plena.
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Únete a nuestro equipo</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+              <p>
+                <a href="#!" class="text-white">carreras@femtrek.com</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Media</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+                  <p>Para entrevistas y colaboraciones</p>
+               <p>empresarial@femtrek.com prensa@femtrek.com</p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Contacto</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+              <p><i class="fas fa-home mr-3"></i> Plaza de la constitución, Col. Centro. Ciudad de México, México</p>
+              <p><i class="fas fa-phone mr-3"></i> contacto@femtrek.com</p>
+              <p><i class="fas fa-print mr-3"></i> +52 55 1234 1234</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+  
+      <!-- Copyright -->
+      <div class="text-center p-3" id="Copyright">
+        © 2024 Copyright: <a class="text-white" href="../html/About-Us.html"> Team Jacarandas</a>
+      </div>
+    </footer>
+  
 
-     <script src="./principal-carrusel.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+
+        <script src="/js/Home-Carrousel.js"></script>
+<!--incluye Bootstrap para que los componentes funcionen de manera óptima, como las slides del carrusel, la barra desplegable y el modal.--> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+        
 </body>
 </html> 
