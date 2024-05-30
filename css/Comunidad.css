@@ -1,0 +1,300 @@
+/* Media queries para iPad landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    /* Estilos específicos para iPad en modo landscape */
+  }
+  
+  /* Media queries para iPad portrait */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* Estilos específicos para iPad en modo portrait */
+  }
+  
+  /* Estilos de la cabecera */
+  .header .navbar-brand {
+    color: white !important;
+  }
+  
+  .header .nav-link {
+    color: white !important;
+    font-size: 16.5px;
+  }
+  
+  .header .nav-link:hover {
+    color: rgb(99, 56, 56) !important;
+  }
+  
+  @media(max-width: 700px) {
+    .nav-link {
+      text-align: center;
+    }
+  }
+  
+  .header .navbar {
+    background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 22px;
+  }
+  
+  h1 {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 38px;
+  }
+  
+  h2 {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+  }
+  
+  h3 {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+  }
+  
+  #postContent {
+    width: 100%;
+    height: 100px;
+    resize: none;
+  }
+  
+  .bg-green {
+    border-radius: 3%;
+    background: #f5e2be;
+  }
+  
+  .form-label {
+    color: black;
+  }
+  
+  .icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f8c0a9;
+    line-height: 30px;
+    margin-right: 10px;
+  }
+  
+  .icon-circle i {
+    color: white;
+  }
+  
+  .info {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .warnings {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  #myMap {
+    width: 95%;
+    height: 220px;
+  }
+  
+  .col-sm {
+    margin-bottom: 20px;
+  }
+  
+  #parrafo {
+    text-align: justify;
+    margin-right: 20px;
+  }
+  
+  #col-der {
+    max-width: 470px;
+    margin-bottom: 0;
+  }
+  
+  /* Estilos para evitar subrayado en los links */
+  .no-underline {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Estilos para tags */
+  span.tag {
+    background-color: #DC9693;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 80px;
+    color: white;
+  }
+  
+  /* Estilos para elementos de la lista personalizada */
+  .list-group-item-custom {
+    background-blend-mode: darken;
+    color: #000;
+  }
+  
+  /* Estilos para botones */
+  .button {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px 4px 10px;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    background-color: #7c947c;
+  }
+  
+  .button2 {
+    background-color: #e07a76;
+  }
+  
+  .button3 {
+    background-color: #f3ab91;
+  }
+  
+  .left-sidebar {
+    background-color: #f5e2be59;
+    padding: 15px 10px 10px 10px;
+    height: 100%;
+  }
+  
+  .tag {
+    display: inline-block;
+    background-color: #7c946c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
+  
+  .tag:hover {
+    background-color: #F1D7A7;
+    cursor: pointer;
+  }
+  
+  #postType {
+    width: 80%;
+  }
+  
+  /* Alerta de publicar */
+  .alert {
+    display: none;
+  }
+  
+  /* Estilos para botones en enlaces de tarjetas */
+  .card-link-btn {
+    background-color: #7c947c;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  #post-btn {
+    display: grid;
+    place-items: center;
+    height: auto;
+    background-color: #7C946C;
+    border-radius: 10px;
+    border: none;
+    gap: 10px;
+    padding: 8px;
+    margin: 10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white !important;
+    font-size: 16.5px;
+  }
+  
+  /* Estilos para contenedores de tarjetas */
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  
+  .tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  
+  .tag {
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+  
+  .card-profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .card-img-top {
+    height: 250px;
+    width: 80%;
+  }
+  
+  /* Colores específicos para los botones */
+  .badge-recomendacion {
+    background-color: #6C825E;
+    color: #fff;
+    border-radius: 0.25rem;
+  }
+  
+  .badge-advertencia {
+    background-color: #B72E2A;
+    color: #fff;
+  }
+  
+  .badge-resena {
+    background-color: #D49521;
+    color: #fff;
+  }
+  
+  /* Botones de conexión */
+  button.bn-sl {
+    background-color: #F49E7C;
+    border: none;
+  }
+  
+  button.bn-sl:hover {
+    background-color: black;
+  }
+  
+  button.bn-mg {
+    background-color: #ECC783;
+    border: none;
+  }
+  

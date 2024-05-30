@@ -1,0 +1,101 @@
+/*Estilos para la Navbar*/
+.header .navbar-brand {
+    color: white !important;
+}
+
+.header .nav-link {
+    color: white !important;
+    font-size: 16.5px;
+}
+
+.header .nav-link:hover {
+    color: rgb(99, 56, 56) !important;
+}
+
+@media(max-width: 700px){
+    .nav-link{text-align: center;}
+}
+
+.header .navbar {
+    background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+}
+
+
+/*Estilos en general para todo nuestro documento, incluye las fuentes que se usaran en todos los elementos*/
+    body {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    h1,h2 {
+        font-family: "Hammersmith One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding: 20px;
+    }
+
+    p{text-align: justify;}
+
+
+/* Estilos para inicio de sesión*/
+#saludo{
+    margin-top: 30px;
+    
+}
+
+@media (max-width: 576px) {
+    #saludo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      
+    }
+    
+   
+  }
+
+
+#logodos{
+    max-width: 100%; /*La imagen no puede ser más ancha que el contenedor */
+    max-height:100%; /* La imagen no puede ser más alta que el contenedor */
+    
+    
+}
+
+#left{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+    #left {
+        flex-direction: column;
+    }
+
+    #logodos{
+        max-width: 70%; /*Reducir el tamaño en pantallas pequeñas*/
+        margin-top: 15px;
+        margin-bottom: 15px; 
+    }
+
+    #saludo{
+        margin-top: auto;
+    }
+}
+
+.btn{
+    background-color: #7C946C;
+    border: #7C946C;
+    color: white !important;
+    text-align: center;
+}
+
+.btn:active{
+    background-color: #e07a76;
+    border: #e07a76;
+}
