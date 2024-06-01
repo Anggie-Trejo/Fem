@@ -65,84 +65,125 @@
                 <div class="left-sidebar">
                     <br><br>
                     <h2>Publicaciones de la comunidad</h2>
-
                     <!-- Formulario de preferencias -->
-                    <form class="form-inline">
-                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Elige el tipo de destino:</label>
-                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                            <option selected value="all">Ambos</option>
-                            <option value="Local">Local</option>
-                            <option value="Extranjero">Extranjero</option>
-                        </select>
-                        <div class="custom-control custom-checkbox my-1 mr-sm-2">
-                            <input type="checkbox" class="custom-control-input" id="customControlInline">
-                            <label class="custom-control-label" for="customControlInline">Mantener mis preferencias</label>
-                            <br>
-                            <a href="#" class="no-underline">
-                                <img src="../public/insumos/filter.svg" alt="Icono sin leer" height="28px"> Filtros avanzados
-                            </a>
-                        </div>
-                    </form>
-                    <br><br>
-
-                    <!-- Hipervínculos -->
-                    <a href="#" class="no-underline">
-                        <img src="../public/insumos/mark_unread.svg" alt="Icono sin leer" height="28px"> Sin leer
-                    </a>
-                    <br>
-                    <a href="#" class="no-underline">
-                        <img src="../public/insumos/forum.svg" alt="Mis publicaciones" height="28px"> Mis publicaciones
-                    </a>
-                    <br>
-                    <a href="#" class="no-underline">
-                        <img src="../public/insumos/insumos/delete.svg" alt="Borradores" height="28px"> Borradores
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-sm-8">
-                <!-- Contenedor de publicaciones -->
-                <br><br><br>
-                <form>
-                    <div class="publish-container bg-white p-4 rounded shadow-sm mb-4">
-                        <div class="user-profile d-flex align-items-center mb-3">
-                            <img src="../public/insumos/insumos/mujer.jpg" alt="" class="rounded-circle me-3" width="50">
-                            <p>Hola, Sandra.</p>
-                        </div>
-
-                        <div class="post-input-container mb-3">
-                            <textarea id="postContent" class="form-control" rows="3" placeholder="¿Deseas compartir algo hoy?"></textarea>
-                            <div class="form-check form-switch mt-3">
-                                <input class="form-check-input" type="checkbox" id="includeImageSwitch" onclick="toggleImageInput()">
-                                <label class="form-check-label" for="includeImageSwitch">Incluir Imagen</label>
-                                <a href="#" class="no-underline mr-3">
-                                    <img src="../public/insumos/attach_file.svg" alt="Adjuntar archivo" height="25px">
-                                </a>
-                                <a href="#" class="no-underline mr-3">
-                                    <img src="../public/insumos/mode_of_travel.svg" alt="modo viaje" height="30px">
-                                </a>
-                            </div>
-                            <input type="file" id="postImage" class="form-control mt-3" style="display: none;">
-                            <select id="postType" class="form-control mt-3">
-                                <option value="Recomendaciones de viaje">Recomendaciones de viaje</option>
-                                <option value="Advertencia de seguridad">Advertencia de seguridad</option>
-                                <option value="Reseña de viaje">Reseña de viaje</option>
+                    <div id="sticky-container">
+                        <form class="form-inline" id = "izq" >
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Elige el tipo de destino:</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected value="all">Ambos</option>
+                                <option value="Local">Local</option>
+                                <option value="Extranjero">Extranjero</option>
                             </select>
-
-                            <!-- Subir publicaciones -->
-                            <div class="add-post mt-3">
-                                <button id="post-btn" type="button" class="btn btn-primary me-2 d-flex align-items-center" onclick="addPost()">
-                                    Publicar
-                                </button>
+                            <div class="custom-control custom-checkbox my-1 mr-sm-2">
+                                <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                <label class="custom-control-label" for="customControlInline">Mantener mis preferencias</label>
+                                <br>
+                                <a href="#" class="no-underline">
+                                    <img src="../public/insumos/filter.svg" alt="Icono sin leer" height="28px"> Filtros avanzados
+                                </a>
                             </div>
+                        </form>
+                        <br><br>
+                        <!-- Hipervínculos -->
+                        <a href="#" class="no-underline" id = "izq" >
+                            <img src="../public/insumos/mark_unread.svg" alt="Icono sin leer" height="28px"> Sin leer
+                        </a>
+                        <br>
+                        <a href="#" class="no-underline" id = "izq">
+                            <img src="../public/insumos/forum.svg" alt="Mis publicaciones" height="28px"> Mis publicaciones
+                        </a>
+                        <br>
+                        <a href="#" class="no-underline" id = "izq">
+                            <img src="../public/insumos/delete.svg" alt="Borradores" height="28px"> Borradores
+                        </a>
                         </div>
                     </div>
+                </div>
 
+            <div class="col-sm-8">
+                <!-- Formulario de publicaciones -->
+                <br><br><br>
+                <div class="container mt-5">
+                    <form>
+                        <div class="publish-container bg-white p-4 rounded shadow-sm mb-4">
+                            <div class="user-profile d-flex align-items-center mb-3">
+                                <img src="../public/insumos/mujer.jpg" alt="Perfil" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <p class="mb-0">Hola, Sandra.</p>
+                                    <p class="mb-0">@traveler01</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <textarea id="postContent" class="form-control" rows="3" placeholder="¿Deseas compartir algo hoy?"></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <a href="#" id="postTags" class="no-underline me-3" onclick="showTextarea()">
+                                    <img src="../public/insumos/mode_of_travel.svg" alt="Adjuntar ubicación" height="25px"> Agrega la ubicación
+                                </a>
+                                <!-- validar por pais/ciudad/americalatina y su respectiva alerta -->
+                                <textarea id="rute-add" class="form-control mt-2 addRute" rows="1" placeholder="Ciudad, País" style="display: none;"></textarea>
+                            </div>
+
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="includeImageSwitch" onclick="toggleImageInput()">
+                                <label class="form-check-label" for="includeImageSwitch">Incluir Imagen</label>
+                            </div>
+                            <!-- div para el despliegue -->
+                            <div class="mb-3" id="imageInputContainer" style="display: none;">
+                                <input type="file" id="postImage" class="form-control">
+                            </div>
+
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="includeArchiveSwitch" onclick="toggleArchiveInput()">
+                                <label class="form-check-label" for="includeArchiveSwitch">Adjuntar archivo</label>
+                            </div>
+                            
+                            <div class="mb-3" id="archiveInputContainer" style="display: none;">
+                                <input type="file" id="postArchive" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <select id="postType" class="form-select">
+                                    <option value="Recomendaciones de viaje">Recomendaciones de viaje</option>
+                                    <option value="Advertencia de seguridad">Advertencia de seguridad</option>
+                                    <option value="Reseña de viaje">Reseña de viaje</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                Tipo de viaje:
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tripType" id="inlineRadio1" value="local">
+                                    <label class="form-check-label" for="inlineRadio1">Local</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tripType" id="inlineRadio2" value="extranjero">
+                                    <label class="form-check-label" for="inlineRadio2">Extranjero</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"> 
+                                    <i class="bi bi-tags"></i> Etiquetas
+                                </span>
+                                <input type="text" id="tagsInput1" class="form-control" placeholder="Etiqueta 1">
+                                <input type="text" id="tagsInput2" class="form-control" placeholder="Etiqueta 2">
+                                <input type="text" id="tagsInput3" class="form-control" placeholder="Etiqueta 3">
+                            </div>
+                            <div class="d-grid">
+                                <button id="post-btn" type="button" class="btn btn-primary" onclick="addPost()">Publicar</button>
+                            </div>
+                        </div>
+                    </form>
                     <!-- Espacio para publicaciones nuevas -->
-                    <div id="feed" class="post-container bg-white p-4 rounded shadow-sm mb-4"></div>
-                </form>
+                    <div id="feed" class="post-container"></div>
+                </div>
 
-                <!-- Contenedor con viajeros -->
+                
+
+                <!-- Contenedor viajeros del js de tarjetas-->
                 <div class="container mt-4">
                     <div class="card-container row" id="card-container">
                         <!-- Aquí se agregarán las tarjetas desde JavaScript -->
