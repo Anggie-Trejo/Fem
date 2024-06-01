@@ -1,12 +1,13 @@
 // Función para mostrar/ocultar el textarea -ubicacion-
-function showTextarea() {
+/* function showTextarea() {
   const textarea = document.getElementById('rute-add');
   textarea.style.display = textarea.style.display === 'none' ? 'block' : 'none';
-}
+} 
+*/
 
 // Función para validar la entrada en el textarea -ubicacion-
 function validateLocation() {
-  const textarea = document.getElementById('rute-add');
+  // const textarea = document.getElementById('rute-add');
   const location = textarea.value.trim();
   const locationPattern = /^[a-zA-Z\s]+,\s*[a-zA-Z\s]+$/; // Expresión regular para validar Ciudad, País
   
@@ -19,7 +20,7 @@ function validateLocation() {
   }
 }
 // valida en tiempo real mientras el usuario escribe
-document.getElementById('rute-add').addEventListener('input', validateLocation);
+// document.getElementById('rute-add').addEventListener('input', validateLocation);
 
 // Función para mostrar/ocultar el input-incluir imagen
 function toggleImageInput() {
@@ -48,7 +49,7 @@ function addPost() {
   const postImage = document.getElementById('postImage').files[0];
   const postArchive = document.getElementById('postArchive').files[0];
   const tripType = document.querySelector('input[name="tripType"]:checked');
-  const location = document.getElementById('rute-add').value.trim(); // nuevo
+ // const location = document.getElementById('rute-add').value.trim(); // nuevo
 
   if (!tripType) {
       alert("Por favor, selecciona un tipo de viaje.");
