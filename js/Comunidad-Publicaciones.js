@@ -51,26 +51,32 @@ function addPost() {
   const tripType = document.querySelector('input[name="tripType"]:checked');
  // const location = document.getElementById('rute-add').value.trim(); // nuevo
 
-  if (!tripType) {
-      alert("Por favor, selecciona un tipo de viaje.");
-      return;
-  }
+if (!postContent) {
+  alert('Por favor, escribe algo antes de publicar.');
+  return;
+}
+if (!tripType) {
+  alert("Por favor, selecciona un tipo de viaje.");
+  return;
+}
 
-  if (!postContent) {
-      alert('Por favor, escribe algo antes de publicar.');
-      return;
-  }
+// Obtener valores de ubicación
+const country = document.getElementById('location-Country').value.trim();
+const city = document.getElementById('location-City').value.trim();
+const location = `${country}, ${city}`;
 
-  const tripTypeText = tripType.value === "local" ? "Local" : "Extranjero";
+// Elegir un tipo de viaje
+const tripTypeText = tripType.value === "local" ? "Local" : "Extranjero";
 
-  const tags = [
-      document.getElementById('tagsInput1').value.trim(),
-      document.getElementById('tagsInput2').value.trim(),
-      document.getElementById('tagsInput3').value.trim()
+const tags = [
+    document.getElementById('tagsInput1').value.trim(),
+    document.getElementById('tagsInput2').value.trim(),
+    document.getElementById('tagsInput3').value.trim()
   ].filter(tag => tag);
 
   // Mostrar la alerta de publicación
   alert("Publicación añadida con tipo de viaje: " + tripTypeText);
+
   const newPost = {
       type: tripTypeText,
       content: postContent,
@@ -78,6 +84,7 @@ function addPost() {
       image: null,
       archive: null,
       location: location,
+      selectedOption: postType, 
       timestamp: Date.now()
   };
 
@@ -86,13 +93,13 @@ function addPost() {
       const reader = new FileReader();
       reader.onload = function (e) {
           newPost.image = e.target.result; // Asignar la imagen a la nueva publicación
-          savePostToLocalStorage(newPost); // Guardar la publicación en localStorage
-          renderPost(newPost); // Renderizar la publicación en la interfaz
+          savePostToLocalStorage(newPost); // Guardar  en localStorage
+          renderPost(newPost); // Renderizar 
       };
       reader.readAsDataURL(postImage); // Leer la imagen como un DataURL
   } else {
       savePostToLocalStorage(newPost); // Guardar la publicación en localStorage
-      renderPost(newPost); // Renderizar la publicación en la interfaz
+      renderPost(newPost); // Renderizar 
   }
 
   // Leer un archivo si se seleccionó
@@ -106,7 +113,7 @@ function addPost() {
       archiveReader.readAsDataURL(postArchive); // Leer el archivo como un DataURL
   }
 
-  // Limpiar el textarea y restablecer el estado del input de imagen
+  // Limpiar después de publicar
   document.getElementById('postContent').value = '';
   includeImageSwitch.checked = false;
   document.getElementById('imageInputContainer').style.display = 'none';
@@ -154,30 +161,74 @@ function renderPost(post) {
   const minutesAgo = getTimeDifference(postDate); // Obtener la diferencia de tiempo en minutos
   const tripTypeText = post.type === 'Local' ? 'Local' : 'Extranjero'; // Asegurémonos de comparar con 'Local' en lugar de 'local'
 
-  card.innerHTML = `
-      <img src="${post.image}" class="card-img-top" alt="Imagen adjunta" style="display: ${post.image ? 'block' : 'none'};">
-      <div class="card-body">
-          <div class="user-profile d-flex align-items-center mb-3">
-              <img src="../public/insumos/mujer.jpg" alt="Perfil" class="rounded-circle me-3" width="50">
-              <div>
-                  <p class="mb-0">Laura Vargas</p>
-                  <p class="mb-0">@traveler11</p>
-              </div>
-          </div>
-          <p class="card-text">${post.content}</p>
-          <p class="card-text"><small class="text-muted">${minutesAgo < 60 ? `Hace ${minutesAgo} minutos` : `Hace aproximadamente ${Math.floor(minutesAgo / 60)} horas`}</small></p>
-          <p class="card-text"><strong>${post.location}</strong></p>
-          <p class="card-text"><span class="badge bg-success">${tripTypeText}</span></p>
-          <div class="d-flex flex-wrap">
-              ${post.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
-          </div>
-          ${post.archive ? `<a href="${post.archive}" download class="btn btn-primary mt-3">Descargar archivo adjunto</a>` : ''}
-          <div class="mt-3">
-              <button class="btn btn-primary me-2">Seguir leyendo</button>
-              <button class="btn btn-outline-primary">Me gusta</button>
-          </div>
-      </div>
-  `;
-  
-  feed.appendChild(card);
+// Mapear el valor del select a su texto correspondiente
+const postTypeTextMap = {
+  '1': 'Reseña',
+  '2': 'Recomendaciones',
+  '3': 'Advertencia de seguridad'
+};
+
+const postTypeText = postTypeTextMap[post.selectedOption];
+
+card.innerHTML = `
+<img src="${post.image}" class="card-img-top" alt="Imagen adjunta" style="display: ${post.image ? 'block' : 'none'};">
+<div class="card-body">
+    <div class="user-profile d-flex align-items-center mb-3">
+        <img src="../public/insumos/mujer.jpg" alt="Perfil" class="rounded-circle me-3" width="50">
+        <div>
+            <p class="mb-0">Laura Vargas</p>
+            <p class="mb-0">@traveler11</p>
+        </div>
+    </div>
+    <p class="card-text">${post.content}</p>
+    <p class="card-text"><small class="text-muted">${minutesAgo < 60 ? `Hace ${minutesAgo} minutos` : `Hace aproximadamente ${Math.floor(minutesAgo / 60)} horas`}</small></p>
+    <p class="card-text"><strong>${post.location}</strong></p>
+    <p class="card-text"><span class="badge bg-success">${tripTypeText}</span></p>
+    <p class="card-text"><span class="badge bg-info">${postTypeText}</span></p> <!-- Mostrar el texto correspondiente -->
+    <div class="d-flex flex-wrap">
+        ${post.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
+    </div>
+    ${post.archive ? `<a href="${post.archive}" download class="btn btn-primary mt-3">Descargar archivo adjunto</a>` : ''}
+    <div class="mt-3">
+        <button class="btn btn-primary me-2">Seguir leyendo</button>
+        <button class="btn btn-outline-primary">Me gusta</button>
+    </div>
+</div>
+`;
+
+feed.appendChild(card);
+}
+
+
+// boton que limpia el formulario
+function limpiarFormulario() {
+  // Obtener referencias a los elementos del formulario
+  const postContent = document.getElementById('postContent');
+  const locationCountry = document.getElementById('location-Country');
+  const locationCity = document.getElementById('location-City');
+  const includeImageSwitch = document.getElementById('includeImageSwitch');
+  const includeArchiveSwitch = document.getElementById('includeArchiveSwitch');
+  const postImage = document.getElementById('postImage');
+  const postArchive = document.getElementById('postArchive');
+  const postType = document.getElementById('postType');
+  const tripType1 = document.getElementById('inlineRadio1');
+  const tripType2 = document.getElementById('inlineRadio2');
+  const tagsInput1 = document.getElementById('tagsInput1');
+  const tagsInput2 = document.getElementById('tagsInput2');
+  const tagsInput3 = document.getElementById('tagsInput3');
+
+  // Establecer los valores de los campos en su estado predeterminado
+  postContent.value = '';
+  locationCountry.value = '';
+  locationCity.value = '';
+  includeImageSwitch.checked = false;
+  includeArchiveSwitch.checked = false;
+  postImage.value = '';
+  postArchive.value = '';
+  postType.selectedIndex = 0; // Restablecer al primer elemento en el select
+  tripType1.checked = false;
+  tripType2.checked = false;
+  tagsInput1.value = '';
+  tagsInput2.value = '';
+  tagsInput3.value = '';
 }

@@ -148,7 +148,7 @@
                                 <textarea id="rute-add" class="form-control mt-2 addRute" rows="1" placeholder="Ciudad, País" style="display: none;"></textarea>
                             </div> --> 
 
-                            <div class="input-group mb-3" >
+                            <div class="input-group mb-3" id = "locationPin">
                                 <span class="input-group-text"> 
                                     <i class="bi bi-geo-fill"></i> Agrega la ubicación
                                 </span>
@@ -180,9 +180,10 @@
 
                             <div class="mb-3">
                                 <select id="postType" class="form-select">
-                                    <option value="Recomendaciones de viaje">Recomendaciones de viaje</option>
-                                    <option value="Advertencia de seguridad">Advertencia de seguridad</option>
-                                    <option value="Reseña de viaje">Reseña de viaje</option>
+                                    <option selected>Tipo de publicación:</option>
+                                    <option class = "selectPost" value="1">Reseña</option>
+                                    <option class = "selectPost" value="2">Recomendaciones</option>
+                                    <option class = "selectPost" value="3">Advertencia de seguridad</option>
                                 </select>
                             </div>
 
@@ -198,7 +199,7 @@
                                 </div>
                             </div>
 
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-3" id ="tagsTravel">
                                 <span class="input-group-text"> 
                                     <i class="bi bi-tags"></i> Etiquetas
                                 </span>
@@ -216,7 +217,7 @@
                                 <button class="btn btn-primary" type="button-1">
                                     <i class="bi bi-archive"></i>
                                     Borrador</button>
-                                <button class="btn btn-primary" type="button-1">
+                                <button class="btn btn-primary" type="button-1" onclick="limpiarFormulario()">
                                     <i class="bi bi-trash3"></i>
                                     Descartar</button>
                             </div>
