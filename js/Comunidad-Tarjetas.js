@@ -243,6 +243,6 @@ function filtrarTarjetas(event) {
   mostrarTarjetas(tarjetasFiltradas);
 }
 
-document.getElementById('inlineFormCustomSelectPref').addEventListener('change', filtrarTarjetas);
+document.getElementById('typePostSelect').addEventListener('change', filtrarTarjetas);
 
 mostrarTarjetas(tarjetas);

@@ -139,10 +139,53 @@
     color: white;
   }
   
+  .tag {
+    display: inline-block;
+    background-color: #7c946c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
+  
+  .tag:hover {
+    background-color: #F1D7A7;
+    cursor: pointer;
+  }
+
+  .tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  
+  .tag {
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+
   /* Estilos para elementos de la lista personalizada */
+
+  /* titulo de la pagina*/
+  #title{
+    text-align: left;
+    background-color: #FBE2DA;
+
+  } 
+  
+  #title-1{
+    text-align: left;
+    margin-left: 38px;
+  }
+
   .list-group-item-custom {
     background-blend-mode: darken;
     color: #000;
+    padding-left: 50%;
   }
   
   /* Estilos para botones */
@@ -173,22 +216,8 @@
     background-color: #f5e2be59;
     padding: 15px 10px 10px 10px;
     height: 100%;
-  }
-  
-  .tag {
-    display: inline-block;
-    background-color: #7c946c;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 10px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    font-size: 11px;
-  }
-  
-  .tag:hover {
-    background-color: #F1D7A7;
-    cursor: pointer;
+    border-radius: 12px;
+
   }
   
   #postType {
@@ -241,18 +270,7 @@
     margin-bottom: 20px;
   }
   
-  .tags {
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-  }
-  
-  .tag {
-    background-color: #eee;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 0.9em;
-  }
+
   
   .card-profile-photo {
     width: 50px;
@@ -304,4 +322,9 @@
     top: 0;
     z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
     padding: 10px;
+  }
+
+  #typePostSelect{
+    border-radius: 7px;
+    border: 1px solid #ccc;
   }
