@@ -63,59 +63,65 @@
         </div>
       </nav>
   </section>
-  
-      <div class="contenedor">
-          <!--COLUMNA IZQUIERDA -->
+  <div class="contenedor">
+      
+
+    <div class="row " > <!--Para la fila -->
+       <!--COLUMNA IZQUIERDA -->
+      <div class="col-sm " id="col-izq">
+        <br><br><form>
+          <label for="Paises"><h4>Países de interés</h4> </label> <br>
+          <input type="letter" id="Paises" placeholder="Que países te gustaria visitar ...">
+        </form><br>
+        <br><form>
+          <label for="Emocion "><h4>¿Qué es lo que te emociona de viajar?</h4></label><br>
+          <input type="letter" id="Emocion" placeholder="De viajar me emociona...">
+        </form><br>
+        <br><form>
+          <label for="Estilo"><h4>¿Cuál es tu estilo de viaje?</h4></label><br>
+          <input type="letter" id="Estilo" placeholder="Mochilazo, petfriendly, tour...">
+        </form><br>
+        <!--Botones "EN OTRO MOMENTO"-->
+        
+        <br><a href="/Configurar-perfil/configurar.html" class="btn despues">En otro momento </a><br>
+        
+        
+        
+      </div>
+     
+        <!--COLUMNA DE EN MEDIO SECCIÓN IMAGEN  -->
+      <div class="col-sm " id="col-medium">
+
+        <h1>VIAJES</h1>
+        <br><img src="/Quizz/chica caminando.jpeg" class="card-img-top" id="imagen" >
+            
+      </div>    
+
+
+        <!--COLUMNA DERECHA  -->
+      <div class="col-sm" id="col-der">
+        <br><br><form>
+          <label for="Actividades "><h4> ¿Que actividades fuera de casa te gustan?</h4></label><br>
+          <input type="letter" id="Actividades" placeholder="Museos, conciertos, ir al cine...">
+        </form><br>
+        <br><form>
+          <label for="Disfrutar"><h4>¿Qué disfrutas más cuando viajas?</h4></label><br>
+          <input type="letter" id="Disfrutar" placeholder="Turismo, gastronomia, relajación, aventura ...">
+        </form><br>
+        <br><label><h4>Prefieres viajar a: </h4></label> <br>
+        <select name="" id="Preferencia">
+        <option value="">Ciudades grandes llenas de actividad</option>
+        <option value="">Destinos tranquilos y naturales </option> <br>
+
+        </select><br>
+
+        <!--El botón guardar info debe funcionar sólo detecta un cambio -->
+        <br>
+        <br><a href="/mi perfil/miperfil.html" class="btn guardar">Guardar información </a><br>
+
+      </div>
+    </div>
+ </div>   
     
-        <div class="row " >
-          <div class="col-sm " id="col-izq">
-            <form>
-              <label for="cafeterias">Cafeterías/Restaurantes</label> <br>
-              <input type="letter" id="cafeterias" placeholder="Me gusta comer en ...">
-            </form>
-            <form>
-              <label for="Paises ">Países de interés</label><br>
-              <input type="letter" id="Paises" placeholder="Me gustaria conocer...">
-            </form>
-            <form>
-              <label for="Deportes">Deportes</label><br>
-              <input type="letter" id="Deportes" placeholder="Práctico...">
-            </form><br>
-            <!--Botones-->
-            <br><a href="/Configurar-perfil/configurar.html" class="btn btn-primary">En otro momento </a>
-          </div>
-         
-            <!--COLUMNA DE EN MEDIO SECCIÓN IMAGEN  -->
-          <div class="col-sm " id="col-medium">
-
-            <form>
-              <label for="Soy">¿Quien soy?</label><br>
-              <input type="letter" id="Soy" placeholder="Soy una persona ..."><br>
-            </form>
-            <br><img src="/About Us/pics/chica caminando.png" class="card-img-top" >
-                
-          </div>    
-
-
-            <!--COLUMNA DERECHA  -->
-          <div class="col-sm" id="col-der">
-            <form>
-              <label for="Pasatiempos ">Pasatiempos</label><br>
-              <input type="letter" id="Pasatiempos" placeholder="Mi pasatiempo es...">
-            </form>
-            <form>
-              <label for="Música  ">Música</label><br>
-              <input type="letter" id="Música " placeholder="Mis música favorita es ...">
-            </form>
-            <form>
-              <label for="Temas">Temas de música</label><br>
-              <input type="letter" id="Temas" placeholder="Me interesa el tema de...">
-            </form> <br>
-            <!--El botón guardar info debe funcionar sólo detecta un cambio -->
-            <br><a href="/mi perfil/miperfil.html" class="btn btn-primary">Guardar información </a><br>
-
-          </div>
-        </div>
-     </div>     
 </body>
 </html>
