@@ -1,26 +1,31 @@
-// Función para mostrar/ocultar el textarea -ubicacion-
-/* function showTextarea() {
-  const textarea = document.getElementById('rute-add');
-  textarea.style.display = textarea.style.display === 'none' ? 'block' : 'none';
-} 
-*/
-
-// Función para validar la entrada en el textarea -ubicacion-
+// validar pais y ciudad
 function validateLocation() {
-  // const textarea = document.getElementById('rute-add');
-  const location = textarea.value.trim();
-  const locationPattern = /^[a-zA-Z\s]+,\s*[a-zA-Z\s]+$/; // Expresión regular para validar Ciudad, País
-  
-  if (!locationPattern.test(location)) {
-      // Entrada no valida borde rojo 
-      textarea.classList.add('is-invalid');
+  const countryInput = document.getElementById('location-Country');
+  const cityInput = document.getElementById('location-City');
+
+  const country = countryInput.value.trim();
+  const city = cityInput.value.trim();
+
+  const locationPattern =  /^[a-zA-Z\s]+$/; // Expresión regular para validar solo letras y espacios
+
+  if (!locationPattern.test(country) || !locationPattern.test(city)) {
+    if (!locationPattern.test(country)) {
+      countryInput.classList.add('is-invalid');
+    } else {
+      countryInput.classList.remove('is-invalid');
+    }
+
+    if (!locationPattern.test(city)) {
+      cityInput.classList.add('is-invalid');
+    } else {
+      cityInput.classList.remove('is-invalid');
+    }
   } else {
-      // Entrada valida, restablecer el color 
-      textarea.classList.remove('is-invalid');
+    countryInput.classList.remove('is-invalid');
+    cityInput.classList.remove('is-invalid');
   }
 }
-// valida en tiempo real mientras el usuario escribe
-// document.getElementById('rute-add').addEventListener('input', validateLocation);
+
 
 // Función para mostrar/ocultar el input-incluir imagen
 function toggleImageInput() {
@@ -49,7 +54,6 @@ function addPost() {
   const postImage = document.getElementById('postImage').files[0];
   const postArchive = document.getElementById('postArchive').files[0];
   const tripType = document.querySelector('input[name="tripType"]:checked');
- // const location = document.getElementById('rute-add').value.trim(); // nuevo
 
 if (!postContent) {
   alert('Por favor, escribe algo antes de publicar.');
@@ -125,6 +129,7 @@ const tags = [
   document.getElementById('tagsInput1').value = '';
   document.getElementById('tagsInput2').value = '';
   document.getElementById('tagsInput3').value = '';
+  
 }
 
 // JSON
@@ -148,6 +153,20 @@ function savePostToLocalStorage(post) {
   localStorage.setItem('posts', JSON.stringify(posts));
 }
 
+// Mapear el valor del select a su texto correspondiente
+const postTypeTextMap = {
+  '1': 'Reseña',
+  '2': 'Recomendaciones',
+  '3': 'Advertencia de seguridad'
+};
+
+// para usar los mismos valores del css
+const postTypeClassMap = {
+  '1': 'badge-resena',
+  '2': 'badge-recomendacion',
+  '3': 'badge-advertencia'
+};
+
 // Función para renderizar una publicación en el feed
 function renderPost(post) {
   const feed = document.getElementById('feed'); 
@@ -156,19 +175,16 @@ function renderPost(post) {
   const card = document.createElement('div');
   card.classList.add('card', 'mb-3');
 
+
+
   // Construir el HTML de la tarjeta
   const postDate = post.timestamp; // Utilizar la marca de tiempo de la publicación
   const minutesAgo = getTimeDifference(postDate); // Obtener la diferencia de tiempo en minutos
   const tripTypeText = post.type === 'Local' ? 'Local' : 'Extranjero'; // Asegurémonos de comparar con 'Local' en lugar de 'local'
 
-// Mapear el valor del select a su texto correspondiente
-const postTypeTextMap = {
-  '1': 'Reseña',
-  '2': 'Recomendaciones',
-  '3': 'Advertencia de seguridad'
-};
+  const postTypeText = postTypeTextMap[post.selectedOption];
+  const postTypeClass = postTypeClassMap[post.selectedOption];
 
-const postTypeText = postTypeTextMap[post.selectedOption];
 
 card.innerHTML = `
 <img src="${post.image}" class="card-img-top" alt="Imagen adjunta" style="display: ${post.image ? 'block' : 'none'};">
@@ -182,16 +198,28 @@ card.innerHTML = `
     </div>
     <p class="card-text">${post.content}</p>
     <p class="card-text"><small class="text-muted">${minutesAgo < 60 ? `Hace ${minutesAgo} minutos` : `Hace aproximadamente ${Math.floor(minutesAgo / 60)} horas`}</small></p>
-    <p class="card-text"><strong>${post.location}</strong></p>
+    <small class="card-text">${post.location}</small>
+    <div class = "viajePublicacion">
     <p class="card-text"><span class="badge bg-success">${tripTypeText}</span></p>
-    <p class="card-text"><span class="badge bg-info">${postTypeText}</span></p> <!-- Mostrar el texto correspondiente -->
+    <p class="card-text"><span class="badge  ${postTypeClass}">${postTypeText}</span></p>
+    </div>
     <div class="d-flex flex-wrap">
-        ${post.tags.map(tag => `<span class="badge bg-secondary me-1">${tag}</span>`).join('')}
+        ${post.tags.map(tag => `<span class="badge bg-Type me-1">${tag}</span>`).join('')} 
     </div>
     ${post.archive ? `<a href="${post.archive}" download class="btn btn-primary mt-3">Descargar archivo adjunto</a>` : ''}
     <div class="mt-3">
-        <button class="btn btn-primary me-2">Seguir leyendo</button>
-        <button class="btn btn-outline-primary">Me gusta</button>
+        <button class="btn btn-primary btn-sm bn-sl">Seguir leyendo <i class="bi bi-three-dots"></i> </button>
+        <button class="btn btn-primary btn-sm bn-mg">Me gusta <i class="bi bi-heart"></i> </button>
+        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-three-dots-vertical"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item active" href="#"><i class="bi bi-bookmark-plus"></i> Guardar publicación</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-trash3"></i> Eliminar publicación</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle"></i> Reportar publicación</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-share"></i> Compartir</a></li>
+      </ul>
     </div>
 </div>
 `;
@@ -232,3 +260,4 @@ function limpiarFormulario() {
   tagsInput2.value = '';
   tagsInput3.value = '';
 }
+
