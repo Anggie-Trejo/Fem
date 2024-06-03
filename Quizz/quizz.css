@@ -105,3 +105,137 @@ h3 {
             left: 75px;
             border: 4px solid #fff;
         }
+
+/*Estilos del contenedor que divide las columnas */
+.contenedor
+{
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #e07A76;
+    
+}
+
+#col-medium
+{
+
+    width: 675px;
+    height: 875px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    color:#ccc;
+    text-align: center;
+    background-color: #e07A76;
+    align-items: center;
+}
+
+#col-izq
+{
+    width: 675px;
+    height: 875px;
+    background-color:beige;
+    
+    
+}
+#col-der
+{
+    width: 675px;
+    height: 875px;
+    background-color:beige;
+    
+}
+
+/*TAMAÑO DE LOS CONTENEDORES DEL TEXTO */
+/*COLUMNA IZQUIERDA */
+#Paises
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 100px;
+    justify-content: right;   
+}
+
+#Emocion
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 100px;
+    justify-content: center;
+}
+
+#Estilo
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 100px;
+    justify-content: center;
+    
+}
+/*columna en medio*/
+#imagen
+{
+    width: 500px;
+    height: 600px;
+   /* text-align: left;*/
+    border-color: #e07A76;
+    
+}
+/*columna derecha*/
+
+#Actividades
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 100px;
+    justify-content: center;
+    
+}
+
+#Disfrutar
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 100px;
+    justify-content: center;   
+   
+}
+
+#Preferencia
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 100px;
+    justify-content: center;
+   
+}
+
+a.despues
+{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    color:#e07A76;
+    border: 10px solid #e07A76;
+    justify-content: center;
+    
+}
+
+a.guardar 
+{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    color:#e07A76;
+    border: 10px solid #e07A76;
+    justify-content: center;
+}
+
+
+
+
+
+
