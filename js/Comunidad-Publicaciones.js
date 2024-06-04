@@ -1,32 +1,3 @@
-// validar pais y ciudad
-function validateLocation() {
-  const countryInput = document.getElementById('location-Country');
-  const cityInput = document.getElementById('location-City');
-
-  const country = countryInput.value.trim();
-  const city = cityInput.value.trim();
-
-  const locationPattern =  /^[a-zA-Z\s]+$/; // Expresión regular para validar solo letras y espacios
-
-  if (!locationPattern.test(country) || !locationPattern.test(city)) {
-    if (!locationPattern.test(country)) {
-      countryInput.classList.add('is-invalid');
-    } else {
-      countryInput.classList.remove('is-invalid');
-    }
-
-    if (!locationPattern.test(city)) {
-      cityInput.classList.add('is-invalid');
-    } else {
-      cityInput.classList.remove('is-invalid');
-    }
-  } else {
-    countryInput.classList.remove('is-invalid');
-    cityInput.classList.remove('is-invalid');
-  }
-}
-
-
 // Función para mostrar/ocultar el input-incluir imagen
 function toggleImageInput() {
   const imageInputContainer = document.getElementById('imageInputContainer');
@@ -208,7 +179,7 @@ card.innerHTML = `
     </div>
     ${post.archive ? `<a href="${post.archive}" download class="btn btn-primary mt-3">Descargar archivo adjunto</a>` : ''}
     <div class="mt-3">
-        <button class="btn btn-primary btn-sm bn-sl">Seguir leyendo <i class="bi bi-three-dots"></i> </button>
+        <button class="btn btn-primary btn-sm bn-sl">Comentar <i class="bi bi-chat-square-text"></i> </button>
         <button class="btn btn-primary btn-sm bn-mg">Me gusta <i class="bi bi-heart"></i> </button>
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-three-dots-vertical"></i>
