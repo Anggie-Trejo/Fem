@@ -27,7 +27,7 @@
         <div class="container-fluid">
 
             <!--Esta parte contiene el logo de nuestro producto-->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="./Home.html">
                 <img src="../public/logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
               </a>
               <!--Toggler es el botón que se despliega como menú colapsable cuando la pantalla está chiquita-->
@@ -76,64 +76,48 @@
 
   <!--Empieza CARRUSEL-->
   <section class="carousel">
-    <!--data-ride permite iniciar el carrusel tan pronto se carga la pagina-->
-    <div id="carouselHome" class="carouselslide" data-bs-ride="carousel">
-      <!--INDICADORES: Botones al inferior del carrusel-->
+    <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
       <ol class="carousel-indicators">
-        <!--1) data-bs-target = identificación del carrusel
-            2) data-bs-slide-to = a qué diapositiva ir cuando se da clic
-            3) class="active" = se debe agregar a alguna diapositiva para que sea visible-->
         <li data-bs-target="#carouselHome" data-bs-slide-to="0" class="active"></li>
         <li data-bs-target="#carouselHome" data-bs-slide-to="1"></li>
         <li data-bs-target="#carouselHome" data-bs-slide-to="2"></li>
         <li data-bs-target="#carouselHome" data-bs-slide-to="3"></li>
         <li data-bs-target="#carouselHome" data-bs-slide-to="4"></li>
-        <li data-bs-target="#carouselHome" data-bs-slide-to="5"></li>
       </ol>
-    
-
-      <!--DIAPOSITIVAS: Imagenes que se muestran en el carrusel-->
+  
       <div class="carousel-inner">
-      <!--DIAPOSITIVA 1-->
-      <div class="carousel-item active">
-        <!--active = necesario en un solo elemento para que sea visible el carrusel-->
-        <video id="0" class="img-fluid d-block w-100" autoplay muted loop alt="video intro">
-          <!-- tipo = especificar mp4 para que sea reconocido y visible---> 
-          <source src="../public/Carrousel/2_travel-video.mp4" type="video/mp4" class="img-fluid d-block w-100">
-        </video>
-      </div>
-       <!--DIAPOSITIVA 2-->
-        <div class="carousel-item">
-          <!--d-block w-100 = para el ancho total de la pantalla-->
-          <img id="1" src="../public/Carrousel/3_map.png" alt="Mapa" class="d-block w-100">
+        <div class="carousel-item active">
+          <video class="d-block w-100" autoplay muted loop>
+            <source src="../public/Carrousel/2_travel-video.mp4" type="video/mp4">
+          </video>
         </div>
-      <!--DIAPOSITIVA 3-->
         <div class="carousel-item">
-          <img id="2" src="../public/Carrousel/4_friends.png" alt="Amigas viajando" class="d-block w-100">
+          <video class="d-block w-100" autoplay muted loop>
+            <source src="../public/Carrousel/salidas.mp4" type="video/mp4">
+          </video>
         </div>
-      <!--DIAPOSITIVA 4-->
         <div class="carousel-item">
-          <img id="3" src="../public/Carrousel/5_taxi.png" alt="Taxi seguro" class="d-block w-100">
+          <video class="d-block w-100" autoplay muted loop>
+            <source src="../public/Carrousel/tips.mp4" type="video/mp4">
+          </video>
         </div>
-      <!--DIAPOSITIVA 5-->
         <div class="carousel-item">
-          <img id="4" src="../public/Carrousel/6_comunity.png" alt="Conexión de amigas" class="d-block w-100">
+          <video class="d-block w-100" autoplay muted loop>
+            <source src="../public/Carrousel/paises.mp4" type="video/mp4">
+          </video>
         </div>
-      <!--DIAPOSITIVA 6-->
         <div class="carousel-item">
-          <img id="5" src="../public/Carrousel/7_find_FemTrek.png" alt="Encuéntralo en FemTrek" class="d-block w-100">
+          <video class="d-block w-100" autoplay muted loop>
+            <source src="../public/Carrousel/amigas.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
-
-      <!--BOTONES FLECHA para cambiar de diapositiva a cada lado del carrusel:-->
-      <!--Boton del lado IZQUIERDO (PREVIOUS)-->
-      <a class="carousel-control-prev"  href="#carouselHome" role="button" data-bs-slide="prev">
-        <!--span = se usar por convencion, a diferencia de <div> que es un elemento de bloqueo, <span> es un elemento 'inline'.-->
+  
+      <a class="carousel-control-prev" href="#carouselHome" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </a>
-      <!--Boton del lado DERECHO (NEXT)-->
-      <a class="carousel-control-next"  href="#carouselHome" role="button" data-bs-slide="next">
+      <a class="carousel-control-next" href="#carouselHome" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </a>
@@ -155,67 +139,62 @@
         </h3>
     </div>
   
-      <!--Para agregar campos de registro o inicio de sesión-->
+    <!--BOTONES DE SIGN IN-SIGN UP-->
+    <div class="container">
+      <h1>Bienvenida a la página principal</h1>
       <div class="signIn-signUp">
         <form action="/Pagina-registro/pagina-registro.html">
-          <a href="/html/Registro.html" id="botones" class="btn btn-primary custom-btn glow-effect" >Regístrate</a>
+          <a href="/html/Registro.html" id="botones" class="btn btn-primary custom-btn">Regístrate</a>
         </form>
         <form action="/Iniciar_sesión/ingreso.html">
-          <a href="#" class="btn btn-primary custom-btn glow-effect" data-bs-toggle="modal" data-bs-target="#modalLogin" id="botones" >Iniciar Sesión</a>
-          <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLabelLogin" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="modalLabelLogin">Iniciar Sesión</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="mb-3">
-                      <label for="name" class="form-label">Nombre</label>
-                      <input type="text" class="form-control" id="name" placeholder="Nombre">
-                    </div>
-                    <div class="mb-3">
-                      <label for="email" class="form-label">Correo Electrónico</label>
-                      <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
-                    </div>
-                    <div class="mb-3">
-                      <label for="password" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="password" placeholder="Contraseña">
-                    </div>
-                       <!-- Submit button -->
-                    <div class="col d-flex justify-content-center">
-                          <button data-mdb-ripple-init type="button" id="boton" class="btn btn-success " onclick="acceso()">Ingresar</button>
-                    </div>
-                    <br>
-                    <hr>
-
-                       <!-- 2 column grid layout for inline styling -->
-                       <div class="row mb-4">
-                       <div class="col d-flex justify-content-center">
-                       
-                    <div class="text-center">
-                       <!-- Simple link -->
-                       <a href="../html/Recuperar-Password.html">¿Olvidaste tu contraseña?</a>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+          <a href="#" class="btn btn-primary custom-btn" data-bs-toggle="modal" data-bs-target="#modalLogin" id="botones">Iniciar Sesión</a>
         </form>
       </div>
-
-        
-      <br>
-      <br>
+    </div>
   
+    <!-- MODAL INICIO DE SESIÓN -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLabelLogin" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content custom-modal">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabelLogin">Iniciar Sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+              </div>
+              <div class="col d-flex justify-content-center">
+                <button type="button" id="boton" class="btn btn-success" onclick="acceso()">Ingresar</button>
+              </div>
+              <br>
+              <hr>
+              <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                  <div class="text-center">
+                    <a href="../html/Recuperar-Password.html">¿Olvidaste tu contraseña?</a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   
-
-      
-      <!--Pie de pagina-->
-       <!-- Section: Social media -->
-    <footer>
+    <!-- Footer -->
+    <footer id="FooterBackground" class="text-center text-lg-start text-white bg-light mt-auto py-3">
+      <!-- Section: Social media -->
       <section class="d-flex justify-content-between p-4" id="FooterRibbon">
         <!-- Left -->
         <div class="me-5">
@@ -246,7 +225,7 @@
       <!-- Section: Social media -->
   
       <!-- Section: Links  -->
-      <section>
+      <section id="FooterBackground">
         <div class="container text-center text-md-start mt-5">
           <!-- Grid row -->
           <div class="row mt-3">
@@ -304,9 +283,11 @@
     </footer>
   
 
-
         <script src="/js/Home-Carrousel.js"></script>
 <!--incluye Bootstrap para que los componentes funcionen de manera óptima, como las slides del carrusel, la barra desplegable y el modal.--> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

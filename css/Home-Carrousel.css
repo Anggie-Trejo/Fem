@@ -69,7 +69,7 @@ p{
 #logo {
 
     max-width: 50%; 
-    height: auto;
+    max-height: 80%;
     box-sizing: border-box;
     padding: 10px;
     display: block;
@@ -77,6 +77,13 @@ p{
 }
 
     /*Estilo de botones de registro e inicio de sesión */
+    
+    .button-container {
+        position: relative;
+        display: inline-block;
+        margin: 12px;
+    }
+    
     #botones {
             display: grid;
             place-items: center; 
@@ -84,7 +91,6 @@ p{
             background-color: #7C946C;
             border: none;
             border-radius: 10px;
-            gap: 10px;
             padding: 8px;
             margin: 12px;
             font-family: "IBM Plex Sans", sans-serif;
@@ -92,72 +98,63 @@ p{
             font-style: normal;
             color: white !important;
             font-size: 16.5px;
+            text-align: center;
             text-decoration: none;
-            position: relative; 
-            cursor: pointer;
-            overflow: hidden;
     }
 
-    .custom-btn:hover {
-        color: rgb(99, 56, 56) !important;
-    }
+/*Animación para el modal*/
 
-   .glow-effect {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        inset: 0;
-        background: linear-gradient(
-          45deg,
-          red, deeppink, purple, green,
-          red, deeppink, purple, green
-        );
-        transition: opacity 100ms;
-        border-radius: 10px;
-        background-size: 800%;
-        background-position: absolute;
-        filter: blur(10px);
-        animation: glowing 20s linear infinite;
-      }
+.custom-modal {
+    position: relative;
+    padding: 20px;
+    overflow: visible;
+}
 
-    @keyframes glowing {
-        0% { background-position: 0 0;}
-        50% { background-position: 400% 0;}
-        100% { background-position: 0 0;}
-    }
+.custom-modal::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -1;
+    background: linear-gradient(
+      45deg,
+      rgb(245, 226, 190), rgb(248, 192, 169), rgb(243, 171, 145), rgb(224, 122, 118),
+      rgb(124, 148, 108), rgb(176, 210, 153), rgb(245, 226, 190), rgb(133, 133, 133)
+    );
+    transition: opacity 100ms;
+    border-radius: 20px;
+    background-size: 200%;
+    background-position: absolute;
+    filter: blur(16px);
+    animation: glowing 20s linear infinite;
+  }
 
-    #boton{
-        background-color: #7C946C;
-        border: #7C946C;
-        color: white !important;
-        text-align: center;
-    }
+@keyframes glowing {
+    0% { background-position: 0 0;}
+    50% { background-position: 400% 0;}
+    100% { background-position: 0 0;}
+}
 
-/*Estilo para imágenes del carrusel*/
+/*Estilo para videos del carrusel*/
 
-.carouselslide, .carousel-inner, .img-fluid, .carousel-item, .images-container {
-    width: 100%; 
+.carousel-item {
+    width: 100%;
     height: auto;
     display: block;
     position: relative;
-    transition: opacity 100ms;
     border-radius: 10px;
-}
+  }
 
-/* Ajusta el video y las imágenes para que ocupen todo el espacio del item */
-.carousel-item video, .carousel-item img {
+  .carousel-item video, .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantiene la relación de aspecto y recorta si es necesario */
+    object-fit: cover;
     display: block;
-}
+  }
 
-
-.carousel-control {
+  .carousel-control {
     position: absolute;
     display: flex;
     top: 0;
@@ -167,25 +164,27 @@ p{
     background-color: white;
     border: none;
     width: 2rem;
-
     opacity: 0.5;
     transition: opacity 100ms;
-}
+  }
 
+  .carousel {
+    max-width: 800px; 
+    max-height: 600px; 
+    margin: 0 auto; 
+    padding: 20px; 
+  }
+  
+  .carousel-inner {
+    max-height: 100%;
+  }
+  
+  .carousel video {
+    max-width: 100%;
+    max-height: 100%;
+  }
 
-#carousel-control-prev {
-    left: 0;
-    padding-left: 0.25 rem;
-    border-radius: 0 2rem 2rem 0;
-}
-
-#carousel-control-next {
-    right: 0;
-    padding-right: 0.25 rem;
-    border-radius: 2rem 0 0 2rem;
-}
-
-.images-container, .about-FemTrek, .identidad-FemTrek, .signIn-signUp, .last-part, .video{
+.images-container, .about-FemTrek, .identidad-FemTrek, .signIn-signUp, .last-part {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -200,10 +199,15 @@ p{
 
 /*Footer*/
 
-footer{
+.footer{
     background-color: #c76a67;
+    padding: 20px;
+    width: 100%;
 }
 
+#FooterBackground {
+    background-color: #ca6f6c;
+}
 
 #FooterRibbon{
     background-image: linear-gradient(to left, #e0c89a, #e07A76);
@@ -220,6 +224,29 @@ footer{
     position: sticky;                  
 }
 
-.my-5{
+.mt-5{
     margin: 0%;
 }
+
+.footer .container {
+    max-width: 100%;
+    padding: 20px;
+}
+
+.footer .col {
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .footer .col {
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .footer .col {
+      margin-bottom: 5px;
+    }
+  }
+
+  
