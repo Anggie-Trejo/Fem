@@ -4,8 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   let carouselElement = document.getElementById('carouselHome');
   let carousel = new bootstrap.Carousel(carouselElement, {
-    interval: 20000,
-    ride: 'carousel'
+    interval: 30000
   });
 
   //Botones (manipulación manual)
@@ -34,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
 
 
 //Función para validar datos del modal de inicio de sesión
