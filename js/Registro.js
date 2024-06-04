@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const formRegister = document.querySelector(".form-register"); // Referencia al formulario de registro completo
     const inputUser = document.getElementById("userNames");
     const inputLastNames = document.getElementById("userLastNames");
+    const inputNickname = document.getElementById("userNickname");
     const inputEmail= document.getElementById("userEmail");
     const inputPhone = document.getElementById("userPhone");
     const inputAge = document.getElementById("userAge");
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const inputCity = document.getElementById("userCity");
     const inputPassword = document.getElementById("passwords");
     const inputPasswordcopy = document.getElementById("passwordClone");
+    
     
     const alertaError= document.querySelector(".alert-danger");
     const alertaExito = document.querySelector(".alert-success");
@@ -22,6 +24,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         const formData = {
             name: inputUser.value,
             lastname: inputLastNames.value,
+            nickname: inputNickname.value,
             email: inputEmail.value,
             phone: inputPhone.value,
             age: inputAge.value,
@@ -42,30 +45,37 @@ document.addEventListener("DOMContentLoaded", ()=> {
             storedFormData = [];
         }
 
-        // Verificar si el usuario ya está registrado
+        // Verificar si el correo de usuario ya está registrado
         const usuarioRegistrado = storedFormData.find(user => user.email === formData.email);
         if (usuarioRegistrado) {
-            alert("Ya hay una cuenta registrada con ese correo");
-            
-            
-            
-        } else  {
+            alert("Ya hay una cuenta registrada con ese correo o hay errores en el formulario");
+            return;
+              
+        } 
+
+        //Verificar que el @usuario no esté repetido
+        const usuarioNickname = storedFormData.find(user => user.nickname === formData.nickname);
+        if (usuarioNickname) {
+            alert ("Ya está ocupado ese nombre de usuaria, por favor elige otro");
+            return;
+        }
+        
             // Agregar los nuevos datos al array y guardarlos en localStorage
             storedFormData.push(formData);
             localStorage.setItem('formData', JSON.stringify(storedFormData));
            
             alert("Registro exitoso");
             window.location.href = "Iniciar-Sesion.html";
-        } 
+        
     });
         
     /*Expresiones regulares. Son reglas de validación. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
     const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜ]{3,10}(?:\s[a-zA-ZáéíóúÁÉÍÓÚüÜ]{0,10})?$/;
+    const nickRegex = /^@[A-Za-z0-9._/-]{5,}$/;
     const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex = /^(?=.*[a-zñ])(?=.*[A-ZÑ])(?=.*\d)[a-zA-Z\dñÑ!@#$%^&*(),.?":{}|<>]{8,}$/;
     const cityRegex= /^[a-zA-ZáéíóúÁÉÍÓÚüÜ\s]{5,}$/;
     const phoneRegex= /^\+?(\d{1,4})?[\s-]?(\(?\d{2,3}\)?)?[\s-]?\d{4,5}[\s-]?\d{4}$/;
-    
     
     
     
@@ -76,6 +86,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
     
         inputLastNames.addEventListener ("input", () =>{
             validarCampo(nameRegex, inputLastNames, "El apellido debe tener mínimo 3 caracteres, sin caracteres especiales");
+        });
+
+        inputNickname.addEventListener ( "input", () => {
+            validarCampo(nickRegex, inputNickname, "El nombre de usuario debe comenzar con @ y tener al menos 6 caracteres");
         });
     
         inputEmail.addEventListener("input", () => {
@@ -114,6 +128,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const estadoValidacion = {
         userNames: false,
         userLastNames: false,
+        userNickname: false,
         userEmail: false,
         userPhone: false,
         userAge: false,
