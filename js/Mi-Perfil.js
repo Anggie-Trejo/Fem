@@ -132,3 +132,24 @@ const blogContainer = document.getElementById('blog-container');
         card.appendChild(tags);
           blogContainer.appendChild(card);
         });
+
+
+
+
+///se actualiza el contenido de configuración en mi perfil
+        document.addEventListener('DOMContentLoaded', function() {
+          const ubicacion = localStorage.getItem('ubicacion');
+          const destino = localStorage.getItem('destino');
+          const intereses = localStorage.getItem('intereses');
+      
+          if (ubicacion) {
+              document.getElementById('ubicacion').textContent = ubicacion;
+          }
+          if (destino) {
+              document.getElementById('destino').textContent = destino;
+          }
+          if (intereses) {
+              document.getElementById('intereses').textContent = intereses;
+          }
+      });
+      

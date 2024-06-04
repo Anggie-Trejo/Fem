@@ -1,6 +1,5 @@
 // El código se ejecuta hasta que todo el html esté cargado
 document.addEventListener("DOMContentLoaded", ()=> {
-    
 
     const formRegister = document.querySelector(".form-register"); // Referencia al formulario de registro completo
     const inputUser = document.getElementById("userNames");
@@ -16,9 +15,23 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const alertaError= document.querySelector(".alert-danger");
     const alertaExito = document.querySelector(".alert-success");
     
-    formRegister.addEventListener("submit", (event) => {
-        event.preventDefault(); // Evitar el envío del formulario
-
+        // Cargar los datos del almacenamiento local al cargar la página
+        const storedFormData = JSON.parse(localStorage.getItem('formData'));
+        if (storedFormData) {
+            inputUser.value = storedFormData.name || '';
+            inputLastNames.value = storedFormData.lastname || '';
+            inputEmail.value = storedFormData.email || '';
+            inputPhone.value = storedFormData.phone || '';
+            inputAge.value = storedFormData.age || '';
+            selectResidence.value = storedFormData.country || '';
+            inputCity.value = storedFormData.city || '';
+            inputPassword.value = storedFormData.password || '';
+            inputPasswordcopy.value = storedFormData.passwordcopy || '';
+        }
+        
+        formRegister.addEventListener("submit", (event) => {
+            event.preventDefault(); // Evitar el envío del formulario
+    
         const formData = {
             name: inputUser.value,
             lastname: inputLastNames.value,
@@ -30,35 +43,15 @@ document.addEventListener("DOMContentLoaded", ()=> {
             password: inputPassword.value,
             passwordcopy: inputPasswordcopy.value
         };
-
+    
+        // Guardar los datos en el almacenamiento local
+        localStorage.setItem('formData', JSON.stringify(formData));
+    
         console.log(formData); // Imprimir los datos en la consola
     
-        // Cargar los datos del almacenamiento local al cargar la página
-        let storedFormData = JSON.parse(localStorage.getItem('formData')) || [];
-
-        // Verificar si storedFormData es un array
-        if (!Array.isArray(storedFormData)) {
-            console.error('Datos corruptos en localStorage.');
-            storedFormData = [];
-        }
-
-        // Verificar si el usuario ya está registrado
-        const usuarioRegistrado = storedFormData.find(user => user.email === formData.email);
-        if (usuarioRegistrado) {
-            alert("Ya hay una cuenta registrada con ese correo");
-            
-            
-            
-        } else  {
-            // Agregar los nuevos datos al array y guardarlos en localStorage
-            storedFormData.push(formData);
-            localStorage.setItem('formData', JSON.stringify(storedFormData));
-           
-            alert("Registro exitoso");
-            window.location.href = "Iniciar-Sesion.html";
-        } 
     });
-        
+    
+    
     /*Expresiones regulares. Son reglas de validación. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
     const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜ]{3,10}(?:\s[a-zA-ZáéíóúÁÉÍÓÚüÜ]{0,10})?$/;
     const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -228,7 +221,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         if(estadoValidacion.userNames && estadoValidacion.userLastNames && estadoValidacion.userEmail && estadoValidacion.userPhone && estadoValidacion.userAge && estadoValidacion.userResidencia && estadoValidacion.userCity && estadoValidacion.passwords && estadoValidacion.passwordClone) {
     
             formRegister.reset();
-            //alertaExito.classList.add("alertaExito");
+            alertaExito.classList.add("alertaExito");
             alertaError.classList.remove("alertaError");
             setTimeout(() => {
                 alertaExito.classList.remove("alertaExito");
@@ -244,6 +237,5 @@ document.addEventListener("DOMContentLoaded", ()=> {
         }
     }
     });
-
     
     //console.log(alertaExito);
