@@ -66,10 +66,10 @@
 
 
   <!--Row de todos los paises-->
-      <div class="container-fluid row">
-        <h1>Conecta tu Viaje</h1>
+      <div class="container-fluid row" id="Countries">
+        <img src="../public/Conecta/Banner2.png" id="Banner">
         <br>
-        <h2>QuickFacts de los países de LatAm</h2>
+        <h2 class="H2Titles">QuickFacts de los destinos más populares</h2>
         <div class="col-xs-12 col-sm-5">
             <div class="card" id="card1" onclick="showCountryDetails('Brasil')">
               <div class="card-category" >Brasil</div>
@@ -112,7 +112,7 @@
           <div class="col-xs-12 col-sm-6">
             <div class="card" id="card6" onclick="showCountryDetails('Colombia')">
               <div class="card-category">Colombia</div>
-              <a class="card-link" href="#country-details" ></a>
+              <a class="card-link" href="#country-details"></a>
             </div>
           </div>
 
@@ -122,7 +122,41 @@
               <a class="card-link" href="#country-details" ></a>
             </div>
           </div>
+
+
+          <!--Tercera linea-->
+      <div class="col-xs-12 col-sm-3">
+        <div class="card" id="card8" onclick="showCountryDetails('Puerto Rico')">
+          <div class="card-category">Puerto Rico</div>
+          <a class="card-link" href="#country-details" ></a>
+        </div>
       </div>
+
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="card" id="card9" onclick="showCountryDetails('Guatemala')">
+          <div class="card-category">Guatemala</div>
+          <a class="card-link" href="#country-details" ></a>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="card" id="card10" onclick="showCountryDetails('Cuba')">
+          <div class="card-category">Cuba</div>
+          <a class="card-link" href="#country-details" ></a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="card" id="card11" onclick="showCountryDetails('Jamaica')">
+          <div class="card-category">Jamaica</div>
+          <a class="card-link" href="#country-details" ></a>
+        </div>
+      </div>
+      </div>
+
+      
 
 
       <!--Row para todos los on click-->
@@ -158,10 +192,7 @@
                  </h2>
                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                    <div class="accordion-body">
-                     <p> policia: 190, <br>
-                      bomberos: 193,<br>
-                      ambulancia: 192,<br>
-                      Atencion al Turista: 0800-704-0067</p>
+                    <ul id="numEmergencia"></ul>
                    </div>
                  </div>
                </div>
@@ -173,19 +204,21 @@
                  </h2>
                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                    <div class="accordion-body">
-                    Autobús, Metro, Taxi, Uber
+                    <p id="transportes"></p>
                    </div>
                  </div>
                </div>
                <div class="accordion-item">
                  <h2 class="accordion-header">
                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                     Información adicional
+                     Vacunas requeridas
                    </button>
                  </h2>
                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                    <div class="accordion-body">
-                      Recuerda vacunarte contra la "Fiebre amarilla (para ciertas zonas)"
+
+                    <p id="vacunas"></p>
+                      
                    </div>
                  </div>
                </div>
@@ -197,9 +230,72 @@
           <!--Fin del container de mi tarjeta de datos-->
 
       </div>
+
+      <div>
+        <h2 class="H2Titles">El ABC para tu viaje en solitario</h2>
+        <!-- Tabs -->
+        <div class="tabs">
+          <ul class="tab-header">
+              <li class="active" data-tab="home">Accesorios</li>
+              <li data-tab="contact">Telefono</li>
+              <li data-tab="about">Recuerda</li>
+              <div class="selector"></div>
+          </ul>
+          <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                <p>
+                  Estos son los accesorios que te recomendamos para llevar a tu viaje:
+                  <ul>
+                    <li><strong>Batería:</strong> Te recomendamos siempre lelvar uan batería portatil para cargar tu teléfono y estar siempre conectada.</li>
+                    <li><strong>Adaptadores de corriente:</strong> Muchas veces los adaptadores cambian de pais  en país, en nuestra sección QuickFacts uedes consultar esta información.</li>
+                    <li><strong>Botiquin:</strong> Si te gusta el estilo aventurero, tener un botiquin es imprescindible, solo revisa siempre qué medicamentos están permitidos en el país de origen y cuales son de libre venta.</li>
+                    <li><strong>Agua y Snacks:</strong> Siempre es recomendable llevar un poco de comida y agua potable.</li>
+                </ul> 
+                </p>
+              </div>
+
+              <div class="tab-pane" id="contact">
+                  <p>
+                    Te recomendamos realizar alguna de las siguiente configuracioens en tu telefono celular</p> 
+                    <strong>Compartir ubicación en tiempo real:</strong>
+                    <ul>
+                        <li><strong>Google Maps:</strong> Puedes activar la función de Google Maps para que tus contactos de confianza puedan conocer tu ubicación en tiempo real.</li>
+                        <li><strong>Beneficio:</strong> Útil para recibir ayuda o para que los seres queridos sepan que el viajero está seguro.</li>
+                    </ul>
+                </li>
+                
+                    <strong>Compartir ubicación de emergencia:</strong>
+                    <ul>
+                        <li><strong>Configuración:</strong> Configuración tu celular que te permite enviar automáticamente la ubicación a los contactos seleccionados en caso de peligro.</li>
+                        <li><strong>Uso:</strong> Ideal para situaciones de emergencia donde el usuario necesita asistencia inmediata.</li>
+                    </ul>
+          
+            
+                    <strong>Tarjeta de emergencia:</strong>
+                    <ul>
+                        <li><strong>Información contenida:</strong> Configuración tu celular que te permite colocar tus datos médicos, contactos de emergencia, alergias y condiciones médicas relevantes.</li>
+                        <li><strong>Accesibilidad:</strong> Información disponible desde la pantalla de bloqueo para que los servicios de emergencia puedan acceder fácilmente si el usuario no puede comunicarse.</li>
+                    </ul>
+           
+            </ul>
+              </div>
+              <div class="tab-pane" id="about">
+                  <p>
+                    Algunas consideracioens adicionales para viajar segura son:
+                    <ul>
+                      <li><strong>Embajadas:</strong> Antes de llegar revisa la dirección de tu embajada, así como los horarios y servicios que ofrecen.</li>
+                      <li><strong>Telefonos:</strong> En muchos países de latinoamerica hay líneas directas para ayudar al viajero, recuerda guardar esta información en tu telefono. También registra los telefonos de emergencia en tu celular.</li>
+                      <li><strong>Accesibilidad:</strong> Recomendamos comprar una SIM nueva o una e-SIM para el pais a visitar.</li>
+                  </ul> 
+                  </p>
+              </div>
+          </div>
       </div>
+      </div>
+      <!-- ./Tabs -->
       
-      
+      <div> <br></div>
+
       
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="../js/Conecta.js"></script>

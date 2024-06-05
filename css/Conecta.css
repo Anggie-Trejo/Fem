@@ -45,6 +45,27 @@ h1,h2 {
   
 }
 
+/*Para el banner*/
+#Banner{
+align-content: center;
+height:fit-content;
+width: fit-content;
+}
+
+.H2Titles{
+text-align: center;
+color: #5e7052;
+text-shadow: -1px -1px 2px #7a7878;
+font-size: 45px;
+margin: 10px;
+}
+
+.H2Titles:hover{
+  color: #364130;
+  }
+  
+
+
 /*Estilos para las tarjetas*/
 h2 {
   font-size: 28px;
@@ -138,9 +159,109 @@ h2 {
   background: url('../public/Conecta/Mexico.jpg');
 }
 
+#card8{
+  background: url('../public/Conecta/PuertoRico.jpg');
+}
+
+#card9{
+  background: url('../public/Conecta/Guatemala.jpg');
+}
+
+#card10{
+  background: url('../public/Conecta/Cuba.jpg');
+}
+
+
+#card11{
+  background: url('../public/Conecta/Jamaica.jpg');
+}
+
 
 /*Acordeon*/
 .accordion-button:not(.collapsed) {
   background-color: #e07A76; /* Change active button background color */
   color: #fff; /* Change active button text color */
+}
+
+
+/*Para el tabs*/
+
+
+.tabs {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #5e70523f;
+  color: #0c0606;
+  border-radius: 10px;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  border-bottom: 1px solid #fff;
+}
+
+.tab-header li {
+  padding: 15px 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  border: 1px solid transparent;
+  transition: white 0.3s ease;
+  font-weight: 600;
+}
+
+
+.tab-header li:hover {
+ background-color: white;
+}
+
+
+#Banner
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+.tab-header .active {
+  border-bottom: none;
+}
+
+.tab-header .active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background-color: #fff;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+
+.selector {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: left 0.3s ease, width 0.3s ease;
+  z-index: 0;
+}
+
+.tab-content {
+  padding: 20px;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
 }
