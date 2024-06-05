@@ -148,7 +148,7 @@ h3 {
 #Paises
 {
     font-family: "IBM Plex Sans";
-    font-weight: 700;
+    font-weight: 700px;
     width: 600px;
     height: 100px;
     justify-content: right;   
@@ -157,12 +157,15 @@ h3 {
 
 #Emocion
 {
+    
     font-family: "IBM Plex Sans";
     font-weight: 700;
     width: 600px;
     height: 100px;
     justify-content: center;
     border-radius: 15px;
+    
+    
 }
 
 #Estilo
