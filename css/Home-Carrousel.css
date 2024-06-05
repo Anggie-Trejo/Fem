@@ -8,11 +8,12 @@
     }
 #logo {
 
-    max-width: 50%; 
-    max-height: 80%;
+    width: 50%; 
+    height: 80%;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 8px;
     display: block;
+    margin-bottom: none !important;
     
 }
 
@@ -20,27 +21,34 @@
     
     .button-container {
         position: relative;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
         margin: 12px;
     }
     
     #botones {
-            display: grid;
-            place-items: center; 
-            height: 50px; 
-            background-color: #7C946C;
-            border: none;
-            border-radius: 10px;
-            padding: 8px;
-            margin: 12px;
-            font-family: "IBM Plex Sans", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            color: white !important;
-            font-size: 16.5px;
-            text-align: center;
-            text-decoration: none;
-    }
+      display: inline-block;
+      place-items: center !important;
+      height: 50px; 
+      background-color: #7C946C;
+      border: none;
+      border-radius: 10px;
+      padding: 8px;
+      margin: 12px;
+      font-family: "IBM Plex Sans", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: white !important;
+      font-size: 16.5px;
+      text-align: center;
+      text-decoration: none;
+  }
+
+  #ingreso {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  }
 
 /*Animación para el modal*/
 
@@ -85,6 +93,7 @@
     display: block;
     position: relative;
     border-radius: 10px;
+    margin-top: none !important;
   }
 
   .carousel-item video, .carousel-item img {
@@ -110,7 +119,7 @@
   }
 
   .carousel {
-    max-width: 800px; 
+    max-width: 900px; 
     max-height: 600px; 
     margin: 0 auto; 
     padding: 20px; 
@@ -133,7 +142,77 @@
     justify-content: center;
   }
 
+/*Estilos para las estadísticas*/
+.container-estadisticas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 50px;
+}
+
+
+#title {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black !important;
+  text-align: center !important;
+  text-decoration: none;
+  margin-bottom: 10px;
+  background-color: white !important;
+}
+
+#alert {
+  color: rgba(211, 2, 2, 0.863);
+}
+
   #fem {
     color: #e07A76;
+    text-align: center;
   }
 
+  #welcome {
+    text-align: center;
+    text-shadow: #c76a67 !important;
+  }
+
+ /*Estilos para el footer*/
+
+ .footer{
+  background-color: #c76a67;
+  width: 100%;
+  gap: none;
+  margin: none;
+}
+
+
+#FooterRibbon{
+  width: 100%;
+  background-image: linear-gradient(to left, #e0c89a, #e07A76);
+}
+
+#Copyright{
+  background-color: rgb(228, 62, 62);
+  width: 100%;
+}
+
+#FooterLine{
+  background-color: #f4e2b3;
+  height: 3px;
+  width: 60px;                    
+}
+
+.my-5{
+  margin: 0%;
+  width: 100%;
+}

@@ -3,9 +3,8 @@
 //Inicializar el carrusel (Bootstrap)
 document.addEventListener('DOMContentLoaded', function() {
   let carouselElement = document.getElementById('carouselHome');
-  let carousel = new bootstrap.Carousel(carouselElement, {
-    interval: 30000
-  });
+  let carousel = new bootstrap.Carousel(carouselElement);
+  
 
   //Botones (manipulación manual)
   let buttonPrevious = carouselElement.querySelector('.carousel-control-prev');

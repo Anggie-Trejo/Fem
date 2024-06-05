@@ -13,6 +13,9 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
     <!--Colocamos los Estilos-->
     <link rel="icon" href="../public/Favicon.png">
 
@@ -85,7 +88,7 @@
 
   <!--Empieza CARRUSEL-->
   <section class="carousel">
-    <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselHome" class="carousel slide">
       <ol class="carousel-indicators">
         <li data-bs-target="#carouselHome" data-bs-slide-to="0" class="active"></li>
         <li data-bs-target="#carouselHome" data-bs-slide-to="1"></li>
@@ -112,7 +115,7 @@
         </div>
         <div class="carousel-item">
           <video class="d-block w-100" autoplay muted loop>
-            <source src="../public/Carrousel/paises.mp4" type="video/mp4">
+            <source src="/public/Carrousel/paises.mp4" type="video/mp4">
           </video>
         </div>
         <div class="carousel-item">
@@ -134,23 +137,42 @@
   </section>
 
 
+  <!--Algunas estadísticas y testimonios-->
+  <div class="container-estadisticas">
+    <div class="row">
+        <h3 id="title"> <i id="alert" class="bi bi-exclamation-diamond-fill"></i> La inseguridad para la mujer Latinoamericana...</h3>
+        <div class="col">
+            <h4>Testimonios</h4>
+            <ul class="list-group testimonios">
+                <li class="list-group-item">Karla, Ciudad de México: "Evito tomar transporte público después de las 8 PM debido al acoso constante. Varios hombres me han seguido así que vivo en una inseguridad permanente".</li>
+                <li class="list-group-item">Mariana, Buenos Aires: "Fui seguida por un desconocido mientras caminaba a casa. Afortunadamente, pude refugiarme en una tienda, pero he quedado con el miedo y desconfianza al caminar sola, especialmente de noche."</li>
+                <li class="list-group-item">Ana, Bogotá: "Siempre envío mi ubicación en tiempo real a mis amigos cuando tomo un taxi. lo hago porque a una amiga la secuestró un conductor de taxi falso, entonces percibo y prevengo el peligro ante cualquier situación."</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h4>Estadísticas</h4>
+            <ul class="list-group estadisticas">
+                <li class="list-group-item">CEPAL (2020), encuesta sobre violencia de género: El 50% de las mujeres en América Latina y el Caribe han experimentado algún tipo de violencia en espacios públicos, incluyendo acoso callejero y agresiones físicas.</li>
+                <li class="list-group-item">OMS (2018): El 38% de las mujeres latinoamericanas han sido víctimas de violencia física o sexual por parte de su pareja, con muchas de estas agresiones ocurriendo fuera del hogar.</li>
+                <li class="list-group-item">ONU Mujeres (2022): 8 de cada 10 mujeres en América Latina sienten miedo de ser atacadas físicamente o sexualmente al caminar solas por la noche en sus comunidades.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
     <!--Ques es FemTrek / Que hace-->
     <div id="fem" class="about-FemTrek">
       <h1 class="Que es FemTrek">
-        De mujeres para mujeres
+        Por eso, FemTrek es la app para viajar seguras
         <br>
-        Una app para viajar seguras
+        a dondequiera que vayamos.
       </h1>
-        <h3>
-          Generemos una comunidad de apoyo 
-          <br>
-          para no restringirnos de una vida plena.
-        </h3>
     </div>
   
     <!--BOTONES DE SIGN IN-SIGN UP-->
     <div class="container">
-      <h1>Bienvenida a la página principal</h1>
+      <h1 id="welcome">¡Bienvenida a la página principal!</h1>
       <div class="signIn-signUp">
         <form action="/Pagina-registro/pagina-registro.html">
           <a href="/html/Registro.html" id="botones" class="btn btn-primary custom-btn">Regístrate</a>
@@ -164,42 +186,42 @@
     <!-- MODAL INICIO DE SESIÓN -->
     <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLabelLogin" aria-hidden="true">
       <div class="modal-dialog modal-lg">
-        <div class="modal-content custom-modal">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalLabelLogin">Iniciar Sesión</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-content custom-modal">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="modalLabelLogin">Iniciar Sesión</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="mb-3">
+                          <label for="name" class="form-label">Nombre</label>
+                          <input type="text" class="form-control" id="name" placeholder="Nombre">
+                      </div>
+                      <div class="mb-3">
+                          <label for="email" class="form-label">Correo Electrónico</label>
+                          <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
+                      </div>
+                      <div class="mb-3">
+                          <label for="password" class="form-label">Contraseña</label>
+                          <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                      </div>
+                      <div id="ingreso" class="button-container">
+                          <button type="button" id="botones" class="btn btn-success" onclick="acceso()">Ingresar</button>
+                      </div>
+                      <br>
+                      <hr>
+                      <div class="row mb-4">
+                          <div class="col d-flex justify-content-center">
+                              <div class="text-center">
+                                  <a href="/html/Password-Reestablecer.html">¿Olvidaste tu contraseña?</a>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
           </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="name" placeholder="Nombre">
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Contraseña">
-              </div>
-              <div class="col d-flex justify-content-center">
-                <button type="button" id="boton" class="btn btn-success" onclick="acceso()">Ingresar</button>
-              </div>
-              <br>
-              <hr>
-              <div class="row mb-4">
-                <div class="col d-flex justify-content-center">
-                  <div class="text-center">
-                    <a href="/html/Password-Reestablecer.html">¿Olvidaste tu contraseña?</a>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
       </div>
-    </div>
+  </div>
   
     <!-- Footer -->
     <footer class="footer text-center text-lg-start text-white bg-light mt-auto py-3">
