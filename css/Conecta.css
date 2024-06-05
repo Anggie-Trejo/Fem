@@ -1,0 +1,146 @@
+/*Estilos para la Navbar*/
+.header .navbar-brand {
+  color: white !important;
+}
+
+.header .nav-link {
+  color: white !important;
+  font-size: 16.5px;
+}
+
+.header .nav-link:hover {
+  color: rgb(99, 56, 56) !important;
+}
+
+.navbar-nav .dropdown-menu {
+right: 0;
+left: auto;
+}
+
+@media(max-width: 700px){
+  .nav-link{text-align: center;}
+}
+
+.header .navbar {
+  background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+  position: fixed; /* Makes the navbar stick to the top */
+  top: 0;          /* Aligns the navbar at the top */
+  width: 100%;     /* Ensures the navbar spans the full width */
+  z-index: 1000;   /* Keeps the navbar on top of other content */
+}
+
+body {
+  margin-top: 100px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+h1,h2 {
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 20px;
+  
+}
+
+/*Estilos para las tarjetas*/
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+
+
+/*Country details*/
+.country-details {
+  border: 1px ridge #727171;
+  border-radius: 15px;
+  padding: 20px;
+  display: none;
+}
+
+  /*Estilos para Información de paises*/
+  .country-details{
+    margin: 15px;
+  }
+
+
+/*Para el acordeon*/
+.accordion{
+ margin-top: 40px;
+}
+
+/*Cards*/
+
+.card {
+  height: 280px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: rgb(0, 0, 0);
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.2;
+}
+.features img {
+  width: 100px;
+}
+
+
+#card1{
+  background: url('../public/Conecta/Brasil.jpg');
+}
+
+#card2{
+  background: url('../public/Conecta/Argentina.jpg');
+}
+
+#card3{
+  background: url('../public/Conecta/Machu\ Pichu.jpg');
+}
+
+#card4{
+  background: url('../public/Conecta/Chile.jpg');
+}
+
+#card5{
+  background: url('../public/Conecta/Bolivia.jpg');
+}
+
+#card6{
+  background: url('../public/Conecta/Colombia.jpg');
+}
+
+#card7{
+  background: url('../public/Conecta/Mexico.jpg');
+}
+
+
+/*Acordeon*/
+.accordion-button:not(.collapsed) {
+  background-color: #e07A76; /* Change active button background color */
+  color: #fff; /* Change active button text color */
+}
