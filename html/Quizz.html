@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!--Link a nuestro archivo de estilos-->
-    <link rel="stylesheet" href="../css/Quizz.css">
-    <link rel="stylesheet" href="../css/gLOBAL.css">
+    <link rel="stylesheet" href="./quizz.css">
     <title>QUIZZ</title>
 
      <!--Link a boostrap-->
@@ -24,96 +23,110 @@
 
 
     <!--Empeiza la sección del NavBar-->
-    <section class="header">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary ms-auto">
-          <div class="container-fluid">
-              <!-- Logo -->
-              <a class="navbar-brand" href="#">
-                  <img src="../public/logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
-              </a>
-              <!-- Toggler -->
-              <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <!-- NavBar list -->
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Conectar Viajes</a>
-                  </li>  
-                    <li class="nav-item">
-                          <a class="nav-link" href="../html/Comunidad.html">Comunidad</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Mi Cuenta
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="../html/Mi-Perfil.html">Visitar Perfil</a>
-                              <a class="dropdown-item" href="../html/Configurar-Perfil.html">Configurar</a>
-                              <a class="dropdown-item" href="../html/Quizz.html">Quizz</a>
-                              <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="../html/Home.html">Cerrar sesión</a>
-                          </div>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
-  </section>
+ <section class="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ms-auto">
+        <div class="container-fluid">
   
-      <div class="contenedor">
-          <!--COLUMNA IZQUIERDA -->
-    
-        <div class="row " >
-          <div class="col-sm " id="col-izq">
-            <form>
-              <label for="cafeterias">Cafeterías/Restaurantes</label> <br>
-              <input type="letter" id="cafeterias" placeholder="Me gusta comer en ...">
-            </form>
-            <form>
-              <label for="Paises ">Países de interés</label><br>
-              <input type="letter" id="Paises" placeholder="Me gustaria conocer...">
-            </form>
-            <form>
-              <label for="Deportes">Deportes</label><br>
-              <input type="letter" id="Deportes" placeholder="Práctico...">
-            </form><br>
-            <!--Botones-->
-            <br><a href="/Configurar-perfil/configurar.html" class="btn btn-primary">En otro momento </a>
-          </div>
-         
-            <!--COLUMNA DE EN MEDIO SECCIÓN IMAGEN  -->
-          <div class="col-sm " id="col-medium">
-
-            <form>
-              <label for="Soy">¿Quien soy?</label><br>
-              <input type="letter" id="Soy" placeholder="Soy una persona ..."><br>
-            </form>
-            <br><img src="/About Us/pics/chica caminando.png" class="card-img-top" >
-                
-          </div>    
-
-
-            <!--COLUMNA DERECHA  -->
-          <div class="col-sm" id="col-der">
-            <form>
-              <label for="Pasatiempos ">Pasatiempos</label><br>
-              <input type="letter" id="Pasatiempos" placeholder="Mi pasatiempo es...">
-            </form>
-            <form>
-              <label for="Música  ">Música</label><br>
-              <input type="letter" id="Música " placeholder="Mis música favorita es ...">
-            </form>
-            <form>
-              <label for="Temas">Temas de música</label><br>
-              <input type="letter" id="Temas" placeholder="Me interesa el tema de...">
-            </form> <br>
-            <!--El botón guardar info debe funcionar sólo detecta un cambio -->
-            <br><a href="/mi perfil/miperfil.html" class="btn btn-primary">Guardar información </a><br>
-
+            <!--Esta parte contiene el logo de nuestro producto-->
+            <a class="navbar-brand" href="#">
+                <img src="/About Us/pics/logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
+              </a>
+              <!--Toggler es el botón que se despliega como menú colapsable cuando la pantalla está chiquita-->
+              <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <!--La lista de las secciones del NavBar-->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/principal/principal-carrusel.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/About Us/about us.html">Acerca de Nosotras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/ContactoPage/contactoMain.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Pagina-registro/pagina-registro.html">Regístrate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Iniciar_sesión/ingreso.html">Inicia Sesión</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="/Configurar-perfil/configurar.html">Configurar perfil</a> <!--nos lleva configurar-->
+              </li>
+            </ul>
           </div>
         </div>
-     </div>     
+      </nav>
+  </section>
+   
+    
+    <div class="contenedor">
+      
+
+    <div class="row " > <!--Para la fila -->
+       <!--COLUMNA IZQUIERDA -->
+      <div class="col-sm " id="col-izq">
+        <br><br><form>
+          <label for="Paises"><h4>Países de interés</h4> </label> <br>
+          <input type="letter" id="Paises" placeholder="Que países te gustaria visitar ...">
+        </form><br>
+        <br><form>
+          <label for="Emocion "><h4>¿Qué es lo que te emociona de viajar?</h4></label><br>
+          <input type="letter" id="Emocion" placeholder="De viajar me emociona...">
+        </form><br>
+        <br><form>
+          <label for="Estilo"><h4>¿Cuál es tu estilo de viaje?</h4></label><br>
+          <input type="letter" id="Estilo" placeholder="Mochilazo, petfriendly, tour...">
+        </form><br>
+              
+        
+        
+      </div>
+     
+        <!--COLUMNA DE EN MEDIO SECCIÓN IMAGEN  -->
+      <div class="col-sm " id="col-medium">
+
+        <h1>VIAJES</h1>
+         <br><img src="/Quizz/chica caminando.jpeg" class="card-img-top" id="imagen" >
+        <!--Botones "EN OTRO MOMENTO"-->
+        <br><a href="/Configurar-perfil/configurar.html" class="btn despues">En otro momento </a>
+        <!--El botón guardar info debe funcionar sólo detecta un cambio -->
+        <a href="/mi perfil/miperfil.html" class="btn guardar">Guardar información </a><br>
+         
+        
+      </div>    
+
+
+        <!--COLUMNA DERECHA  -->
+      <div class="col-sm" id="col-der">
+        <br><br><form>
+          <label for="Actividades "><h4> ¿Que actividades fuera de casa te gustan?</h4></label><br>
+          <input type="letter" id="Actividades" placeholder="Museos, conciertos, ir al cine...">
+        </form><br>
+        <br><form>
+          <label for="Disfrutar"><h4>¿Qué disfrutas más cuando viajas?</h4></label><br>
+          <input type="letter" id="Disfrutar" placeholder="Turismo, gastronomia, relajación, aventura ...">
+        </form><br>
+        <br><label><h4>Prefieres viajar a: </h4></label> <br>
+        <select name="" id="Preferencia">
+        <option value="">Ciudades grandes llenas de actividad</option>
+        <option value="">Destinos tranquilos y naturales </option> <br>
+
+        </select><br>
+
+        
+
+      </div>
+    </div>
+ </div>   
+
+
+ 
+
 </body>
 </html>
