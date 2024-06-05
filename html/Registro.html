@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Link a boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--Link a todas las fuentes de Google-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!--Link a nuestro archivo de estilos-->
+    <link rel="stylesheet" href="../css/Registro.css">
+
+    <script src="../js/Registro.js" async defer></script>
+    
+    
+
+    <!--Page Icon-->
+  <link rel="icon" href="../public/Favicon.png">
+  <title>Registrate | Femtrek</title>
+  </head>
+
+  <body>
+
+    <section class="header">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary ms-auto">
+          <div class="container-fluid">
+  
+              <!--Esta parte contiene el logo de nuestro producto-->
+              <a class="navbar-brand" href="#">
+                  <img src="../public/logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
+                </a>
+                <!--Toggler es el botón que se despliega como menú colapsable cuando la pantalla está chiquita-->
+                <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <!--La lista de las secciones del NavBar-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../html/Home.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../html/About-Us.html">Acerca de Nosotras</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../html/Contacto.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../html/Registro.html">Regístrate</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../html/Iniciar-Sesion.html">Inicia Sesión</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+  </section>
+<!--Comienza el cuerpo de nuestra página, se coloca en un container para que todo quede centrado y se vea chulo, ya cuenta con la fuente-->
+<div class="container">
+
+
+    <div class="row">
+      <div class="col-md-3" id="left">
+        <img src="../public/Femtrek_registro.jpg" alt="Imagen red social" id="prueba2">
+
+
+      </div>
+
+
+      <div class="col-md-9" >
+    
+      <h1>Vuélvete parte de FemTrek</h1>
+
+      <div class="alert alert-success " role="alert">
+        ¡Bienvenida, se ha registrado correctamente el formulario!
+      </div>
+      <div class="alert alert-danger " role="alert">
+        Hay errores o secciones vacías en el llenado del formulario. 
+      </div>
+
+      <p> Ya casi eres parte de la comunidad, sólo llena este breve formulario para comenzar </p>
+ 
+       <form class="form-register">
+        
+        <div class="mb-3">
+            <label class="form-label">Nombre(s)</label>
+            <input type="text" class="form-control" id="userNames" name="txt_name" placeholder="María">
+          </div>
+
+        <div class="mb-3">
+            <label class="form-label">Apellido(s)</label>
+            <input type="text" class="form-control" id="userLastNames" name="txt_lastnames" placeholder="Félix">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Nombre de usuaria</label>
+            <input type="user" class="form-control" id="userNickname" name="txt_user" placeholder="@ejemplo">
+          </div>
+
+        <div class="mb-3">
+        <label class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="userEmail" name="txt_email" placeholder="nombre@ejemplo.com">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Número de teléfono</label>
+        <input type="number" class="form-control" id="userPhone" name="txt_lastnames" placeholder="(+52)5544332211">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Fecha de Nacimiento</label>
+        <input type="date" class="form-control" id="userAge" name="txt_age" placeholder="Debes que tener al menos 18 años para unirte">
+      </div>
+
+      <div class="mb-3">
+      <label class="form-label">País de residencia</label>
+      <select class="form-select" aria-label="Default select example" id="userResidencia">
+        <option selected>Seleccionar</option>
+        <option value="AYB">Antigua y Barbuda</option>
+        <option value="ARG">Argentina</option>
+        <option value="BAH">Bahamas</option>
+        <option value="BAR">Barbados</option>
+        <option value="BEL">Belice</option>
+        <option value="BOL">Bolivia</option>
+        <option value="BRA">Brasil</option>
+        <option value="CHL">Chile</option>
+        <option value="COL">Colombia</option>
+        <option value="COL">Costa Rica</option>
+        <option value="CUB">Cuba</option>
+        <option value="DMA">Dominica</option>
+        <option value="ECU">Ecuador</option>
+        <option value="SLV">El Salvador</option>
+        <option value="GRA">Granada</option>
+        <option value="GTM">Guatemala</option>
+        <option value="GUF">Guyana Francesa</option>
+        <option value="HTI">Haití</option>
+        <option value="HND">Honduras</option>
+        <option value="JAM">Jamaica</option>
+        <option value="ANT">Las Antillas</option>
+        <option value="MEX">México</option>
+        <option value="NIC">Nicaragua</option>
+        <option value="PAN">Panamá</option>
+        <option value="PRY">Paraguay</option>
+        <option value="PER">Perú</option>
+        <option value="PRI">Puerto Rico</option>
+        <option value="DOM">República Dominicana</option>
+        <option value="SLA">Santa Lucía</option>
+        <option value="SKN">Saint Kitts y Nevis</option>
+        <option value="SVG">San Vicente y las Granadinas></option>
+        <option value="SUR">Suriname></option>
+        <option value="TYT">Trinidad y Tobago></option>
+        <option value="URU">Uruguay</option>
+        <option value="VEN">Venezuela</option>
+      </select>
+    </div>
+
+        <!---->
+    <div class="mb-3">
+        <label class="form-label">Ciudad o Distrito</label>
+        <input type="text" class="form-control" id="userCity" name="txt_city" placeholder="Ciudad de México">
+
+       
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="passwords" name="txt_password">
+        <p><small>Recuerda colocar una contraseña que contenga al menos una mayúscula, minúscula, número y caracter especial.</small></p>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Repetir contraseña</label>
+        <input type="password" class="form-control" id="passwordClone" name="txt_passwordClone">
+        <p><small>Vuelve a escribir tu contraseña</small></p>
+      </div>
+
+      <button type="submit" class="btn btn-outline-success">Registrarme</button>
+      <br>
+      
+                 
+      
+      </form>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

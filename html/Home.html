@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Link a nuestros archivos de estilos-->
+  <link rel="stylesheet" href="/css/Global.css">
+  <link rel="stylesheet" href="/css/Home-Carrousel.css">
+
+
+    <!--Links de Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+    <!--Colocamos los Estilos-->
+    <link rel="icon" href="../public/Favicon.png">
+
+    <!--Link a todas las fuentes de Google y fuentes-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="../css/Global.css">
+   <link rel="stylesheet" href="../css/Contacto.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://kit.fontawesome.com/060659d31d.js" crossorigin="anonymous"></script>
+    <title>Home</title>
+</head>
+<body>
+
+  <section class="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ms-auto">
+        <div class="container-fluid">
+
+            <!--Esta parte contiene el logo de nuestro producto-->
+            <a class="navbar-brand" href="./Home.html">
+                <img src="../public/logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
+              </a>
+              <!--Toggler es el botón que se despliega como menú colapsable cuando la pantalla está chiquita-->
+              <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <!--La lista de las secciones del NavBar-->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../html/Home.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/About-Us.html">Acerca de Nosotras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/Contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/Registro.html">Regístrate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/Iniciar-Sesion.html">Inicia Sesión</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</section>
+
+   <!-- Logo para visibilizar-->
+  <div class="images-container">
+  <div class="logobody">
+  <!--INSERTAR VIDEO
+      autoplay = comenzar automaticamente.
+      img-fluid = escalar proporcionalmente.
+      d-none = evita reproduccion automatica
+      d-md-block = permite reproduccion en pantallas grandes y medianas-->
+  <video id="logo" class="img-fluid" autoplay muted loop alt="Logo con movimiento">
+    <!-- tipo = especificar mp4 para que sea reconocido y visible---> 
+    <source src="../public/Carrousel/1_logo_video.mp4" type="video/mp4">
+  </video>
+  </div>
+
+  <!--Empieza CARRUSEL-->
+  <section class="carousel">
+    <div id="carouselHome" class="carousel slide">
+      <ol class="carousel-indicators">
+        <li data-bs-target="#carouselHome" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carouselHome" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselHome" data-bs-slide-to="2"></li>
+        <li data-bs-target="#carouselHome" data-bs-slide-to="3"></li>
+        <li data-bs-target="#carouselHome" data-bs-slide-to="4"></li>
+      </ol>
+  
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <video class="d-block w-100" autoplay muted loop>
+            <source src="../public/Carrousel/2_travel-video.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay muted loop>
+            <source src="../public/Carrousel/salidas.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay muted loop>
+            <source src="../public/Carrousel/tips.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay muted loop>
+            <source src="/public/Carrousel/paises.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay muted loop>
+            <source src="../public/Carrousel/amigas.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+  
+      <a class="carousel-control-prev" href="#carouselHome" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselHome" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+  </section>
+
+
+  <!--Algunas estadísticas y testimonios-->
+  <div class="container-estadisticas">
+    <div class="row">
+        <h3 id="title"> <i id="alert" class="bi bi-exclamation-diamond-fill"></i> La inseguridad para la mujer Latinoamericana...</h3>
+        <div class="col">
+            <h4>Testimonios</h4>
+            <ul class="list-group testimonios">
+                <li class="list-group-item">Karla, Ciudad de México: "Evito tomar transporte público después de las 8 PM debido al acoso constante. Varios hombres me han seguido así que vivo en una inseguridad permanente".</li>
+                <li class="list-group-item">Mariana, Buenos Aires: "Fui seguida por un desconocido mientras caminaba a casa. Afortunadamente, pude refugiarme en una tienda, pero he quedado con el miedo y desconfianza al caminar sola, especialmente de noche."</li>
+                <li class="list-group-item">Ana, Bogotá: "Siempre envío mi ubicación en tiempo real a mis amigos cuando tomo un taxi. lo hago porque a una amiga la secuestró un conductor de taxi falso, entonces percibo y prevengo el peligro ante cualquier situación."</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h4>Estadísticas</h4>
+            <ul class="list-group estadisticas">
+                <li class="list-group-item">CEPAL (2020), encuesta sobre violencia de género: El 50% de las mujeres en América Latina y el Caribe han experimentado algún tipo de violencia en espacios públicos, incluyendo acoso callejero y agresiones físicas.</li>
+                <li class="list-group-item">OMS (2018): El 38% de las mujeres latinoamericanas han sido víctimas de violencia física o sexual por parte de su pareja, con muchas de estas agresiones ocurriendo fuera del hogar.</li>
+                <li class="list-group-item">ONU Mujeres (2022): 8 de cada 10 mujeres en América Latina sienten miedo de ser atacadas físicamente o sexualmente al caminar solas por la noche en sus comunidades.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+    <!--Ques es FemTrek / Que hace-->
+    <div id="fem" class="about-FemTrek">
+      <h1 class="Que es FemTrek">
+        Por eso, FemTrek es la app para viajar seguras
+        <br>
+        a dondequiera que vayamos.
+      </h1>
+    </div>
+  
+    <!--BOTONES DE SIGN IN-SIGN UP-->
+    <div class="container">
+      <h1 id="welcome">¡Bienvenida a la página principal!</h1>
+      <div class="signIn-signUp">
+        <form action="/Pagina-registro/pagina-registro.html">
+          <a href="/html/Registro.html" id="botones" class="btn btn-primary custom-btn">Regístrate</a>
+        </form>
+        <form action="/Iniciar_sesión/ingreso.html">
+          <a href="#" class="btn btn-primary custom-btn" data-bs-toggle="modal" data-bs-target="#modalLogin" id="botones">Iniciar Sesión</a>
+        </form>
+      </div>
+    </div>
+  
+    <!-- MODAL INICIO DE SESIÓN -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLabelLogin" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content custom-modal">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="modalLabelLogin">Iniciar Sesión</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="mb-3">
+                          <label for="name" class="form-label">Nombre</label>
+                          <input type="text" class="form-control" id="name" placeholder="Nombre">
+                      </div>
+                      <div class="mb-3">
+                          <label for="email" class="form-label">Correo Electrónico</label>
+                          <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
+                      </div>
+                      <div class="mb-3">
+                          <label for="password" class="form-label">Contraseña</label>
+                          <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                      </div>
+                      <div id="ingreso" class="button-container">
+                          <button type="button" id="botones" class="btn btn-success" onclick="acceso()">Ingresar</button>
+                      </div>
+                      <br>
+                      <hr>
+                      <div class="row mb-4">
+                          <div class="col d-flex justify-content-center">
+                              <div class="text-center">
+                                  <a href="/html/Password-Reestablecer.html">¿Olvidaste tu contraseña?</a>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+    <!-- Footer -->
+    <footer class="footer text-center text-lg-start text-white bg-light mt-auto py-3">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-between p-4" id="FooterRibbon">
+        <!-- Left -->
+        <div class="me-5">
+          <p>Conecta con nosotras en redes sociales:</p>
+        </div>
+        <!-- Left -->
+  
+        <!-- Iconos para redes sociales -->
+        <div>
+          <a href="" class="text-white me-4">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+        </div>
+        <!-- Sección derecha -->
+      </section>
+      <!-- Section: Social media -->
+  
+      <!-- Section: Links  -->
+      <section class="footer">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold">FemTrek</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+              <p>
+                De mujeres para mujeres. Generemos una comunidad de apoyo para no restringirnos de una vida plena.
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Únete a nuestro equipo</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+              <p>
+                <a href="#!" class="text-white">carreras@femtrek.com</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Media</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+                  <p>Para entrevistas y colaboraciones</p>
+               <p>empresarial@femtrek.com prensa@femtrek.com</p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Contacto</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+              <p><i class="fas fa-home mr-3"></i> Plaza de la constitución, Col. Centro. Ciudad de México, México</p>
+              <p><i class="fas fa-phone mr-3"></i> contacto@femtrek.com</p>
+              <p><i class="fas fa-print mr-3"></i> +52 55 1234 1234</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+  
+      <!-- Copyright -->
+      <div class="text-center p-3" id="Copyright">
+        © 2024 Copyright: <a class="text-white" href="../html/About-Us.html"> Team Jacarandas</a>
+      </div>
+    </footer>
+  
+
+    <!-- Script a JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Script a Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Script al Js -->
+    <script src="/js/Home-Carrousel.js"></script>
+</body>
+</html> 

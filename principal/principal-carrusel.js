@@ -1,33 +1,22 @@
-//Evento para llamar al carrusel
-document.addEventListener('DOMContentLoaded', function () {
-   let carouselElement = document.getElementById ('carouselHome');
-   let carousel = new bootstrap.Carousel (carouselElement);
+//Evento para llamar al carrusel sólo hasta que cargue el DOM completo
 
-   //Función para cambiar la  imagen cada 6 segundos
-   function autoMov() {
-      carousel.next();
-      setTimeout(autoMov, 6000);
-    }
-    autoMov();
+//Inicializar el carrusel (Bootstrap)
+document.addEventListener('DOMContentLoaded', function() {
+  let carouselElement = document.getElementById('carouselHome');
+  let carousel = new bootstrap.Carousel(carouselElement, {
+    interval: 4000,
+    ride: 'carousel'
+  });
 
-    //Evento para corregir temporizador al hacer click
+  //Botones (manipulación manual)
+  let buttonPrevious = carouselElement.querySelector('.carousel-control-prev');
+  let buttonNext = carouselElement.querySelector('.carousel-control-next');
 
-    //Anterior
-    let prevButton = carouselElement.querySelector('.carousel-control-prev');
-    prevButton.addEventListener('click', function() {
-      carousel.prev();
+  buttonPrevious.addEventListener('click', function() {
+    carousel.prev();
+  });
 
-      clearTimeout(autoMov, 6000);
-      autoMov();
-    });
-
-    //Siguiente
-    var nextButton = carouselElement.querySelector('.carousel-control-next');
-  nextButton.addEventListener('click', function() {
+  buttonNext.addEventListener('click', function() {
     carousel.next();
-
-    clearTimeout(autoMov, 6000);
-    autoMov();
-    });
-
+  });
 });
