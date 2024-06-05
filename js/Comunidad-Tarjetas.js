@@ -207,7 +207,7 @@ recoTagsContainer.appendChild(tags);
   const additionalButtons1 = document.createElement("button");
   additionalButtons1.type = "button";
   additionalButtons1.className = "btn btn-primary btn-sm bn-sl";
-  additionalButtons1.innerHTML = 'Seguir leyendo <i class="bi bi-three-dots"></i>';
+  additionalButtons1.innerHTML = 'Comentar <i class="bi bi-chat-square-text""></i>';
 
   const additionalButtons2 = document.createElement("button");
   additionalButtons2.type = "button";

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidad</title>
+    <title>Borradores</title>
 
     <!-- Fuentes de Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,7 +76,10 @@
                         <form class="form-inline" id = "izq" > 
                             <h3>
                                 <i class="bi bi-signpost-split"></i>
-                                Elije el destino:
+                                <a href="./Comunidad.html" class = "no-underline" >
+                                    Elije el destino:
+                                </a>
+                                <!-- corroborar sitio -->
                             </h3>
                             <br>
 
@@ -114,12 +117,12 @@
                             Sin leer
                         </a>
                         <br>
-                        <a href="misPublicaciones.html" class="no-underline" id = "izq">
+                        <a href="./misPublicaciones.html" class="no-underline" id = "izq">
                             <i class="bi bi-journal"></i>
                             Mis publicaciones
                         </a>
                         <br>
-                        <a href="./borradores.html" class="no-underline" id = "izq">
+                        <a href="#" class="no-underline" id = "izq">
                             <i class="bi bi-archive-fill"></i> Borradores
                         </a>
                         </div>
@@ -127,108 +130,12 @@
                 </div>
 
             <div class="col-sm-8">
-                <!-- Formulario de publicaciones -->
-                <div class="container mt-5">
-                    <form>
-                        <div class="publish-container bg-white p-4 rounded shadow-sm mb-4">
-                            <div class="user-profile d-flex align-items-center mb-3">
-                                <img src="../public/insumos/mujer2.jpg" alt="Perfil" class="rounded-circle me-3" width="50">
-                                <div>
-                                    <p class="mb-0">Hola, Laura Vargas.</p>
-                                    <p class="mb-0">@traveler11</p>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <textarea id="postContent" class="form-control" rows="3" placeholder="¿Deseas compartir algo hoy?"></textarea>
-                            </div>
-
-                            <div class="input-group mb-3" id = "locationPin">
-                                <span class="input-group-text"> 
-                                    <i class="bi bi-geo-fill"></i> Agrega la ubicación
-                                </span>
-                                <input type="text" id="location-Country" class="form-control" placeholder="País" oninput="validateLocation()">
-                                <input type="text" id="location-City" class="form-control" placeholder="Ciudad" oninput="validateLocation()" >
-                            </div>
-
-                            <div class="form-check form-switch mb-3">
-                                <input class="form-check-input" type="checkbox" id="includeImageSwitch" onclick="toggleImageInput()">
-                                <label class="form-check-label" for="includeImageSwitch">
-                                    <i class="bi bi-card-image"></i>
-                                    Incluir Imagen</label>
-                            </div>
-                            <!-- div para el despliegue -->
-                            <div class="mb-3" id="imageInputContainer" style="display: none;">
-                                <input type="file" id="postImage" class="form-control">
-                            </div>
-
-                            <div class="form-check form-switch mb-3">
-                                <input class="form-check-input" type="checkbox" id="includeArchiveSwitch" onclick="toggleArchiveInput()">
-                                <label class="form-check-label" for="includeArchiveSwitch">
-                                    <i class="bi bi-paperclip"></i>
-                                    Adjuntar archivo</label>
-                            </div>
-                            
-                            <div class="mb-3" id="archiveInputContainer" style="display: none;">
-                                <input type="file" id="postArchive" class="form-control">
-                            </div>
-
-                            <div class="mb-3">
-                                <select id="postType" class="form-select">
-                                    <option selected>Tipo de publicación:</option>
-                                    <option class = "selectPost" value="1">Reseña</option>
-                                    <option class = "selectPost" value="2" >Recomendación</option>
-                                    <option class = "selectPost" value="3">Advertencia de seguridad</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                Tipo de viaje:
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="tripType" id="inlineRadio1" value="local">
-                                    <label class="form-check-label" for="inlineRadio1">Local</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="tripType" id="inlineRadio2" value="extranjero">
-                                    <label class="form-check-label" for="inlineRadio2">Extranjero</label>
-                                </div>
-                            </div>
-
-                            <div class="input-group mb-3" id ="tagsTravel" >
-                                <span class="input-group-text"> 
-                                    <i class="bi bi-tags"></i> Etiquetas
-                                </span>
-                                <input type="text" id="tagsInput1" class="form-control" placeholder="Etiqueta 1">
-                                <input type="text" id="tagsInput2" class="form-control" placeholder="Etiqueta 2">
-                                <input type="text" id="tagsInput3" class="form-control" placeholder="Etiqueta 3">
-                            </div>
-
-                            <div class="d-grid">
-                                <button id="post-btn" type="button" class="btn btn-primary" onclick="addPost()">
-                                    Publicar
-                                </button>
-                            </div>
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <button class="btn btn-outline-primary btn-sm" type="button-1" id = "bt-Borr" onclick="addBorrador()">
-                                    <i class="bi bi-archive"></i>
-                                    Borrador</button>
-                                <button class="btn btn-outline-primary btn-sm" type="button-1" id="bt-Des" onclick="limpiarFormulario()">
-                                    <i class="bi bi-trash3"></i>
-                                    Descartar</button>
-                            </div>
-                        </div>
-                    </form>
+                
                     <!-- Espacio para publicaciones nuevas -->
-                    <div id="feed" class="post-container"></div>
+                    <div id="feedDraft" class="post-container"></div>
                 </div>
 
                 
-
-                <!-- Contenedor viajeros del js de tarjetas-->
-                <div class="container mt-4">
-                    <div class="card-container row" id="card-container">
-                        <!-- Aquí se agregarán las tarjetas desde JavaScript -->
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -237,9 +144,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="../js/comunidadPaises.js"></script>
-    <script src="../js/Comunidad-Tarjetas.js"></script>
-    <script src="../js/Comunidad-Publicaciones.js"></script>
+
+    <script src="../js/borradores.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
