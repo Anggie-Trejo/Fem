@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 document.addEventListener("DOMContentLoaded", function() {
     /**
      * usamos addEvent Listener para que el código dentro de la función solo se ejecute una vez que todo el contenido HTML se haya cargado por completo.
@@ -54,4 +52,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
->>>>>>> 1efb8bac5361ce10b0623e1f5f7cdad16bb97c4d
