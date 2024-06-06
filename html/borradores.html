@@ -79,7 +79,6 @@
                                 <a href="./Comunidad.html" class = "no-underline" >
                                     Elije el destino:
                                 </a>
-                                <!-- corroborar sitio -->
                             </h3>
                             <br>
 
@@ -96,7 +95,6 @@
                                 <label class="custom-control-label" for="customControlInline">Mantener mis preferencias</label>
                                 <br>
                             </div>
-
                             <div class="btn-group">
                                 <button class="btn btn-secondary btn-sm dropdown-toggle" id= "dropFilter" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-filter-square"></i>
@@ -111,30 +109,34 @@
                             
                         </form>
                         <br><br>
-                        <!-- Hipervínculos -->
-                        <a href="./construccion.html" class="no-underline" id = "izq" >
-                            <i class="bi bi-journal-bookmark-fill"></i>
-                            Sin leer
-                        </a>
-                        <br>
-                        <a href="./misPublicaciones.html" class="no-underline" id = "izq">
-                            <i class="bi bi-journal"></i>
-                            Mis publicaciones
-                        </a>
-                        <br>
-                        <a href="#" class="no-underline" id = "izq">
-                            <i class="bi bi-archive-fill"></i> Borradores
-                        </a>
+                        <div class = "hiper">
+                            <div class = "hiper2" id = "hip1">
+                                <a href="./construccion.html" class="no-underline" id = "hiperS">
+                                    <i class="bi bi-journal-bookmark-fill"></i>
+                                Sin leer
+                                </a>
+                            </div>
+                            <div class = "hiper2" id = "hip2">
+                                <a href="misPublicaciones.html" class="no-underline">
+                                    <i class="bi bi-journal"></i>
+                                Mis publicaciones
+                                </a>
+                            </div>
+                            <div class = "hiper2" id = "hip3">
+                                <a href="./borradores.html" class="no-underline">
+                                <i class="bi bi-archive-fill"></i> Borradores
+                            </a>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
+            </div>
 
             <div class="col-sm-8">
-                
-                    <!-- Espacio para publicaciones nuevas -->
-                    <div id="feedDraft" class="post-container"></div>
+                <div id="feedDraft" class="post-container"></div>
                 </div>
-
                 
             </div>
         </div>
