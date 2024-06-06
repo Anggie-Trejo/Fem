@@ -1,149 +1,110 @@
 
-/*Estilos para la Navbar*/
-.header .navbar-brand {
-    color: white !important;
-}
-
-.header .nav-link {
-    color: white !important;
-    font-size: 16.5px;
-}
-
-.header .nav-link:hover {
-    color: rgb(99, 56, 56) !important;
-}
-
-@media(max-width: 700px){
-    .nav-link{text-align: center;}
-}
-
-.header .navbar {
-    background-image: linear-gradient(to right, #F5E2BE, #e07A76);
-}
-
-/*Estilos en general para todo nuestro documento, incluye las fuentes que se usaran en todos los elementos*/
-body {
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-
-h1,h2 {
-    font-family: "Hammersmith One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center;
-    padding: 20px;
-}
-
-h3 {
-    font-family: "Hammersmith One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 30px;
-    text-align: center;
-}
-
-p{text-align: center;}
-
-
-.images-container {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-/*Tamaño del otro logo*/
+/*Tamaño del otro logo en movimiento*/
 .logobody {
     display: grid;
         place-items: center; 
-        height: auto;       
+        height: auto;  
+             
     }
 #logo {
 
-    max-width: 50%; 
-    height: auto;
+    width: 50%; 
+    height: 80%;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 8px;
     display: block;
+    margin-bottom: none !important;
     
 }
 
-
-    h1,h2 {
-        font-family: "Hammersmith One", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        text-align: center;
-        padding: 20px;
-    }
-
-    p{
-        text-align: center;
-        text-shadow: 4px 4px 10px rgba(255, 0, 0, 0.7);
-    }
-
-
-    /*Tamaño del otro logo*/
-    .logobody {
-        display: grid;
-            place-items: center; 
-            height: auto;       
-        }
-
-    .signIn-signUp {
-        display: grid;
-            place-items: center; 
-            height: auto; 
-    }
-
-
     /*Estilo de botones de registro e inicio de sesión */
-    #btn {
-        display: grid;
-            place-items: center; 
-            height: auto; 
-            background-color: #7C946C;
-            border-radius: 10px;
-            gap: 10px;
-            padding: 8px;
-            margin: 10px;
-            font-family: "IBM Plex Sans", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            color: white !important;
-            font-size: 16.5px;
-            text-decoration: none;
-        
+    
+    .button-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 12px;
     }
+    
+    #botones {
+      display: inline-block;
+      place-items: center !important;
+      height: 50px; 
+      background-color: #7C946C;
+      border: none;
+      border-radius: 10px;
+      padding: 8px;
+      margin: 12px;
+      font-family: "IBM Plex Sans", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: white !important;
+      font-size: 16.5px;
+      text-align: center;
+      text-decoration: none;
+  }
 
-    #btn:hover {
-        color: rgb(99, 56, 56) !important;
-    }
+  #ingreso {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  }
 
-/*Estilo para imágenes del carrusel*/
+/*Animación para el modal*/
 
-.carouselslide, .carousel-inner, .img-fluid, .carousel-item, .images-container {
-    width: 100%; 
+.custom-modal {
+    position: relative;
+    padding: 20px;
+    overflow: visible;
+}
+
+.custom-modal::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -1;
+    background: linear-gradient(
+      45deg,
+      rgb(245, 226, 190), rgb(248, 192, 169), rgb(243, 171, 145), rgb(224, 122, 118),
+      rgb(124, 148, 108), rgb(176, 210, 153), rgb(245, 226, 190), rgb(133, 133, 133)
+    );
+    transition: opacity 100ms;
+    border-radius: 20px;
+    background-size: 200%;
+    background-position: absolute;
+    filter: blur(16px);
+    animation: glowing 20s linear infinite;
+  }
+
+@keyframes glowing {
+    0% { background-position: 0 0;}
+    50% { background-position: 400% 0;}
+    100% { background-position: 0 0;}
+}
+
+/*Estilo para videos del carrusel*/
+
+.carousel-item {
+    width: 100%;
     height: auto;
     display: block;
     position: relative;
-    transition: opacity 100ms;
     border-radius: 10px;
-}
+    margin-top: none !important;
+  }
 
-/* Ajusta el video y las imágenes para que ocupen todo el espacio del item */
-.carousel-item video, .carousel-item img {
+  .carousel-item video, .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantiene la relación de aspecto y recorta si es necesario */
+    object-fit: cover;
     display: block;
-}
+    border-radius: 15px;
+  }
 
-
-.carousel-control {
+  .carousel-control {
     position: absolute;
     display: flex;
     top: 0;
@@ -153,25 +114,27 @@ p{text-align: center;}
     background-color: white;
     border: none;
     width: 2rem;
-
     opacity: 0.5;
     transition: opacity 100ms;
-}
+  }
 
+  .carousel {
+    max-width: 900px; 
+    max-height: 600px; 
+    margin: 0 auto; 
+    padding: 20px; 
+  }
+  
+  .carousel-inner {
+    max-height: 100%;
+  }
+  
+  .carousel video {
+    max-width: 100%;
+    max-height: 100%;
+  }
 
-#carousel-control-prev {
-    left: 0;
-    padding-left: 0.25 rem;
-    border-radius: 0 2rem 2rem 0;
-}
-
-#carousel-control-next {
-    right: 0;
-    padding-right: 0.25 rem;
-    border-radius: 2rem 0 0 2rem;
-}
-
-.images-container, .about-FemTrek, .identidad-FemTrek, .signIn-signUp, .last-part, .video{
+.container, .images-container, .about-FemTrek, .identidad-FemTrek, .signIn-signUp, .last-part {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -179,66 +142,77 @@ p{text-align: center;}
     justify-content: center;
   }
 
+/*Estilos para las estadísticas*/
+.container-estadisticas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 50px;
+}
+
+
+#title {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black !important;
+  text-align: center !important;
+  text-decoration: none;
+  margin-bottom: 10px;
+  background-color: white !important;
+}
+
+#alert {
+  color: rgba(211, 2, 2, 0.863);
+}
+
   #fem {
     color: #e07A76;
+    text-align: center;
   }
 
-#btn {
-    display: grid;
-        place-items: center; 
-        height: auto; 
-        background-color: #7C946C;
-        border-radius: 10px;
-        gap: 10px;
-        padding: 8px;
-        margin: 10px;
-        font-family: "IBM Plex Sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-    
+  #welcome {
+    text-align: center;
+    text-shadow: #c76a67 !important;
+  }
+
+ /*Estilos para el footer*/
+
+ .footer{
+  background-color: #c76a67;
+  width: 100%;
+  gap: none;
+  margin: none;
 }
 
-/*Footer*/
-.download {
-    
-        place-items: center; 
-        align-items: center;
-        height: auto;
-        margin: 10px;
-        border-radius: 10px;
-        text-decoration: none !important;
-        background-color: #ecd6d5;
-        box-shadow: 5px rgb(99, 56, 56);
-        font-family: "IBM Plex Sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
+
+#FooterRibbon{
+  width: 100%;
+  background-image: linear-gradient(to left, #e0c89a, #e07A76);
 }
 
-#facebook {
-   
-        place-items: center; 
-        align-items: center;
-        height: auto;
-        gap: 10px;
-        margin: 10px;
-        font-family: "IBM Plex Sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: rgb(38, 52, 237) !important;
-        font-size: 16.5px;
-        text-decoration: none;
+#Copyright{
+  background-color: rgb(228, 62, 62);
+  width: 100%;
 }
 
-#Instagram {
-        place-items: center; 
-        align-items: center;
-        height: auto;
-        gap: 10px;
-        margin: 10px;
-        font-family: "IBM Plex Sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: rgb(224, 93, 6) !important;
-        font-size: 16.5px;
-        text-decoration: none;
+#FooterLine{
+  background-color: #f4e2b3;
+  height: 3px;
+  width: 60px;                    
+}
+
+.my-5{
+  margin: 0%;
+  width: 100%;
 }

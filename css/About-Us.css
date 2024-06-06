@@ -47,6 +47,13 @@ h3 {
     color: #e07A76;
 }
 
+.about {
+    background-color:#f8bfa9aa;
+    border-radius: 10px;
+    text-align: center;
+    text-shadow: 4px 4px 10px rgba(255, 0, 0, 0.7);
+}
+
 #pmodal{
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 400;
