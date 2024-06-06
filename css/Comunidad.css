@@ -161,7 +161,7 @@ h3 {
 }
 
 .hiper2:hover{
-  background-color: #F6E7CB;
+  background-color: #f5e2be59;
   border-radius: 10px;
 }
 
@@ -189,6 +189,11 @@ button#dropFilter {
   padding:10px 15px 10px 15px;
 }
 
+button#dropFilter:hover{
+  background-color: #F6E7CB;
+}
+
+
 /* Lado derecho */
 /* publicaciones */
 /* text area compartir algo */
@@ -196,6 +201,13 @@ button#dropFilter {
   width: 100%;
   height: 100px;
   resize: none;
+}
+
+#borrador.content{
+  width: 100%;
+  height: 100px;
+  resize: none;
+
 }
 
 /* pruebas esto nuevo va a formularios */ 
@@ -337,6 +349,20 @@ button.bn-mg:hover {
   background-color: #E75723;
 }
 
+#bn-Adjunto {
+  background-color: transparent;
+  border: none;
+  color: #809871;
+  margin-inline: 5px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+}
+
+#bn-Adjunto:hover {
+  background-color: #809871;
+  color: white;
+}
+
 /* dropdown */
 button.dropdown-toggle {
   background-color: transparent;
@@ -346,10 +372,32 @@ button.dropdown-toggle {
   margin-inline: 5px;
 }
 
+button.dropdown-toggle:focus{
+  background-color: #D23D37;
+}
+
 button.dropdown-toggle:hover {
   background-color: #D23D37;
 }
 
+/* menu desplegable de este dropdown*/ 
+#drop-Post {
+  background-color: #fbfbfb;
+}
+
+#drop-Post .dropdown-item {
+  color: #000; 
+}
+
+#drop-Post .dropdown-item:hover {
+  background-color: #f5e2be59; 
+  color: #000; 
+}
+
+#drop-Post .dropdown-item.active {
+  background-color: #F9EFDC; 
+  color: #000;
+}
 
 /* tarjetas */
 /* Estilos para contenedores de tarjetas */
@@ -421,3 +469,28 @@ span.badge-secondary {
   border-radius: 0 0 10px 10px;
 }
 
+
+/*Estilos para el footer*/
+
+footer{
+  background-color: #c76a67;
+}
+
+
+#FooterRibbon{
+  background-image: linear-gradient(to left, #e0c89a, #e07A76);
+}
+
+#Copyright{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#FooterLine{
+  background-color: #f4e2b3;
+  height: 3px;
+  width: 60px;                    
+}
+
+.my-5{
+  margin: 0%;
+}

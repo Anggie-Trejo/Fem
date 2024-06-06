@@ -160,7 +160,7 @@ card.innerHTML = `
 <img src="${post.image}" class="card-img-top" alt="Imagen adjunta" style="display: ${post.image ? 'block' : 'none'};">
 <div class="card-body">
     <div class="user-profile d-flex align-items-center mb-3">
-        <img src="../public/insumos/mujer2.jpg" alt="Perfil" class="rounded-circle me-3" width="50">
+        <img src="../public/Ojos-Mujer.jpg" alt="Perfil" class="rounded-circle me-3" width="50">
         <div>
             <p class="mb-0">Laura Vargas</p>
             <p class="mb-0">@traveler11</p>
@@ -176,14 +176,15 @@ card.innerHTML = `
     <div class="d-flex flex-wrap">
         ${post.tags.map(tag => `<span class="badge bg-Type me-1">${tag}</span>`).join('')} 
     </div>
-    ${post.archive ? `<a href="${post.archive}" download class="btn btn-primary mt-3">Descargar archivo adjunto</a>` : ''}
+    
     <div class="finalCard">
+    ${post.archive ? `<a href="${post.archive}" download class="btn btn-primary btn-sm" id= "bn-Adjunto">Descargar archivo <i class="bi bi-download"></i></a>` : ''}
         <button class="btn btn-primary btn-sm bn-sl">Comentar <i class="bi bi-chat-square-text"></i> </button>
         <button class="btn btn-primary btn-sm bn-mg">Me gusta <i class="bi bi-heart"></i> </button>
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-three-dots-vertical"></i>
       </button>
-      <ul class="dropdown-menu dropdown-menu-dark">
+      <ul class="dropdown-menu dropdown-menu-dark" id = "drop-Post">
         <li><a class="dropdown-item active" href="#"><i class="bi bi-bookmark-plus"></i> Guardar publicación</a></li>
         <li><a class="dropdown-item" href="#"><i class="bi bi-trash3"></i> Eliminar publicación</a></li>
         <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle"></i> Reportar publicación</a></li>
@@ -231,3 +232,88 @@ function limpiarFormulario() {
   tagsInput3.value = '';
 }
 
+/* agregamos para borradores*/
+function addBorrador() {
+  // Obtener valores del formulario
+  const postContent = document.getElementById('postContent').value.trim();
+  const postType = document.getElementById('postType').value;
+  const includeImageSwitch = document.getElementById('includeImageSwitch');
+  const includeArchiveSwitch = document.getElementById('includeArchiveSwitch');
+  const postImage = document.getElementById('postImage').files[0];
+  const postArchive = document.getElementById('postArchive').files[0];
+  const tripType = document.querySelector('input[name="tripType"]:checked');
+  
+  if (!postContent) {
+    alert('Por favor, escribe algo antes de guardar.');
+    return;
+  }
+  if (!tripType) {
+    alert("Por favor, selecciona un tipo de viaje.");
+    return;
+  }
+
+  // Obtener valores de ubicación
+  const country = document.getElementById('location-Country').value.trim();
+  const city = document.getElementById('location-City').value.trim();
+  const location = `${country}, ${city}`;
+  
+  // Elegir un tipo de viaje
+  const tripTypeText = tripType.value === "local" ? "Local" : "Extranjero";
+
+  const tags = [
+      document.getElementById('tagsInput1').value.trim(),
+      document.getElementById('tagsInput2').value.trim(),
+      document.getElementById('tagsInput3').value.trim()
+  ].filter(tag => tag);
+
+  const newBorrador = {
+      type: tripTypeText,
+      content: postContent,
+      tags: tags,
+      image: null,
+      archive: null,
+      location: location,
+      selectedOption: postType, 
+      timestamp: Date.now()
+  };
+
+  // Leer una imagen si se seleccionó-- aun pendient4e
+  if (postImage) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+          newBorrador.image = e.target.result;
+          saveBorradorToLocalStorage(newBorrador);
+          redirigirABorradores(); // Redirigir después de guardar la imagen
+      };
+      reader.readAsDataURL(postImage);
+  } else {
+      saveBorradorToLocalStorage(newBorrador);
+      redirigirABorradores(); // Redirigir inmediatamente si no hay imagen
+  }
+
+  // Leer un archivo si se seleccionó
+  if (postArchive) {
+      const archiveReader = new FileReader();
+      archiveReader.onload = function (e) {
+          newBorrador.archive = e.target.result;
+          saveBorradorToLocalStorage(newBorrador);
+          redirigirABorradores(); // Redirigir después de guardar el archivo
+      };
+      archiveReader.readAsDataURL(postArchive);
+  } else if (!postImage) {
+      redirigirABorradores(); // Redirigir si no hay imagen ni archivo
+  }
+
+  // Limpiar el formulario después de guardar el borrador
+  limpiarFormulario();
+}
+
+function saveBorradorToLocalStorage(borrador) {
+  const borradores = JSON.parse(localStorage.getItem('borradores')) || [];
+  borradores.push(borrador);
+  localStorage.setItem('borradores', JSON.stringify(borradores));
+}
+
+function redirigirABorradores() {
+  window.location.href = 'borradores.html';
+}
