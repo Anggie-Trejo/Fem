@@ -1,3 +1,105 @@
+// Función para codificar la contraseña (puedes usar una función más segura en producción)
+function codificarTexto(texto) {
+    return btoa(texto); // Base64 encoding
+}
+
+// Almacenar un usuario de prueba en el LocalStorage
+function almacenarUsuarioDePrueba() {
+    const usuarioDePrueba = {
+        email: 'Laura@gmail.com',
+        password: codificarTexto('Laura@gmail.com'),
+    };
+    localStorage.setItem('usuarioDePrueba', JSON.stringify(usuarioDePrueba));
+}
+
+// Función para validar el formulario de inicio de sesión
+function validarFormulario() {
+    const email = document.getElementById('userEmail').value;
+    const password = document.getElementById('passwords').value;
+
+    // Verificar campos vacíos
+    if (!email || !password) {
+        alert('Por favor, complete todos los campos.');
+        return false;
+    }
+
+    // Validar datos
+    const usuarioAlmacenado = JSON.parse(localStorage.getItem('usuarioDePrueba'));
+
+    if (usuarioAlmacenado) {
+        const emailCodificado = usuarioAlmacenado.email;
+        const passwordCodificada = usuarioAlmacenado.password;
+
+        if (email === emailCodificado && codificarTexto(password) === passwordCodificada) {
+            return true; // true para redirigir a la página de perfil
+        } else {
+            alert('Nombre de usuario o contraseña inválidos.');
+            return false;
+        }
+    } else {
+        alert('No se encontró el usuario almacenado.');
+        return false;
+    }
+}
+
+// Función para manejar el acceso
+function acceso(event) {
+    event.preventDefault(); // Evitando que el enlace redirija inmediatamente
+
+    if (validarFormulario()) {
+        window.location.href = '../html/Mi-Perfil.html'; // Redirigiendo a la página de perfil si la validación es exitosa
+    }
+}
+
+// Almacenar el usuario de prueba cuando se carga la página
+window.onload = function() {
+    almacenarUsuarioDePrueba();
+};
+
+// Agregar el evento de clic al botón
+document.getElementById('boton').addEventListener('click', acceso);
+
+
+
+
+// Function to validate form fields
+/*function validateForm() {
+    var userEmail = document.getElementById("userEmail").value;
+    var password = document.getElementById("passwords").value;
+  
+    // Check if fields are empty
+    if (userEmail.trim() === "" || password.trim() === "") {
+      alert("Por favor llena todos los campos");
+      return false;
+    }
+  
+    // Password validation using regular expressions
+
+    // For now, let's assume the username is "test" and password is "password"
+    if (userEmail !== "test" || password !== "password") {
+      alert("Usuario o contraseña inválidos");
+      return false;
+    }
+  
+    // Store user data in LocalStorage
+    localStorage.setItem("userEmail", userEmail);
+  
+    return true;
+  }
+
+  // Function to handle form submission
+function handleFormSubmission(event) {
+    event.preventDefault(); // Prevent form submission
+    if (validateForm()) {
+      // If form is valid, redirect to another web page
+      window.location.href = "../html/Home.html"; // Replace "dashboard.html" with the URL of your desired web page
+    }
+  }
+  
+  // Event listener for form submission
+  document.getElementById("inicioses").addEventListener("submit", handleFormSubmission);
+
+
 // El código se ejecuta hasta que todo el html esté cargado
 document.addEventListener("DOMContentLoaded", ()=> {
 
