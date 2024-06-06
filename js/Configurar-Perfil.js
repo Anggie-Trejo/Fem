@@ -45,37 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+///guardar cambios
+document.getElementById('configForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
+    const ubicacion = document.getElementById('ubicacion').value;
+    const destino = document.getElementById('destino').value;
+    const intereses = document.getElementById('intereses').value;
 
+    localStorage.setItem('ubicacion', ubicacion);
+    localStorage.setItem('destino', destino);
+    localStorage.setItem('intereses', intereses);
 
-
-
-//fución para eliminar cuenta
- 
-/*
-
-async function deleteAccount() {
-    const confirmation = confirm('¿Estás seguro de que deseas borrar tu cuenta? Esta acción no se puede deshacer.');
-    if (!confirmation) return;
-
-    try {
-        const response = await fetch('/api/deleteAccount', {
-            method: 'DELETE',
-        });
-
-        if (response.ok) {
-            alert('Cuenta borrada exitosamente.');
-            window.location.href = '/login';
-        } else {
-            alert('Error al borrar la cuenta.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Error al conectar con el servidor.');
-    }
-}
-
-function saveChanges() {
-    alert('Cambios guardados exitosamente.');
-    // Falta añadir la lógica para guardar cambios adicionales del perfil
-}*/
+    alert('Cambios guardados exitosamente!');
+});

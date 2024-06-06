@@ -1,9 +1,11 @@
 // El código se ejecuta hasta que todo el html esté cargado
 document.addEventListener("DOMContentLoaded", ()=> {
+    
 
     const formRegister = document.querySelector(".form-register"); // Referencia al formulario de registro completo
     const inputUser = document.getElementById("userNames");
     const inputLastNames = document.getElementById("userLastNames");
+    const inputNickname = document.getElementById("userNickname");
     const inputEmail= document.getElementById("userEmail");
     const inputPhone = document.getElementById("userPhone");
     const inputAge = document.getElementById("userAge");
@@ -12,29 +14,17 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const inputPassword = document.getElementById("passwords");
     const inputPasswordcopy = document.getElementById("passwordClone");
     
+    
     const alertaError= document.querySelector(".alert-danger");
     const alertaExito = document.querySelector(".alert-success");
     
-        // Cargar los datos del almacenamiento local al cargar la página
-        const storedFormData = JSON.parse(localStorage.getItem('formData'));
-        if (storedFormData) {
-            inputUser.value = storedFormData.name || '';
-            inputLastNames.value = storedFormData.lastname || '';
-            inputEmail.value = storedFormData.email || '';
-            inputPhone.value = storedFormData.phone || '';
-            inputAge.value = storedFormData.age || '';
-            selectResidence.value = storedFormData.country || '';
-            inputCity.value = storedFormData.city || '';
-            inputPassword.value = storedFormData.password || '';
-            inputPasswordcopy.value = storedFormData.passwordcopy || '';
-        }
-        
-        formRegister.addEventListener("submit", (event) => {
-            event.preventDefault(); // Evitar el envío del formulario
-    
+    formRegister.addEventListener("submit", (event) => {
+        event.preventDefault(); // Evitar el envío del formulario
+
         const formData = {
             name: inputUser.value,
             lastname: inputLastNames.value,
+            nickname: inputNickname.value,
             email: inputEmail.value,
             phone: inputPhone.value,
             age: inputAge.value,
@@ -43,22 +33,49 @@ document.addEventListener("DOMContentLoaded", ()=> {
             password: inputPassword.value,
             passwordcopy: inputPasswordcopy.value
         };
-    
-        // Guardar los datos en el almacenamiento local
-        localStorage.setItem('formData', JSON.stringify(formData));
-    
+
         console.log(formData); // Imprimir los datos en la consola
     
+        // Cargar los datos del almacenamiento local al cargar la página
+        let storedFormData = JSON.parse(localStorage.getItem('formData')) || [];
+
+        // Verificar si storedFormData es un array
+        if (!Array.isArray(storedFormData)) {
+            console.error('Datos corruptos en localStorage.');
+            storedFormData = [];
+        }
+
+        // Verificar si el correo de usuario ya está registrado
+        const usuarioRegistrado = storedFormData.find(user => user.email === formData.email);
+        if (usuarioRegistrado) {
+            alert("Ya hay una cuenta registrada con ese correo o hay errores en el formulario");
+            return;
+              
+        } 
+
+        //Verificar que el @usuario no esté repetido
+        const usuarioNickname = storedFormData.find(user => user.nickname === formData.nickname);
+        if (usuarioNickname) {
+            alert ("Ya está ocupado ese nombre de usuaria, por favor elige otro");
+            return;
+        }
+        
+            // Agregar los nuevos datos al array y guardarlos en localStorage
+            storedFormData.push(formData);
+            localStorage.setItem('formData', JSON.stringify(storedFormData));
+           
+            alert("Registro exitoso");
+            window.location.href = "Iniciar-Sesion.html";
+        
     });
-    
-    
+        
     /*Expresiones regulares. Son reglas de validación. La primera permite uno o dos nombres, de 2 a 12 caracteres cada uno, cualquier letra en minúscula o mayúscula*/
     const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜ]{3,10}(?:\s[a-zA-ZáéíóúÁÉÍÓÚüÜ]{0,10})?$/;
+    const nickRegex = /^@[A-Za-z0-9._/-]{5,}$/;
     const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex = /^(?=.*[a-zñ])(?=.*[A-ZÑ])(?=.*\d)[a-zA-Z\dñÑ!@#$%^&*(),.?":{}|<>]{8,}$/;
     const cityRegex= /^[a-zA-ZáéíóúÁÉÍÓÚüÜ\s]{5,}$/;
     const phoneRegex= /^\+?(\d{1,4})?[\s-]?(\(?\d{2,3}\)?)?[\s-]?\d{4,5}[\s-]?\d{4}$/;
-    
     
     
     
@@ -69,6 +86,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
     
         inputLastNames.addEventListener ("input", () =>{
             validarCampo(nameRegex, inputLastNames, "El apellido debe tener mínimo 3 caracteres, sin caracteres especiales");
+        });
+
+        inputNickname.addEventListener ( "input", () => {
+            validarCampo(nickRegex, inputNickname, "El nombre de usuario debe comenzar con @ y tener al menos 6 caracteres");
         });
     
         inputEmail.addEventListener("input", () => {
@@ -107,6 +128,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const estadoValidacion = {
         userNames: false,
         userLastNames: false,
+        userNickname: false,
         userEmail: false,
         userPhone: false,
         userAge: false,
@@ -221,7 +243,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         if(estadoValidacion.userNames && estadoValidacion.userLastNames && estadoValidacion.userEmail && estadoValidacion.userPhone && estadoValidacion.userAge && estadoValidacion.userResidencia && estadoValidacion.userCity && estadoValidacion.passwords && estadoValidacion.passwordClone) {
     
             formRegister.reset();
-            alertaExito.classList.add("alertaExito");
+            //alertaExito.classList.add("alertaExito");
             alertaError.classList.remove("alertaError");
             setTimeout(() => {
                 alertaExito.classList.remove("alertaExito");
@@ -237,5 +259,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
         }
     }
     });
+
     
     //console.log(alertaExito);

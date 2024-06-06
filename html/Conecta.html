@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head class="Mi-perfil">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Link a boostrap-->
+              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--Link a todas las fuentes de Google-->
+              <link rel="preconnect" href="https://fonts.googleapis.com">
+              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+              <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+              <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!--Link a nuestro archivo de estilos-->
+    <link rel="stylesheet" href="../css/Conecta.css">          
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="icon" href="../public/Favicon.png">
+    <title>Conecta tu viaje</title>
+  </head>
+
+  
+  <body>
+
+    <!--Empeiza la sección del NavBar-->
+    <section class="header">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary ms-auto">
+          <div class="container-fluid">
+              <!-- Logo -->
+              <a class="navbar-brand" href="#">
+                  <img src="../public/logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
+              </a>
+              <!-- Toggler -->
+              <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <!-- NavBar list -->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Conectar Viajes</a>
+                  </li>  
+                    <li class="nav-item">
+                          <a class="nav-link" href="../html/Comunidad.html">Comunidad</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Mi Cuenta
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="../html/Mi-Perfil.html">Visitar Perfil</a>
+                              <a class="dropdown-item" href="../html/Configurar-Perfil.html">Configurar</a>
+                              <a class="dropdown-item" href="../html/Quizz.html">Quizz</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="../html/Home.html">Cerrar sesión</a>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </section>
+  
+
+
+  <!--Row de todos los paises-->
+      <div class="container-fluid row" id="Countries">
+        <img src="../public/Conecta/Banner2.png" id="Banner">
+        <br>
+        <h2 class="H2Titles">QuickFacts de los destinos más populares</h2>
+        <div class="col-xs-12 col-sm-5">
+            <div class="card" id="card1" onclick="showCountryDetails('Brasil')">
+              <div class="card-category" >Brasil</div>
+              <a class="card-link" href="#country-details"></a>
+            </div>
+          </div>
+
+
+          <div class="col-xs-12 col-sm-3">
+            <div class="card" id="card2" onclick="showCountryDetails('Argentina')">
+              <div class="card-category">Argentina</div>
+              <a class="card-link" href="#country-details" ></a>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-2">
+            <div class="card" id="card3" onclick="showCountryDetails('Peru')">
+              <div class="card-category">Peru</div>
+              <a class="card-link" href="#country-details" ></a>
+            </div>
+          </div>
+
+
+          <div class="col-xs-12 col-sm-2">
+            <div class="card" id="card4" onclick="showCountryDetails('Chile')">
+              <div class="card-category">Chile</div>
+              <a class="card-link" href="#country-details" ></a>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-3">
+            <div class="card" id="card5" onclick="showCountryDetails('Bolivia')">
+              <div class="card-category">Bolivia</div>
+              <a class="card-link" href="#country-details" ></a>
+            </div>
+          </div>
+
+
+
+          <div class="col-xs-12 col-sm-6">
+            <div class="card" id="card6" onclick="showCountryDetails('Colombia')">
+              <div class="card-category">Colombia</div>
+              <a class="card-link" href="#country-details"></a>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-3">
+            <div class="card" id="card7" onclick="showCountryDetails('México')">
+              <div class="card-category">México</div>
+              <a class="card-link" href="#country-details" ></a>
+            </div>
+          </div>
+
+
+          <!--Tercera linea-->
+      <div class="col-xs-12 col-sm-3">
+        <div class="card" id="card8" onclick="showCountryDetails('Puerto Rico')">
+          <div class="card-category">Puerto Rico</div>
+          <a class="card-link" href="#country-details" ></a>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="card" id="card9" onclick="showCountryDetails('Guatemala')">
+          <div class="card-category">Guatemala</div>
+          <a class="card-link" href="#country-details" ></a>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="card" id="card10" onclick="showCountryDetails('Cuba')">
+          <div class="card-category">Cuba</div>
+          <a class="card-link" href="#country-details" ></a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="card" id="card11" onclick="showCountryDetails('Jamaica')">
+          <div class="card-category">Jamaica</div>
+          <a class="card-link" href="#country-details" ></a>
+        </div>
+      </div>
+      </div>
+
+      
+
+
+      <!--Row para todos los on click-->
+      <div class="container-fluid row" id="FactsCard">
+        <!--Divider para los datos del país-->
+
+          <div class="country-details" id="country-details">
+          <div class="row">  
+                        
+            <!--Incio de country detail-->
+            <div class="QuickFacts col-sm-6">
+            <h2 id="country-name"></h2>
+            <p><strong>Capital:</strong> <span id="country-capital"></span></p>
+            <p><strong>Idiomas Oficiales:</strong> <span id="country-languages"></span></p>
+            <p><strong>Moneda:</strong> <span id="country-currency"></span></p>
+            <p><strong>Clima:</strong> <span id="country-climate"></span></p>
+            <p><strong>Nivel de Seguridad Pública:</strong> <span id="country-security"></span></p>
+            <p><strong>Tipo de Enchufe:</strong> <span id="country-plug"></span></p>
+            <p><strong>Atracciones Turísticas:</strong> <span id="country-attractions"></span></p>
+          </div>
+            <!--Fin de country detail-->
+          
+          
+
+            <!--Inicio de accordion-->
+            <div class="col-sm-6">
+              <div class="accordion" id="accordionPanelsStayOpenExample">
+               <div class="accordion-item">
+                 <h2 class="accordion-header">
+                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                     Números de Emergencia
+                   </button>
+                 </h2>
+                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                   <div class="accordion-body">
+                    <ul id="numEmergencia"></ul>
+                   </div>
+                 </div>
+               </div>
+               <div class="accordion-item">
+                 <h2 class="accordion-header">
+                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                     Medios de transporte
+                   </button>
+                 </h2>
+                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                   <div class="accordion-body">
+                    <p id="transportes"></p>
+                   </div>
+                 </div>
+               </div>
+               <div class="accordion-item">
+                 <h2 class="accordion-header">
+                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                     Vacunas requeridas
+                   </button>
+                 </h2>
+                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                   <div class="accordion-body">
+
+                    <p id="vacunas"></p>
+                      
+                   </div>
+                 </div>
+               </div>
+             </div>
+            </div>
+            </div>
+            <!--Fin de accordion-->
+          </div>
+          <!--Fin del container de mi tarjeta de datos-->
+
+      </div>
+
+      <div>
+        <h2 class="H2Titles">El ABC para tu viaje en solitario</h2>
+        <!-- Tabs -->
+        <div class="tabs">
+          <ul class="tab-header">
+              <li class="active" data-tab="home">Accesorios</li>
+              <li data-tab="contact">Telefono</li>
+              <li data-tab="about">Recuerda</li>
+              <div class="selector"></div>
+          </ul>
+          <div class="tab-content">
+              <div class="tab-pane active" id="home">
+                <p>
+                  Estos son los accesorios que te recomendamos para llevar a tu viaje:
+                  <ul>
+                    <li><strong>Batería:</strong> Te recomendamos siempre lelvar uan batería portatil para cargar tu teléfono y estar siempre conectada.</li>
+                    <li><strong>Adaptadores de corriente:</strong> Muchas veces los adaptadores cambian de pais  en país, en nuestra sección QuickFacts uedes consultar esta información.</li>
+                    <li><strong>Botiquin:</strong> Si te gusta el estilo aventurero, tener un botiquin es imprescindible, solo revisa siempre qué medicamentos están permitidos en el país de origen y cuales son de libre venta.</li>
+                    <li><strong>Agua y Snacks:</strong> Siempre es recomendable llevar un poco de comida y agua potable.</li>
+                </ul> 
+                </p>
+              </div>
+
+              <div class="tab-pane" id="contact">
+                  <p>
+                    Te recomendamos realizar alguna de las siguiente configuracioens en tu telefono celular</p> 
+                    <strong>Compartir ubicación en tiempo real:</strong>
+                    <ul>
+                        <li><strong>Google Maps:</strong> Puedes activar la función de Google Maps para que tus contactos de confianza puedan conocer tu ubicación en tiempo real.</li>
+                        <li><strong>Beneficio:</strong> Útil para recibir ayuda o para que los seres queridos sepan que el viajero está seguro.</li>
+                    </ul>
+                </li>
+                
+                    <strong>Compartir ubicación de emergencia:</strong>
+                    <ul>
+                        <li><strong>Configuración:</strong> Configuración tu celular que te permite enviar automáticamente la ubicación a los contactos seleccionados en caso de peligro.</li>
+                        <li><strong>Uso:</strong> Ideal para situaciones de emergencia donde el usuario necesita asistencia inmediata.</li>
+                    </ul>
+          
+            
+                    <strong>Tarjeta de emergencia:</strong>
+                    <ul>
+                        <li><strong>Información contenida:</strong> Configuración tu celular que te permite colocar tus datos médicos, contactos de emergencia, alergias y condiciones médicas relevantes.</li>
+                        <li><strong>Accesibilidad:</strong> Información disponible desde la pantalla de bloqueo para que los servicios de emergencia puedan acceder fácilmente si el usuario no puede comunicarse.</li>
+                    </ul>
+           
+            </ul>
+              </div>
+              <div class="tab-pane" id="about">
+                  <p>
+                    Algunas consideracioens adicionales para viajar segura son:
+                    <ul>
+                      <li><strong>Embajadas:</strong> Antes de llegar revisa la dirección de tu embajada, así como los horarios y servicios que ofrecen.</li>
+                      <li><strong>Telefonos:</strong> En muchos países de latinoamerica hay líneas directas para ayudar al viajero, recuerda guardar esta información en tu telefono. También registra los telefonos de emergencia en tu celular.</li>
+                      <li><strong>Accesibilidad:</strong> Recomendamos comprar una SIM nueva o una e-SIM para el pais a visitar.</li>
+                  </ul> 
+                  </p>
+              </div>
+          </div>
+      </div>
+      </div>
+      <!-- ./Tabs -->
+      
+      <div> <br></div>
+
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../js/Conecta.js"></script>
+  </body>
+</html>
+  

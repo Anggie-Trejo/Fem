@@ -33,23 +33,22 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Conectar Viajes</a>
+                      <a class="nav-link" href="../html/Conecta.html">Conectar Viajes</a>
                   </li>  
                     <li class="nav-item">
                           <a class="nav-link" href="../html/Comunidad.html">Comunidad</a>
                       </li>
                       <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Mi Cuenta
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="../html/Mi-Perfil.html">Visitar Perfil</a>
-                              <a class="dropdown-item" href="../html/Configurar-Perfil.html">Configurar</a>
-                              <a class="dropdown-item" href="../html/Quizz.html">Quizz</a>
-                              <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="../html/Home.html">Cerrar sesión</a>
-                          </div>
-                      </li>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Mi Cuenta
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../html/Mi-Perfil.html">Visitar Perfil</a>
+                            <a class="dropdown-item" href="../html/Quizz.html">Quizz</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../html/Home.html">Cerrar sesión</a>
+                        </div>
+                    </li>
                   </ul>
               </div>
           </div>
@@ -77,25 +76,34 @@
           <label for="portadaPic">Cambiar foto de portada</label>
       
         </div>
-          <label for="username">Nombre:</label>
-          <input type="text" id="username" name="username" required>
-          <label for="lastame">Apellido:</label>
-          <input type="text" id="lastname" name="lastname" required>
-          <label for="location">Locación:</label>
-          <input type="text" id="location" name="location" required>
-              </form>
+        
+    </form>
+
+          <form id="configForm">
+            <label for="ubicacion">Estoy en:</label>
+            <input type="text" id="ubicacion" name="ubicacion">
+            <br>
+            <label for="destino">Próximo destino:</label>
+            <input type="text" id="destino" name="destino">
+            <br>
+            <label for="intereses">Intereses:</label>
+            <input type="text" id="intereses" name="intereses">
+            <br>
+             <!--guardar cambios-->
+            <button type="submit">Guardar cambios</button>
+        </form>
+        <a href="Mi-Perfil.html">Volver a mi perfil</a>
+        <script src="Configurar-Perfil.js"></script>
+
+
+
       <!--borrar cuenta-->
       <p>Borrar cuenta</p>
       <p>Al eliminar tu cuenta borraremos toda tu información  
-      <button id="deleteAccountButton" onclick="deleteAccount()">Borrar Cuenta</button>
+      <button id="deleteAccountButton" >Borrar Cuenta</button>
     </p>
-      <!--guardar cambios-->
-      <button type="button" onclick="saveChanges()">Guardar Cambios</button> 
+     
   </div>
-
-
-
-
 
 <script src="../js/Configurar-Perfil.js"></script>
 </body>      

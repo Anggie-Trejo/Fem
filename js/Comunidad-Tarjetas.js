@@ -8,7 +8,8 @@ const tarjetas = [
     travelPhotos: "../public/insumos/playa.jpg",
     location: "Bogotá, Colombia",
     reco: "Recomendación",
-    tags: ["Local", "Cultura", "Festival Iberoamericano de Teatro"]
+    tags: ["Local"],
+    tags2: ["Cultura", "Festival Iberoamericano de Teatro"]
   },
   {
     id: "@Mari_Viaja",
@@ -18,7 +19,8 @@ const tarjetas = [
     travelAdvice: "Si visitas Buenos Aires, Argentina, no te pierdas el vibrante barrio de La Boca. Conocido por sus casas coloridas y la famosa calle Caminito, es un gran lugar para experimentar la cultura local. También, visita el Cementerio de la Recoleta donde puedes encontrar la tumba de Eva Perón. Y, por supuesto, disfruta de un tradicional asado argentino en una de las muchas parrillas de la ciudad.",
     location: "Buenos Aires, Argentina",
     reco: "Advertencia",
-    tags: ["Extranjero", "La Boca", "Cementerio de la Recoleta", "Asado Argentino"],
+    tags: ["Extranjero"],
+    tags2: ["La Boca", "Cementerio de la Recoleta", "Asado Argentino"],
     travelPhotos: ["../public/insumos/TS.jpg"]
   },
   {
@@ -30,7 +32,8 @@ const tarjetas = [
     travelPhotos: ["../public/insumos/avion.jpg"],
     location: "Machu Picchu, Perú",
     reco: "Advertencia",
-    tags: ["Local", "Machu Picchu", "Camino Inca", "Cusco"]
+    tags: ["Local"],
+    tags2: ["Machu Picchu", "Camino Inca", "Cusco"]
   },
   {
     id: "@Sofi.Rojas23",
@@ -41,7 +44,8 @@ const tarjetas = [
     travelPhotos: ["../public/insumos/castillo.jpg"],
     location: "Cartagena, Colombia",
     reco: "Advertencia",
-    tags: ["Extranjero", "Cartagena", "Ciudad Vieja", "Castillo San Felipe"]
+    tags: ["Extranjero"],
+    tags2: ["Cartagena", "Ciudad Vieja", "Castillo San Felipe"]
   },
   {
     id: "@travelerIsa",
@@ -52,7 +56,8 @@ const tarjetas = [
     travelPhotos: ["../public/insumos/avion.jpg"],
     location: "Río de Janeiro, Brasil",
     reco: "Reseña",
-    tags: ["Extranjero", "Río de Janeiro", "Cristo Redentor", "Copacabana", "Pan de Azúcar"]
+    tags: ["Extranjero"],
+    tags2: ["Río de Janeiro", "Cristo Redentor", "Copacabana", "Pan de Azúcar"]
   },
   {
     id: "@ValGonz4554",
@@ -63,7 +68,8 @@ const tarjetas = [
     travelPhotos: ["../public/insumos/mar.jpg"],
     location: "CDMX, México",
     reco: "Reseña",
-    tags: ["Local", "Ciudad de México", "Zócalo", "Teotihuacán", "Coyoacán"]
+    tags:["Local"],
+    tags2: ["Ciudad de México", "Zócalo", "Teotihuacán", "Coyoacán"]
   },
   {
     id: "@NomadCami5820",
@@ -74,7 +80,8 @@ const tarjetas = [
     travelPhotos: ["../public/insumos/mar.jpg"],
     location: "Desierto de Atacama, Chile",
     reco: "Reseña",
-    tags: ["Extranjero", "Desierto de Atacama", "Valle de la Luna", "El Tatio", "Salar de Atacama"]
+    tags: ["Extranjero"],
+    tags2: ["Desierto de Atacama", "Valle de la Luna", "El Tatio", "Salar de Atacama"]
   },
   {
     id: "@Gabi_SoloTravs",
@@ -85,7 +92,8 @@ const tarjetas = [
     travelPhotos: ["../public/insumos/volcan.jpg"],
     location: "Costa Rica",
     reco: "Reseña",
-    tags: ["Extranjero", "Manuel Antonio", "Volcán Arenal", "Monteverde"]
+    tags: ["Extranjero"],
+    tags2: ["Manuel Antonio", "Volcán Arenal", "Monteverde"]
   },
   {
     id: "@Luci1711",
@@ -96,7 +104,8 @@ const tarjetas = [
     travelPhotos: ["../public/insumos/avion.jpg"],
     location: "Islas Galápagos, Ecuador",
     reco: "Reseña",
-    tags: ["Local", "Islas Galápagos", "Fauna", "Isla Santa Cruz"]
+    tags: ["Local"],
+    tags2: ["Islas Galápagos", "Fauna", "Isla Santa Cruz"]
   },
   {
     id: "@Elena_Solitaria",
@@ -107,7 +116,8 @@ const tarjetas = [
     travelPhotos: ["../public/insumos/mar.jpg"],
     location: "Salar de Uyuni, Bolivia",
     reco: "Reseña",
-    tags: ["Extranjero", "Salar de Uyuni", "Parque Nacional Eduardo Avaroa", "Flamencos"]
+    tags: ["Extranjero"],
+    tags2: ["Salar de Uyuni", "Parque Nacional Eduardo Avaroa", "Flamencos"]
   },
   {
     id: "@CaroTravels",
@@ -118,7 +128,8 @@ const tarjetas = [
     travelPhotos: ["../public/insumos/playa.jpg"],
     location: "Ciudad de Panamá, Panamá",
     reco: "Recomendación",
-    tags: ["Local", "Casco Viejo", "Canal de Panamá", "Parque Nacional Soberanía"]
+    tags: ["Local"],
+    tags2: ["Casco Viejo", "Canal de Panamá", "Parque Nacional Soberanía"]
   }
 ];
 
@@ -166,28 +177,44 @@ function crearTarjeta(tarjeta) {
   }
 
   cardLocation.appendChild(document.createElement('br'));
-  cardLocation.appendChild(cardReco);
+
+    // Crear contenedor para cardReco y tags
+const recoTagsContainer = document.createElement('div');
+recoTagsContainer.className = 'reco-tags-container';
+recoTagsContainer.appendChild(cardReco);
+
 
   const tags = document.createElement('div');
   tags.className = 'tags';
   tarjeta.tags.forEach(tag => {
     const tagItem = document.createElement('span');
-    tagItem.className = 'tag badge badge-secondary';
+    tagItem.className = 'span badge badge-secondary'; 
     tagItem.textContent = tag;
     tags.appendChild(tagItem);
+    });
+
+recoTagsContainer.appendChild(tags);
+
+  const tags2 = document.createElement('div');
+  tags2.className = 'tags2';
+  tarjeta.tags2.forEach(tag => {
+    const tagItem = document.createElement('span');
+    tagItem.className = 'span badge badge-secondary'; 
+    tagItem.textContent = tag;
+    tags2.appendChild(tagItem);
   });
 
   const additionalButtons1 = document.createElement("button");
   additionalButtons1.type = "button";
   additionalButtons1.className = "btn btn-primary btn-sm bn-sl";
-  additionalButtons1.textContent = "Seguir leyendo";
+  additionalButtons1.innerHTML = 'Comentar <i class="bi bi-chat-square-text""></i>';
 
   const additionalButtons2 = document.createElement("button");
   additionalButtons2.type = "button";
   additionalButtons2.className = "btn btn-primary btn-sm bn-mg";
-  additionalButtons2.textContent = "Me gusta";
+  additionalButtons2.innerHTML = 'Me gusta <i class="bi bi-heart"></i> ';
 
-  const dropdown = document.createElement("div");
+  const dropdown = document.createElement("dropdown");
   dropdown.className = "dropdown";
   dropdown.innerHTML = `
     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -203,7 +230,7 @@ function crearTarjeta(tarjeta) {
   `;
 
   const buttonsContainer = document.createElement("div");
-  buttonsContainer.className = "d-flex align-items-center mb-3";
+  buttonsContainer.className = "finalCard";
   buttonsContainer.appendChild(additionalButtons1);
   buttonsContainer.appendChild(additionalButtons2);
   buttonsContainer.appendChild(dropdown);
@@ -213,7 +240,8 @@ function crearTarjeta(tarjeta) {
   cardBody.appendChild(cardUsername);
   cardBody.appendChild(cardAdvice);
   cardBody.appendChild(cardLocation);
-  cardBody.appendChild(tags);
+  cardBody.appendChild(recoTagsContainer);
+  cardBody.appendChild(tags2);
   cardBody.appendChild(buttonsContainer);
   card.appendChild(travelPhoto);
   card.appendChild(cardBody);
@@ -243,6 +271,6 @@ function filtrarTarjetas(event) {
   mostrarTarjetas(tarjetasFiltradas);
 }
 
-document.getElementById('inlineFormCustomSelectPref').addEventListener('change', filtrarTarjetas);
+document.getElementById('typePostSelect').addEventListener('change', filtrarTarjetas);
 
 mostrarTarjetas(tarjetas);

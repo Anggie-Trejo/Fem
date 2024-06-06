@@ -105,3 +105,146 @@ h3 {
             left: 75px;
             border: 4px solid #fff;
         }
+
+/*Estilos del contenedor que divide las columnas */
+.contenedor
+{
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #e07A76;
+    
+}
+
+#col-medium
+{
+    height: 875px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    color:aliceblue;
+    text-align: center;
+    background-color: #e07A76;
+    align-items: center;
+}
+
+#col-izq
+{
+   
+    background-color:#F5E2BE;
+    
+    
+}
+#col-der
+{
+    
+    background-color:#F5E2BE;
+    
+}
+
+/*TAMAÑO DE LOS CONTENEDORES DEL TEXTO */
+/*COLUMNA IZQUIERDA */
+#Paises
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700px;
+    width: 600px;
+    height: 100px;
+    justify-content: right;   
+    border-radius: 15px;
+}
+
+#Emocion
+{
+    
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 100px;
+    justify-content: center;
+    border-radius: 15px;
+    
+    
+}
+
+#Estilo
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 100px;
+    justify-content: center;
+    border-radius: 15px;
+    
+}
+/*columna en medio*/
+#imagen
+{
+    width: 500px;
+    height: 600px;
+   /* text-align: left;*/
+    border-color:#F5E2BE;
+    border-radius: 15px;
+    
+    
+}
+/*columna derecha*/
+
+#Actividades
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 90px;
+    justify-content: center;
+    border-radius: 15px;
+    
+}
+
+#Disfrutar
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 90px;
+    justify-content: center;   
+    border-radius: 15px;
+   
+}
+
+#Preferencia
+{
+    font-family: "IBM Plex Sans";
+    font-weight: 700;
+    width: 600px;
+    height: 90px;
+    justify-content: center;
+    border-radius: 15px;
+   
+}
+
+a.despues
+{
+    font-family: "IBM Plex Sans";
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    color:#e07A76;
+    border-color:aliceblue;
+    border-width: 5px;
+    justify-content: right;
+    background-color:#F5E2BE;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+a.guardar 
+{
+    font-family: "IBM Plex Sans";
+    width: 200px;
+    height: 50px;
+    text-align:center;
+    color:#e07A76;
+    border-color:aliceblue;
+    border-width: 5px;
+    justify-content: right;
+    background-color:#F5E2BE;
+    margin-top: 50px;
+}

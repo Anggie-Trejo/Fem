@@ -22,20 +22,22 @@
 
 
 
-    body {
-        font-family: "IBM Plex Sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-    }
+body {
+font-family: "IBM Plex Sans", sans-serif;
+font-weight: 400; 
+font-style: normal;
+font-size: 22px;
 
+}
 
-    h1,h2 {
-        font-family: "Hammersmith One", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 50px;
-        padding: 20px;
-    }
+h1,h2 {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    padding: 20px;
+}
+
 
 h3 {
     font-family: "Hammersmith One", sans-serif;
@@ -43,6 +45,13 @@ h3 {
     font-style: oblique;
     font-size: 30px;
     color: #e07A76;
+}
+
+.about {
+    background-color:#f8bfa9aa;
+    border-radius: 10px;
+    text-align: center;
+    text-shadow: 4px 4px 10px rgba(255, 0, 0, 0.7);
 }
 
 #pmodal{
@@ -107,104 +116,3 @@ h3 {
     margin-right: 20px;
 }
 
-/*.custom-card{
-	width: 300px;
-	height: 500px;
-}
-
-    p{text-align: justify;} 
-    
-.img-fluid {
-
-    max-width:100%;
-    height:auto;
-
-}
-
-.card-body{
-    flex:1 1 auto;padding:1rem 1rem
-}
-   
-
-.card-text:last-child{
-
-    margin-bottom:0
-    
-}
-
-.card-text{
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15px;
-
-}
-
-
- #team-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
-        .team-member {
-            width: 300px;
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-            position: relative;
-        }
-
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            position: absolute;
-            top: -75px;
-            left: 75px;
-            border: 4px solid #fff;
-        }*/
-       
-        
-        
-
-/*PREGUNTAR SOBRE LA PARTE DE BOOSTRAP CSS Y LOS 9 ERRORES*/
-
-            /*
-.carousel-control-color{
-    white;
-}
-$carousel-control-width15%;
-$carousel-control-opacity:           .5;
-$carousel-control-hover-opacity:     .9;
-$carousel-control-transition:        opacity .15s ease;
-
-.carousel-indicators{
-    width:30px;
-    height: 3px;
-    
-}
-$carousel-indicator-height:          3px;
-$carousel-indicator-hit-area-height: 10px;
-$carousel-indicator-spacer:          3px;
-$carousel-indicator-opacity:         .5;
-$carousel-indicator-active-bg:       $white;
-$carousel-indicator-active-opacity:  1;
-$carousel-indicator-transition:      opacity .6s ease;
-
-$carousel-caption-width:             70%;
-$carousel-caption-color:             $white;
-$carousel-caption-padding-y:         1.25rem;
-$carousel-caption-spacer:            1.25rem;
-
-$carousel-control-icon-width:        2rem;
-
-$carousel-control-prev-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
-$carousel-control-next-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
-
-$carousel-transition-duration:       .6s;
-$carousel-transition:                transform $carousel-transition-duration ease-in-out; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)*/
