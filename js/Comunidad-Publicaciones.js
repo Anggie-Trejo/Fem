@@ -67,25 +67,25 @@ const tags = [
   if (postImage) {
       const reader = new FileReader();
       reader.onload = function (e) {
-          newPost.image = e.target.result; // Asignar la imagen a la nueva publicación
-          savePostToLocalStorage(newPost); // Guardar  en localStorage
-          renderPost(newPost); // Renderizar 
+          newPost.image = e.target.result; 
+          savePostToLocalStorage(newPost); 
+          renderPost(newPost); 
       };
-      reader.readAsDataURL(postImage); // Leer la imagen como un DataURL
+      reader.readAsDataURL(postImage); 
   } else {
-      savePostToLocalStorage(newPost); // Guardar la publicación en localStorage
-      renderPost(newPost); // Renderizar 
+      savePostToLocalStorage(newPost); 
+      renderPost(newPost); 
   }
 
   // Leer un archivo si se seleccionó
   if (postArchive) {
       const archiveReader = new FileReader();
       archiveReader.onload = function (e) {
-          newPost.archive = e.target.result; // Asignar el archivo a la nueva publicación
-          savePostToLocalStorage(newPost); // Guardar la publicación en localStorage
-          renderPost(newPost); // Renderizar la publicación en la interfaz
+          newPost.archive = e.target.result; 
+          savePostToLocalStorage(newPost); 
+          renderPost(newPost); 
       };
-      archiveReader.readAsDataURL(postArchive); // Leer el archivo como un DataURL
+      archiveReader.readAsDataURL(postArchive); 
   }
 
   // Limpiar después de publicar
@@ -138,7 +138,7 @@ const postTypeClassMap = {
   '3': 'badge-advertencia'
 };
 
-// Función para renderizar una publicación en el feed
+// Función para renderizar una card
 function renderPost(post) {
   const feed = document.getElementById('feed'); 
 
@@ -149,10 +149,9 @@ function renderPost(post) {
 
 
   // Construir el HTML de la tarjeta
-  const postDate = post.timestamp; // Utilizar la marca de tiempo de la publicación
+  const postDate = post.timestamp; 
   const minutesAgo = getTimeDifference(postDate); // Obtener la diferencia de tiempo en minutos
-  const tripTypeText = post.type === 'Local' ? 'Local' : 'Extranjero'; // Asegurémonos de comparar con 'Local' en lugar de 'local'
-
+  const tripTypeText = post.type === 'Local' ? 'Local' : 'Extranjero'; 
   const postTypeText = postTypeTextMap[post.selectedOption];
   const postTypeClass = postTypeClassMap[post.selectedOption];
 
@@ -178,7 +177,7 @@ card.innerHTML = `
         ${post.tags.map(tag => `<span class="badge bg-Type me-1">${tag}</span>`).join('')} 
     </div>
     ${post.archive ? `<a href="${post.archive}" download class="btn btn-primary mt-3">Descargar archivo adjunto</a>` : ''}
-    <div class="mt-3">
+    <div class="finalCard">
         <button class="btn btn-primary btn-sm bn-sl">Comentar <i class="bi bi-chat-square-text"></i> </button>
         <button class="btn btn-primary btn-sm bn-mg">Me gusta <i class="bi bi-heart"></i> </button>
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -201,7 +200,7 @@ feed.appendChild(card);
 
 // boton que limpia el formulario
 function limpiarFormulario() {
-  // Obtener referencias a los elementos del formulario
+
   const postContent = document.getElementById('postContent');
   const locationCountry = document.getElementById('location-Country');
   const locationCity = document.getElementById('location-City');

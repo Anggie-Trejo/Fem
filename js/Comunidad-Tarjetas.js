@@ -214,11 +214,11 @@ recoTagsContainer.appendChild(tags);
   additionalButtons2.className = "btn btn-primary btn-sm bn-mg";
   additionalButtons2.innerHTML = 'Me gusta <i class="bi bi-heart"></i> ';
 
-  const dropdown = document.createElement("div");
+  const dropdown = document.createElement("dropdown");
   dropdown.className = "dropdown";
   dropdown.innerHTML = `
     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bi bi-three-dots-veestrtical"></i>
+      <i class="bi bi-three-dots-vertical"></i>
     </button>
     <ul class="dropdown-menu dropdown-menu-dark">
       <li><a class="dropdown-item active" href="#"><i class="bi bi-bookmark-plus"></i> Guardar publicación</a></li>
@@ -230,7 +230,7 @@ recoTagsContainer.appendChild(tags);
   `;
 
   const buttonsContainer = document.createElement("div");
-  buttonsContainer.className = "d-flex align-items-center mb-3";
+  buttonsContainer.className = "finalCard";
   buttonsContainer.appendChild(additionalButtons1);
   buttonsContainer.appendChild(additionalButtons2);
   buttonsContainer.appendChild(dropdown);

@@ -1,5 +1,4 @@
-
-  // DOM 
+// DOM 
   // Función para cargar las publicaciones desde localStorage y renderizarlas
   document.addEventListener('DOMContentLoaded', loadPostsFromLocalStorage);
   
@@ -134,8 +133,7 @@
     const card = document.createElement('div');
     card.classList.add('card', 'mb-3');
   
-  
-  
+
     // Construir el HTML de la tarjeta
     const postDate = post.timestamp; // Utilizar la marca de tiempo de la publicación
     const minutesAgo = getTimeDifference(postDate); // Obtener la diferencia de tiempo en minutos
@@ -165,9 +163,9 @@
       <div class="d-flex flex-wrap">
           ${post.tags.map(tag => `<span class="badge bg-Type me-1">${tag}</span>`).join('')} 
       </div>
-      <div class="mt-3">
-      <button class="btn btn-primary btn-sm bn-sl">Publicar <i class="bi bi-chat-square-text"></i> </button>
-      <button class="btn btn-primary btn-sm bn-mg">Eliminar <i class="bi bi-heart"></i> </button>
+      <div class="finalCard">
+      <button class="btn btn-primary btn-sm bn-sl" id ="draftPub" >Publicar <i class="bi bi-card-text"></i></button>
+        <button class="btn btn-primary btn-sm bn-mg" id = "draftDel" >Eliminar <i class="bi bi-journal-x"></i></button>
       </div>
      
   </div>

@@ -91,18 +91,16 @@ h3 {
 
 /* específicos para comunidad */
 
-/* Estilos para evitar subrayado en los links */
-.no-underline {
-  text-decoration: none;
-  color: black;
-}
+
+
 
 /* estilos para las etiquetas de publicaciones.js */
 .bg-Type {
   background-color: #CBB2A4;
-  padding: auto; /* Ajusta el relleno */
-  border-radius: 10px; /* Ajusta el radio del borde */
+  padding: auto; 
+  border-radius: 10px;
   font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 10px;
 }
 
 /* título de la página */
@@ -146,16 +144,49 @@ h3 {
   padding: 10px;
 }
 
+#textMantener{
+  font-size: 18px;
+  color:#8F9491; 
+}
+
+/* hipervinculos */
+.hiper{
+  background-color: #F9EFDC;
+  border-radius: 10px;
+  align-items:auto;
+  margin-right: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 20px 20px 20px 20px;
+}
+
+.hiper2:hover{
+  background-color: #F6E7CB;
+  border-radius: 10px;
+}
+
+/* Estilos para evitar subrayado en los links */
+.no-underline {
+  text-decoration: none;
+  color: black;
+}
+
 /* filtro tipo de destino */
 #typePostSelect {
   border-radius: 7px;
   border: none;
+  padding: 5px 5px 5px 5px;
+  font-weight: 400;
 }
 
 button#dropFilter {
-  background-color: #EECF95;
+  background-color: #F9EFDC;
   border: none;
   font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  color: black;
+  align-items: center;
+  padding:10px 15px 10px 15px;
 }
 
 /* Lado derecho */
@@ -165,6 +196,41 @@ button#dropFilter {
   width: 100%;
   height: 100px;
   resize: none;
+}
+
+/* pruebas esto nuevo va a formularios */ 
+#includeImageSwitch:checked{
+  background-color: #809871;
+  border-color: #ddffd9;
+}
+
+#includeImageSwitch{
+  border-color: #ddffd9;
+}
+
+#includeArchiveSwitch:checked{
+  background-color: #809871;
+  border-color: #ddffd9;
+}
+
+#includeArchiveSwitch{
+  border-color: #ddffd9;
+}
+
+/* aplica para switch e input */
+.form-check-input:checked:focus {
+  box-shadow: 0 0 0 5px #ddffd9; 
+}
+
+/* circulo para tipo de viaje*/
+#inlineRadio1:checked{
+  background-color: #809871; 
+        border-color: #809871;
+}
+
+#inlineRadio2:checked{
+  background-color: #809871; 
+        border-color: #809871;
 }
 
 /* botón publicar */
@@ -242,44 +308,46 @@ button#dropFilter {
   margin: 0;
 }
 
-
-
 /* Botones de conexión ambos */
 /* seguir leyendo */
 button.bn-sl {
-  background-color: #E07A76;
+  background-color: transparent;
   border: none;
-  font-family: "IBM Plex Sans", sans-serif;
+  color: #F49D7B;
   margin-inline: 5px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
 }
 
 button.bn-sl:hover {
-  background-color: #933310;
+  background-color: #F49D7B;
 }
 
 /* me gusta */
 button.bn-mg {
-  background-color: #F3AB91;
-  border: #ECC783;
-  font-family: "IBM Plex Sans", sans-serif;
+  background-color: transparent;
+  border: none;
+  color: #E75723;
   margin-inline: 5px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
 }
 
 button.bn-mg:hover {
-  border: none;
-  background-color: #933310;
+  background-color: #E75723;
 }
 
 /* dropdown */
 button.dropdown-toggle {
-  background-color: #F5E2BE;
+  background-color: transparent;
   border: none;
+  color: #D23D37;
   font-family: "IBM Plex Sans", sans-serif;
   margin-inline: 5px;
 }
 
 button.dropdown-toggle:hover {
-  background-color: #B72E2A;
+  background-color: #D23D37;
 }
 
 
@@ -322,3 +390,34 @@ span.badge-secondary {
   flex-direction: left;
   margin-inline: 5px;
 }
+
+
+/* especifico para borradores */
+#draftPub{
+  background-color: transparent;
+  border-color: #6D825E;
+  color: #6D825E;
+}
+
+#draftPub:hover{
+  background-color: #C0CCB8 ;
+}
+
+#draftDel{
+  background-color: transparent;
+  border-color: #B72E2A;
+  color: #85221E;
+}
+
+#draftDel:hover{
+  background-color: #ECAEAC;
+}
+
+.finalCard{
+  background-color: #f5e2be59;
+  text-align: right;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 0 0 10px 10px;
+}
+
