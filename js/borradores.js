@@ -131,6 +131,5 @@ function renderDraft(draft) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Coloca aquí cualquier función que necesite ejecutarse después de que el DOM esté completamente cargado
-    loadDraftsFromLocalStorage(); // Suponiendo que tienes una función llamada loadBorradoresFromLocalStorage en tu archivo borradores.js
+    loadDraftsFromLocalStorage(); 
 });
