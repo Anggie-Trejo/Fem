@@ -40,7 +40,7 @@ function acceso() {
   const email=document.getElementById("email").value;
   const password=document.getElementById("password").value;
   
-  if(email=="algo@otracosa.com" && password==="probandoando") { 
+  if(email=="Laura@gmail.com" && password==="Laura@gmail.com") { 
     //Guardar el estado de inicio de sesión en localStorage
       localStorage.setItem('isLoggedIn', 'true');
           window.location.href="Comunidad.html";
