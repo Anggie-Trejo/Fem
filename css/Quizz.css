@@ -40,211 +40,92 @@ h3 {
     font-family: "Hammersmith One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 
-.custom-card{
-	width: 300px;
-	height: 500px;
+.card {
+    background-color: #f8d0c0;
+    height: 300px;
 }
 
-    p{text-align: justify;} 
-    
-.img-fluid {
 
-    max-width:100%;
-    height:auto;
 
-}
 
 .card-body{
-    flex:1 1 auto;padding:1rem 1rem
-}
-   
-
-.card-text:last-child{
-
-    margin-bottom:0
-    
+    display: flex;
+    flex-direction: column;
 }
 
-.card-text{
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15px;
+.mb-auto{
+    margin-bottom: auto;
 
 }
 
-
- #team-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-
-        .team-member {
-            width: 300px;
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-            position: relative;
-        }
-
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-            position: absolute;
-            top: -75px;
-            left: 75px;
-            border: 4px solid #fff;
-        }
-
-/*Estilos del contenedor que divide las columnas */
-.contenedor
-{
-    font-family: "IBM Plex Sans", sans-serif;
-    color: #e07A76;
-    
+.mt-auto{
+    margin-top: auto;
 }
 
-#col-medium
-{
-    height: 875px;
-    font-family: "IBM Plex Sans", sans-serif;
-    font-weight: 400;
-    color:aliceblue;
+.card-title{
     text-align: center;
-    background-color: #e07A76;
-    align-items: center;
+    margin-bottom: 20px;
+    color: white;
 }
 
-#col-izq
-{
-   
-    background-color:#F5E2BE;
-    
-    
-}
-#col-der
-{
-    
-    background-color:#F5E2BE;
-    
+.container img {
+    width: 100%; /* Asegura que la imagen se estire para ocupar el ancho completo */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina cualquier espacio extra debajo de la imagen */
 }
 
-/*TAMAÑO DE LOS CONTENEDORES DEL TEXTO */
-/*COLUMNA IZQUIERDA */
-#Paises
-{
-    font-family: "IBM Plex Sans";
-    font-weight: 700px;
-    width: 600px;
-    height: 100px;
-    justify-content: right;   
-    border-radius: 15px;
+.form-select {
+    background-color: white; /* Un tono de rosa */
+    color: #e07A76; /* Color del texto */
+    border: 1px solid #f8d0c0; /* Borde rosa más oscuro */
 }
 
-#Emocion
-{
-    
-    font-family: "IBM Plex Sans";
-    font-weight: 700;
-    width: 600px;
-    height: 100px;
-    justify-content: center;
-    border-radius: 15px;
-    
+/* Estilo para el select cuando está activo o en foco */
+.form-select:focus {
+    background-color: white; /* Un rosa más oscuro para el estado activo */
+    border-color: #f8d0c0; /* Un rosa aún más oscuro para el borde */
     
 }
 
-#Estilo
-{
-    font-family: "IBM Plex Sans";
-    font-weight: 700;
-    width: 600px;
-    height: 100px;
-    justify-content: center;
-    border-radius: 15px;
-    
-}
-/*columna en medio*/
-#imagen
-{
-    width: 500px;
-    height: 600px;
-   /* text-align: left;*/
-    border-color:#F5E2BE;
-    border-radius: 15px;
-    
-    
-}
-/*columna derecha*/
-
-#Actividades
-{
-    font-family: "IBM Plex Sans";
-    font-weight: 700;
-    width: 600px;
-    height: 90px;
-    justify-content: center;
-    border-radius: 15px;
-    
+/* Estilo para las opciones del menú desplegable */
+.form-select option {
+    background-color: #ffffff; /* Fondo blanco para las opciones */
+    color: #e07A76 ; /* Texto negro para las opciones */
 }
 
-#Disfrutar
-{
-    font-family: "IBM Plex Sans";
-    font-weight: 700;
-    width: 600px;
-    height: 90px;
-    justify-content: center;   
-    border-radius: 15px;
-   
+.button-container {
+    display: flex;
+    justify-content: center; /* Centra los botones en el contenedor */
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 20px; /* Espacio encima del contenedor de botones */
 }
 
-#Preferencia
-{
-    font-family: "IBM Plex Sans";
-    font-weight: 700;
-    width: 600px;
-    height: 90px;
-    justify-content: center;
-    border-radius: 15px;
-   
+.btn {
+    padding: 10px 20px; /* Ajusta el tamaño del texto y el relleno según sea necesario */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor en forma de mano al pasar el mouse */
+    font-weight: bold; /* Texto en negrita */
+    color: white; /* Texto blanco */
+    font-size: 16px; /* Tamaño de letra */
+    outline: none; /* Elimina el contorno al enfocar */
 }
 
-a.despues
-{
-    font-family: "IBM Plex Sans";
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    color:#e07A76;
-    border-color:aliceblue;
-    border-width: 5px;
-    justify-content: right;
-    background-color:#F5E2BE;
-    margin-right: 100px;
-    margin-top: 50px;
+.btn-save {
+    background-color: #f8d0c0; /* Color rosa para el botón guardar */
 }
 
-a.guardar 
-{
-    font-family: "IBM Plex Sans";
-    width: 200px;
-    height: 50px;
-    text-align:center;
-    color:#e07A76;
-    border-color:aliceblue;
-    border-width: 5px;
-    justify-content: right;
-    background-color:#F5E2BE;
-    margin-top: 50px;
+.btn-later {
+    background-color: #f8d0c0; /* Un tono más claro de rosa para el botón en otro momento */
 }
+
+.btn:hover {
+    opacity: 0.8; /* Efecto al pasar el mouse */
+}
+
+
+
