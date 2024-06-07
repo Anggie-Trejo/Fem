@@ -1,3 +1,15 @@
+// Función para mostrar/ocultar el input de imagen
+function toggleImageInput() {
+  const imageInputContainer = document.getElementById('imageInputContainer');
+  imageInputContainer.style.display = imageInputContainer.style.display === 'none' ? 'block' : 'none';
+}
+
+// Función para mostrar/ocultar el input de archivo
+function toggleArchiveInput() {
+  const archiveInputContainer = document.getElementById('archiveInputContainer');
+  archiveInputContainer.style.display = archiveInputContainer.style.display === 'none' ? 'block' : 'none';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadPostsFromLocalStorage();
   });
