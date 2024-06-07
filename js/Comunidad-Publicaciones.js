@@ -1,4 +1,4 @@
-// Función para mostrar/ocultar el input de imagen
+// Función para mostrar/ocultar el input de imagen 
 function toggleImageInput() {
   const imageInputContainer = document.getElementById('imageInputContainer');
   imageInputContainer.style.display = imageInputContainer.style.display === 'none' ? 'block' : 'none';
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     `;
   
-    // En orden
+    // En orden de publicación
     feed.insertBefore(card, feed.firstChild);
   }
   
