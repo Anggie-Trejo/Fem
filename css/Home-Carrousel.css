@@ -188,22 +188,17 @@
 
  /*Estilos para el footer*/
 
- .footer{
+ footer{
   background-color: #c76a67;
-  width: 100%;
-  gap: none;
-  margin: none;
 }
 
 
 #FooterRibbon{
-  width: 100%;
   background-image: linear-gradient(to left, #e0c89a, #e07A76);
 }
 
 #Copyright{
-  background-color: rgb(228, 62, 62);
-  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 #FooterLine{
@@ -214,5 +209,5 @@
 
 .my-5{
   margin: 0%;
-  width: 100%;
 }
+
