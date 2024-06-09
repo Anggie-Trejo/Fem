@@ -147,7 +147,18 @@
         
     }
 
-
+    .btn{
+        background-color: #7C946C;
+        border: #7C946C;
+        color: white !important;
+        text-align: center;
+    }
+    
+    .btn:hover{
+        background-color: #e07a76;
+        border: #e07a76;
+        border-radius: 10%;
+    }
 
     .error {
         outline: solid 4px rgb(170, 28, 28);
