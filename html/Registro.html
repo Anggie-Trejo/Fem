@@ -66,11 +66,14 @@
   </section>
 <!--Comienza el cuerpo de nuestra página, se coloca en un container para que todo quede centrado y se vea chulo, ya cuenta con la fuente-->
 <div class="container">
+  <h1>Vuélvete parte de FemTrek</h1>
 
 
     <div class="row">
       <div class="col-md-3" id="left">
+        <img src="../public/Registro_1.jpeg" alt="Viajes mujeres Latinas" id="travels">
         <img src="../public/Femtrek_registro.jpg" alt="Imagen red social" id="prueba2">
+        <img src="../public/Registro_3.jpeg" alt="womens" id="prueba3">
 
 
       </div>
@@ -78,18 +81,22 @@
 
       <div class="col-md-9" >
     
-      <h1>Vuélvete parte de FemTrek</h1>
-
       <div class="alert alert-success " role="alert">
         ¡Bienvenida, se ha registrado correctamente el formulario!
       </div>
       <div class="alert alert-danger " role="alert">
         Hay errores o secciones vacías en el llenado del formulario. 
       </div>
+      <div class="alert alert-warning" role="alert" id="alertemail">
+        Ya existe una cuenta con ese correo electrónico.
+      </div>
+      <div class="alert alert-info" role="alert" id="alertuser">
+        Ya existe una cuenta con ese nombre de usuaria.
+      </div>
 
-      <p> Ya casi eres parte de la comunidad, sólo llena este breve formulario para comenzar </p>
+      <h5> ¡Ya casi eres parte de la comunidad, sólo llena este formulario para comenzar! </h5>
  
-       <form class="form-register">
+        <form class="form-register">
         
         <div class="mb-3">
             <label class="form-label">Nombre(s)</label>
@@ -183,14 +190,114 @@
         <p><small>Vuelve a escribir tu contraseña</small></p>
       </div>
 
-      <button type="submit" class="btn btn-outline-success">Registrarme</button>
+      <button type="submit" class="btn btn-success" id="enviar">Registrarme</button>
+      
       <br>
       
                  
-      
-      </form>
+
+
     </div>
-    
+
+    </form>
+</div>
+</div>
+<br>
+
+<footer class="text-center text-lg-start text-white">
+
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-between p-4" id="FooterRibbon">
+    <!-- Left -->
+    <div class="me-5">
+      <p>Conecta con nosotras en redes sociales:</p>
+    </div>
+    <!-- Left -->
+
+    <!-- Iconos para redes sociales -->
+    <div>
+      <a href="" class="text-white me-4">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="bi bi-twitter-x"></i>
+      </a>
+    </div>
+    <!-- Sección derecha -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section>
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold">FemTrek</h6>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+          <p>
+            De mujeres para mujeres. Generemos una comunidad de apoyo para no restringirnos de una vida plena.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold">Únete a nuestro equipo</h6>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+          <p>
+            <a href="#!" class="text-white">carreras@femtrek.com</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold">Media</h6>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+              <p>Para entrevistas y colaboraciones</p>
+           <p>empresarial@femtrek.com prensa@femtrek.com</p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold">Contacto</h6>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+          <p><i class="fas fa-home mr-3"></i> Plaza de la constitución, Col. Centro. Ciudad de México, México</p>
+          <p><i class="fas fa-phone mr-3"></i> contacto@femtrek.com</p>
+          <p><i class="fas fa-print mr-3"></i> +52 55 1234 1234</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+
+  <!-- Copyright -->
+  <div class="text-center p-3" id="Copyright">
+    © 2024 Copyright: <a class="text-white" href="../html/About-Us.html"> Team Jacarandas</a>
+  </div>
+
+</footer>
+<!-- Footer -->
+   
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
