@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const nickRegex = /^@[A-Za-z0-9._/-]{5,}$/;
     const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex = /^(?=.*[a-zñ])(?=.*[A-ZÑ])(?=.*\d)[a-zA-Z\dñÑ!@#$%^&*(),.?":{}|<>]{8,}$/;
-    const cityRegex= /^[a-zA-ZáéíóúÁÉÍÓÚüÜ\s]{4,}$/;
+    const cityRegex= /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]{4,}$/;
     const phoneRegex= /^\+?(\d{1,4})?[\s-]?(\(?\d{2,3}\)?)?[\s-]?\d{4,5}[\s-]?\d{4}$/;
     
     
