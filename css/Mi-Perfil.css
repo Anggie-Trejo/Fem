@@ -10,13 +10,20 @@
             opacity: 0.8;
         }
 
+          h1,h2 {
+        font-family: "Hammersmith One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding: 20px;
+    }
+
 
         /*Formato para la imagen de perfil*/
 
         .imgLeft {
             padding: 20px 20px;
             text-align: center;
-            max-width: 350px;
+            max-width: 400px;
             position: relative;
             margin: 0 auto;
           }
@@ -25,8 +32,7 @@
             .imgContainer {
                 top: -35px;
                 position: absolute;
-                left: 10%;
-                margin-left: 100px;
+                margin-left: 130px;
                 transform: translatex(-30%);
             }
 
@@ -40,10 +46,6 @@
                 box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
             }
 
-            .imgContainer img:hover {
-                scale: 1.15;
-                transition: 330ms 330ms ease-in-out;
-            }
 
 
             /*Mi profile class*/
@@ -51,14 +53,14 @@
                 background-color: #f5e2be59;
                 border-radius: 15px;
                 padding: 15px 10px 10px 10px;
-                margin-top: 150px;
-                margin-bottom: 50px;
+                margin-bottom: 40px;
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
             }
 
 
             #userName {
                 font-weight: 400;
+                color: black;
                 font-size: 30px;
                 margin-top: 4px;
                 text-align: center;
@@ -67,14 +69,14 @@
 
               #userId {
                 font-size: 18px;
-                color: #818181;
+                color: #6b6a6a;
                 margin: 0;
                 text-align: center;
               }
 
               #userDesc {
                 font-size: 16px;
-                color: #818181;
+                color: #6b6a6a;
                 margin: 0;
                 text-align: center;
               }
@@ -82,10 +84,11 @@
 
               #UserChars{
                 font-size: 16px;
-                color: #3f3d3d;
+                color: #2c2b2b;
                 align-items: center;
-                text-align: center;
+                text-align: left;
                 margin-top: 20px;
+                padding: 12px;
               }
 
               .MyProfileCard .Stats {
@@ -105,7 +108,7 @@
               .MyProfileCard .Stats li {
                 display: flex;
                 flex-direction: column;
-                color: #818181;
+                color: #555252;
                 font-size: 16px;
               }
 
@@ -117,17 +120,6 @@
                 font-weight: 600;
               }
 
-              /*Línea separadora de mi perfil*/
-              .MyProfileCard .Stats:after {
-                position: absolute;
-                content: "";
-                bottom: -16px;
-                display: block;
-                background: #cccccc;
-                height: 1px;
-                width: 100%;
-                margin-bottom: 6px;
-              }
 
 
             /*Estilos Gabi*/
@@ -261,20 +253,41 @@ margin-right: 30px;
 
 /*Mis foros*/
 #Foros {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background: #f8bfa98c;
+  background-color: #f5e2be59;
+                border-radius: 15px;
+                padding: 15px 10px 10px 10px;
+                margin-bottom: 50px;
+                text-align: center;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+           
 }
 
-@media screen and (max-width: 1000px) 
-{#Foros {
-  visibility: hidden;
-  clear: both;
-    float: left;
-    margin: 10px auto 5px 20px;
-    width: 28%;
-    display: none;
-}}
+/*Estilos para el carrousel*/
+#UserCharsCarousel{
+  background-color: #f5e2be59;
+  border-radius: 15px;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 50px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f8bfa98c; /* Adjust the background color as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.icon-circle i {
+  font-size: 20px;
+  color: #3f3d3d; /* Adjust the icon color as needed */
+}
+
+.Intereses{
+  text-align: center;
+  font-size: 18px;
+}
