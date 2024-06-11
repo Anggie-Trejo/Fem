@@ -102,11 +102,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
         });
     
         inputLastNames.addEventListener ("input", () =>{
-            validarCampo(lastnameRegex, inputLastNames, "El apellido debe tener mínimo 3 caracteres, sin caracteres especiales");
+            validarCampo(lastnameRegex, inputLastNames, "El apellido debe tener mínimo 3 caracteres, sin caracteres especiales.");
         });
 
         inputNickname.addEventListener ( "input", () => {
-            validarCampo(nickRegex, inputNickname, "El nombre de usuario debe comenzar con @ y tener al menos 6 caracteres");
+            validarCampo(nickRegex, inputNickname, "El nombre de usuario debe comenzar con @ y tener al menos 5 caracteres.");
         });
     
         inputEmail.addEventListener("input", () => {
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         });
     
         inputPhone.addEventListener("input", () => {
-            validarCampo(phoneRegex, inputPhone, "Formato de número inválido")
+            validarCampo(phoneRegex, inputPhone, "Formato de número inválido.")
         });
     
         inputAge.addEventListener("input", validAge);
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         });
     
         inputCity.addEventListener("input", () =>{
-            validarCampo(cityRegex, userCity, "Escribe el nombre de tu ciudad");
+            validarCampo(cityRegex, userCity, "Escribe el nombre de tu ciudad.");
         });
     
         inputPassword.addEventListener("input", () =>{
