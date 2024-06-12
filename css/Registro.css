@@ -143,6 +143,9 @@
         h5{
             margin-bottom: 15px;
         }
+        .alert{
+            font-size:small;
+        }
 
         
     }
@@ -163,6 +166,13 @@
     .error {
         outline: solid 4px rgb(170, 28, 28);
     }
+
+    .alerta{
+        margin-top: 5px;
+        color:rgb(170, 28, 28);
+        font-weight:500;
+    }
+
 
     .alert-success,
     .alert-danger,

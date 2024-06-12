@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const nickRegex = /^@[A-Za-z0-9._/-]{5,}$/;
     const emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex = /^(?=.*[a-zñ])(?=.*[A-ZÑ])(?=.*\d)[a-zA-Z\dñÑ!@#$%^&*(),.?":{}|<>]{8,}$/;
-    const cityRegex= /^[a-zA-ZáéíóúÁÉÍÓÚüÜ\s]{4,}$/;
+    const cityRegex= /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]{4,}$/;
     const phoneRegex= /^\+?(\d{1,4})?[\s-]?(\(?\d{2,3}\)?)?[\s-]?\d{4,5}[\s-]?\d{4}$/;
     
     
@@ -102,11 +102,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
         });
     
         inputLastNames.addEventListener ("input", () =>{
-            validarCampo(lastnameRegex, inputLastNames, "El apellido debe tener mínimo 3 caracteres, sin caracteres especiales");
+            validarCampo(lastnameRegex, inputLastNames, "El apellido debe tener mínimo 3 caracteres, sin caracteres especiales.");
         });
 
         inputNickname.addEventListener ( "input", () => {
-            validarCampo(nickRegex, inputNickname, "El nombre de usuario debe comenzar con @ y tener al menos 6 caracteres");
+            validarCampo(nickRegex, inputNickname, "El nombre de usuario debe comenzar con @ y tener al menos 5 caracteres.");
         });
     
         inputEmail.addEventListener("input", () => {
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         });
     
         inputPhone.addEventListener("input", () => {
-            validarCampo(phoneRegex, inputPhone, "Formato de número inválido")
+            validarCampo(phoneRegex, inputPhone, "Formato de número inválido.")
         });
     
         inputAge.addEventListener("input", validAge);
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         });
     
         inputCity.addEventListener("input", () =>{
-            validarCampo(cityRegex, userCity, "Escribe el nombre de tu ciudad");
+            validarCampo(cityRegex, userCity, "Escribe el nombre de tu ciudad.");
         });
     
         inputPassword.addEventListener("input", () =>{
