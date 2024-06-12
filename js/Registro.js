@@ -98,11 +98,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
     
     //El add.EventListener se dispara cada que el usuario escribe y llama a la función validarCampo
         inputUser.addEventListener("input", () =>{
-            validarCampo(nameRegex, inputUser, "El nombre debe tener mínimo 3 caracteres, sin caracteres especiales.");
+            validarCampo(nameRegex, inputUser, "El nombre debe tener mínimo 3 letras, sin caracteres especiales.");
         });
     
         inputLastNames.addEventListener ("input", () =>{
-            validarCampo(lastnameRegex, inputLastNames, "El apellido debe tener mínimo 3 caracteres, sin caracteres especiales.");
+            validarCampo(lastnameRegex, inputLastNames, "El apellido debe tener mínimo 3 letras, sin caracteres especiales.");
         });
 
         inputNickname.addEventListener ( "input", () => {
