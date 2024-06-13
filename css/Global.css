@@ -1,0 +1,71 @@
+
+/*Estilos para la Navbar*/
+            .header .navbar-brand {
+                color: white !important;
+            }
+
+            .header .nav-link {
+                color: white !important;
+                font-size: 16.5px;
+            }
+
+            .header .nav-link:hover {
+                color: rgb(99, 56, 56) !important;
+            }
+
+            .navbar-nav .dropdown-menu {
+              right: 0;
+              left: auto;
+          }
+
+            @media(max-width: 700px){
+                .nav-link{text-align: center;}
+            }
+
+            .header .navbar {
+                background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+                position: fixed; /* Makes the navbar stick to the top */
+                top: 0;          /* Aligns the navbar at the top */
+                width: 100%;     /* Ensures the navbar spans the full width */
+                z-index: 1000;   /* Keeps the navbar on top of other content */
+            }
+
+
+
+
+                /*Estilos para el footer*/
+
+                footer{
+                    background-color: #c76a67;
+                }
+
+
+                #FooterRibbon{
+                    background-image: linear-gradient(to left, #e0c89a, #e07A76);
+                }
+
+                #Copyright{
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+
+                #FooterLine{
+                    background-color: #f4e2b3;
+                    height: 3px;
+                    width: 60px;                    
+                }
+
+                .my-5{
+                    margin: 0%;
+                }
+
+/* título de la página en construcción*/
+#title {
+    text-align: left;
+    background-color: #FBE2DA;
+  }
+  
+  /* texto del título */
+  #title-1 {
+    text-align: left;
+    margin-left: 38px;
+  }
