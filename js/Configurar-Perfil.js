@@ -52,10 +52,12 @@ document.getElementById('configForm').addEventListener('submit', function(event)
     const ubicacion = document.getElementById('ubicacion').value;
     const destino = document.getElementById('destino').value;
     const intereses = document.getElementById('intereses').value;
+    const descripcion = document.getElementById('description').value;
 
     localStorage.setItem('ubicacion', ubicacion);
     localStorage.setItem('destino', destino);
     localStorage.setItem('intereses', intereses);
+    localStorage.setItem('description', descripcion);
 
     alert('Cambios guardados exitosamente!');
 });

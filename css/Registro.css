@@ -34,46 +34,150 @@
         font-weight: 400;
         font-style: normal;
         padding: 20px;
+        text-align: center;
         
     }
 
     p{text-align: justify;}
 
 
-    /* Estilos de la página de registro*/
+    /*Estilos para el footer*/
+
+    footer{
+        background-color: #c76a67;
+    }
+
+
+    #FooterRibbon{
+        background-image: linear-gradient(to left, #e0c89a, #e07A76);
+    }
+
+    #Copyright{
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    #FooterLine{
+        background-color: #f4e2b3;
+        height: 3px;
+        width: 60px;                    
+    }
+
+    .my-5{
+        margin: 0%;
+    }
+
+
+/* Estilos de la página de registro*/
+    h1{
+        color: #0a0000;
+        text-shadow:  5px 5px 10px #e69999;
+        width: 100%; /* Hace que el h1 ocupe todo el ancho de su contenedor */
+      display: block; /* Asegura que el h1 se comporte como un elemento de bloque */
+    }
+
+    h5{
+        color: black;
+        text-align: center;
+    
+    }
+
+    
+    .form-register{
+        padding: 20px;
+        border-radius: 10px;
+        /*background-color: #ecd8d6; */
+        align-items: center;
+        width: 100%;
+        background: linear-gradient(to bottom, #ecd8d6, #e2a29f)
+        /*#f5b6b3, #F5E2BE*/
+
+    }
+
+    .form-label{
+        font-weight: bold;
+    }
+
+    #enviar {
+        display: block; /* Hace que el botón sea un bloque en línea */
+        margin: 0 auto; /* Centra el botón horizontalmente */
+        text-align: center; /* Centra el texto dentro del botón */
+        width: 100%;
+    }
+       
+
 
     #left{
         position:relative;
-        display:flex;
+        display:grid;
         justify-content: center;
         align-items: center;
-    }
-
-    #prueba2{
-        width: 100%;
-        height: 80%;
-        margin-right: 50px;
         
+
     }
 
-    @media screen and (max-width:750px) {
-        #prueba2{
+    #left img{
+        width:100%;
+        height: auto;
+        
+
+    }
+
+    @media screen and (max-width: 1198px){
+        #left img{
+            width:100%;
+            height: 100%;
+            gap: 5px;
+        }
+    }
+
+   
+    @media screen and (max-width:700px) {
+        #left img{
             display: none;
         }
+        
         h1{
             text-align: center;
+            margin-bottom: 0px; 
         }
+        h5{
+            margin-bottom: 15px;
+        }
+        .alert{
+            font-size:small;
+        }
+
         
     }
 
-
-
-    .error {
-        outline: solid 2px rgb(170, 28, 28);
+    .btn{
+        background-color: #7C946C;
+        border: #7C946C;
+        color: white !important;
+        text-align: center;
+    }
+    
+    .btn:hover{
+        background-color: #e07a76;
+        border: #e07a76;
+        border-radius: 10%;
     }
 
+    .error {
+        outline: solid 4px rgb(170, 28, 28);
+    }
+
+    .alerta{
+        margin-top: 5px;
+        color:rgb(170, 28, 28);
+        font-weight:500;
+    }
+
+
     .alert-success,
-    .alert-danger {
+    .alert-danger,
+    .alert-warning,
+    .alert-info {
         display:none;
     }
 
@@ -96,4 +200,21 @@
         /*color:white;*/
     }
 
+    .alertaCorreo {
+        display: block;
+        padding: 0.5rem 1 rem;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 1rem;
+        /*color:white;*/
+    }
+
+    .alertaUser {
+        display: block;
+        padding: 0.5rem 1 rem;
+        margin-top: 10px;
+        font-weight: 500;
+        font-size: 1rem;
+        /*color:white;*/
+    }
 

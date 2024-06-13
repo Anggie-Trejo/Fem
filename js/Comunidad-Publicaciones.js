@@ -10,6 +10,17 @@ function toggleArchiveInput() {
   archiveInputContainer.style.display = archiveInputContainer.style.display === 'none' ? 'block' : 'none';
 }
 
+// Función para limpiar etiquetas y solo la primera letra es mayus
+function tagsFiltered(ids) {
+  return ids.map(id => {
+      let tag = document.getElementById(id).value.trim();
+      if (tag) {
+          tag = tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase(); 
+      }
+      return tag;
+  }).filter(tag => tag);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadPostsFromLocalStorage();
   });
@@ -17,8 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function addPost() {
     const postContent = document.getElementById('postContent').value.trim();
     const postType = document.getElementById('postType').value;
-    const includeImageSwitch = document.getElementById('includeImageSwitch');
-    const includeArchiveSwitch = document.getElementById('includeArchiveSwitch');
     const postImage = document.getElementById('postImage').files[0];
     const postArchive = document.getElementById('postArchive').files[0];
     const tripType = document.querySelector('input[name="tripType"]:checked');
@@ -41,17 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
   
-    const tags = [
-      document.getElementById('tagsInput1').value.trim(),
-      document.getElementById('tagsInput2').value.trim(),
-      document.getElementById('tagsInput3').value.trim()
-    ].filter(tag => tag);
-  
-    if (tags.length === 0) {
-      alert("Por favor, completa las etiquetas.");
-      return;
-    }
-  
+    const tags = tagsFiltered(['tagsInput1', 'tagsInput2', 'tagsInput3']);
     const tripTypeText = tripType.value === "local" ? "Local" : "Extranjero";
   
     alert("Publicación añadida con tipo de viaje: " + tripTypeText);
@@ -144,9 +143,25 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const postDate = post.timestamp;
     const minutesAgo = getTimeDifference(postDate);
+
+    // Creamos un identificador único para cada publicación basado en el timestamp
+      card.dataset.timestamp = post.timestamp;
+
     const tripTypeText = post.type === 'Local' ? 'Local' : 'Extranjero';
     const postTypeText = postTypeTextMap[post.selectedOption];
     const postTypeClass = postTypeClassMap[post.selectedOption];
+
+    function deletePostFromLocalStorage(postToDelete) {
+      let posts = JSON.parse(localStorage.getItem('posts')) || [];
+      
+      posts = posts.filter(post => post.timestamp !== postToDelete.timestamp);
+      
+      localStorage.setItem('posts', JSON.stringify(posts));
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      renderAllPosts();
+    });
   
     card.innerHTML = `
     <img src="${post.image}" class="card-img-top" alt="Imagen adjunta" style="display: ${post.image ? 'block' : 'none'};">
@@ -177,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
             <ul class="dropdown-menu dropdown-menu-dark" id="drop-Post">
                 <li><a class="dropdown-item active" href="#"><i class="bi bi-bookmark-plus"></i> Guardar publicación</a></li>
-                <li><a class="dropdown-item" href="#"><i class="bi bi-trash3"></i> Eliminar publicación</a></li>
+                <li><a class="dropdown-item" id="btnDelete"><i class="bi bi-trash3"></i> Eliminar publicación</a></li>
                 <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle"></i> Reportar publicación</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#"><i class="bi bi-share"></i> Compartir</a></li>
@@ -185,8 +200,24 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
     </div>
     `;
+    const deleteButton = card.querySelector('#btnDelete');
+    deleteButton.addEventListener('click', function() {
+        card.remove();
+        deletePostFromLocalStorage(post);
+    });
   
-    // En orden de publicación
     feed.insertBefore(card, feed.firstChild);
   }
   
+  // Función para eliminar una publicación del Local Storage
+  function deletePostFromLocalStorage(postToDelete) {
+    const posts = loadPostsFromLocalStorage();
+    const updatedPosts = posts.filter(post => post.postDate !== postToDelete.postDate);
+    savePostsToLocalStorage(updatedPosts);
+  }
+  
+  // Función para renderizar todas las publicaciones desde el Local Storage
+  function renderAllPosts() {
+    const posts = loadPostsFromLocalStorage();
+    posts.forEach(renderPost);
+  }

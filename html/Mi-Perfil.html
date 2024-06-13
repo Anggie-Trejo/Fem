@@ -13,7 +13,7 @@
               <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
               <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
               <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
+  
     <!--Link a nuestro archivo de estilos-->
               <link rel="stylesheet" href="../css/global.css">
               <link rel="stylesheet" href="../css/Mi-Perfil.css">
@@ -72,58 +72,75 @@
   </div>
 
 <!--Div para colocar la imagen de perfil-->
-<div class="imgLeft">
-<div class="imgContainer">
-  <img src="../public/Ojos-Mujer.jpg" alt="Anna Smith" />
-  </div>
+<div class="row" style="margin-bottom: 180px;"> 
+  <div class="imgLeft">
+    <div class="imgContainer">
+      <img src="../public/Ojos-Mujer.jpg" alt="Anna Smith" />
+      </div>
+    </div>    
 </div>
 
 
-
-<!-- Tarjeta para colocar la información de mi perfil-->
-<div class="container-md pt-2">
-     <!-- Div lado izquierdo-->
-    
-          <!-- Div para la imagen de perfil-->
-            <div class="MyProfileCard">
-              <h2 id="userName"> Laura Vargas</h2>
-              <p id="userId">@traveler11</p>
-              <p id="userDesc">Me gustan las jícamas y los elotes con chile del que no pica</p>
-              
-              <ul class="Stats"> 
-                <li><span class="NumStats"> 4,350</span> Seguidores</li>
-                <li><span class="NumStats"> 350</span> Siguiendo</li>
-                <li><span class="NumStats"> 350</span> Sitios Visitados</li>
-              </ul>
-
-                <div id="UserChars"> 
-              <p> <i class="bi bi-geo-fill"></i> <span> Estoy en: </span> Ciudad de México</p>
-              <p> <i class="bi bi-airplane-engines-fill"></i> <span> Próximo destino: </span> Bolivia</p>
-              <p> <i class="bi bi-bookmark-heart"></i> <span> Intereses: </span>Comida, baile, jícamas, elotes</p>
-              </div>
-
-              
-              
-          </div>
-    </div>
 
 
   <!--Contenedor para el input y la información-->
 <div class="container">
     <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-5">
+
+                <!--Carta de perfil-->
+                <div class="MyProfileCard">
+                  <h1 id="userName"> Laura Vargas</h1>
+                  <p id="userId">@traveler11</p>
+                  <ul class="Stats"> 
+                    <li><span class="NumStats"> 4,350</span> Seguidores</li>
+                    <li><span class="NumStats"> 350</span> Siguiendo</li>
+                  </ul>  
+
+                  <p id="userDesc">"Me gustan las jícamas y los elotes con chile del que no pica"</p>
+                  <button type="button" class="btn btn-center">Seguir</button>
+              </div>
+              
+              <!--Carrousel de preferencias-->
+              <div id="UserCharsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="icon-circle"><i class="bi bi-geo-fill"></i></div>
+                    <p class="Intereses"> Estoy en: Ciudad de México</p>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="icon-circle"><i class="bi bi-airplane-engines-fill"></i></div>
+                    <p class="Intereses">Próximo destino: Bolivia</p>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="icon-circle"><i class="bi bi-bookmark-heart"></i></div>
+                    <p class="Intereses"> Intereses: Comida, baile, jícamas, elotes</p>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#UserCharsCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#UserCharsCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              
+
+              <!--Foros en los que participo-->
                  <div id="Foros"> 
                   <h3>Mis foros</h3>
                   <p> <i class="bi bi-suitcase"></i> Mexicanas en Colombia</p>
                   <p> <i class="bi bi-shield-fill-plus"></i></i> Tips de autodefensa</p>
                   <p> <i class="bi bi-shield-fill-plus"></i></i> Viaja segura: Transmilenio</p>
-                  </div>
+              </div>
               </div>
  
 
 
 <!--Para la columna larga-->
-      <div class="col-md-9">
+      <div class="col-md-7">
         <div class="post-input-container mb-3">
           <textarea id="postContent" class="form-control" rows="3" placeholder="¿Deseas compartir algo hoy?"></textarea>
           <div class="form-check form-switch mt-3">
@@ -138,7 +155,7 @@
           </select>
           <!-- Subir publicaciones -->
           <div class="add-post mt-3">
-              <button id="post-btn" type="button" class="btn btn-primary me-2 d-flex align-items-center" onclick="addPost()" alt="Button to post" class="me-2">
+              <button id="post-btn" type="button" class="btn btn-primary" onclick="addPost()" alt="Button to post" class="me-2">
                   Publicar
               </button>
           </div>
