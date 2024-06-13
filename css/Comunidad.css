@@ -1,0 +1,520 @@
+/* Media queries para iPad landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Estilos específicos para iPad en modo landscape */
+}
+
+/* Media queries para iPad portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Estilos específicos para iPad en modo portrait */
+}
+
+/*Estilos para la Navbar*/
+.header .navbar-brand {
+  color: white !important;
+}
+
+.header .nav-link {
+  color: white !important;
+  font-size: 16.5px;
+}
+
+.header .nav-link:hover {
+  color: rgb(99, 56, 56) !important;
+}
+
+.navbar-nav .dropdown-menu {
+right: 0;
+left: auto;
+}
+
+@media(max-width: 700px){
+  .nav-link{text-align: center;}
+}
+
+.header .navbar {
+  background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+  position: fixed; /* Makes the navbar stick to the top */
+  top: 0;          /* Aligns the navbar at the top */
+  width: 100%;     /* Ensures the navbar spans the full width */
+  z-index: 1000;   /* Keeps the navbar on top of other content */
+}
+
+
+/* Estilos generales */
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 22px;
+}
+
+h1 {
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 38px;
+}
+
+h2 {
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+}
+
+h3 {
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 26px;
+}
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f8c0a9;
+  line-height: 30px;
+  margin-right: 10px;
+}
+
+.icon-circle i {
+  color: white;
+}
+
+.info {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.warnings {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* específicos para comunidad */
+
+
+
+
+/* estilos para las etiquetas de publicaciones.js */
+.bg-Type {
+  background-color: #CBB2A4;
+  padding: auto; 
+  border-radius: 10px;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-bottom: 10px;
+}
+
+/* título de la página */
+#title {
+  text-align: left;
+  background-image: linear-gradient(to bottom, #fcf7ed, #fff7f3, #fffafa, #fffcfe, #ffffff);
+  /* background-color: #FCF7ED; */
+  width:auto; 
+  border-radius: 10px;
+}
+
+/* texto del título */
+#title-1 {
+  text-align: left;
+  margin-left: 20px;
+  z-index: 0;
+}
+
+/* Estilos para botones */
+.button {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px 4px 10px;
+  cursor: pointer;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* lado izquierdo */
+.left-sidebar {
+  background-color: #f5e2be59;
+  padding-left: 20px;
+  height: 100%;
+  border-radius: 12px;
+  z-index: 0;
+}
+
+#sticky-container {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  z-index: 0;
+}
+
+#textMantener{
+  font-size: 18px;
+  color:#8F9491; 
+}
+
+/* hipervinculos */
+.hiper{
+  background-color: #F9EFDC;
+  border-radius: 10px;
+  align-items:auto;
+  margin-right: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 20px 20px 20px 20px;
+}
+
+.hiper2:hover{
+  background-color: #f5e2be59;
+  border-radius: 10px;
+}
+
+/* Estilos para evitar subrayado en los links */
+.no-underline {
+  text-decoration: none;
+  color: black;
+}
+
+/* filtro tipo de destino */
+#typePostSelect {
+  border-radius: 7px;
+  border: none;
+  padding: 5px 5px 5px 5px;
+  font-weight: 400;
+}
+
+button#dropFilter {
+  background-color: #F9EFDC;
+  border: none;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  color: black;
+  align-items: center;
+  padding:10px 15px 10px 15px;
+}
+
+button#dropFilter:hover{
+  background-color: #F6E7CB;
+}
+
+
+/* Lado derecho */
+/* publicaciones */
+/* text area compartir algo */
+
+/* #colDer{
+  background-color: #fbfbfb;
+  border-radius: 15px;
+} */
+
+#postContent {
+  width: 100%;
+  height: 100px;
+  resize: none;
+}
+
+#borrador.content{
+  width: 100%;
+  height: 100px;
+  resize: none;
+
+}
+
+/* pruebas esto nuevo va a formularios */ 
+#includeImageSwitch:checked{
+  background-color: #809871;
+  border-color: #ddffd9;
+}
+
+#includeImageSwitch{
+  border-color: #ddffd9;
+}
+
+#includeArchiveSwitch:checked{
+  background-color: #809871;
+  border-color: #ddffd9;
+}
+
+#includeArchiveSwitch{
+  border-color: #ddffd9;
+}
+
+/* aplica para switch e input */
+.form-check-input:checked:focus {
+  box-shadow: 0 0 0 5px #ddffd9; 
+}
+
+/* circulo para tipo de viaje*/
+#inlineRadio1:checked{
+  background-color: #809871; 
+        border-color: #809871;
+}
+
+#inlineRadio2:checked{
+  background-color: #809871; 
+        border-color: #809871;
+}
+
+/* botón publicar */
+#post-btn {
+  display: grid;
+  place-items: center;
+  height: auto;
+  background-color: #809871;
+  border-radius: 10px;
+  border: none;
+  gap: 10px;
+  padding: 8px;
+  margin: 10px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  color: white !important;
+  font-size: 18px;
+}
+
+#post-btn:hover{
+  background-color: #586A4D;
+}
+
+#bt-Borr{
+  background-color: #DFE5DC;
+  color: #3B4733;
+  border: 1px solid #3B4733;
+}
+
+#bt-Borr:hover{
+  background-color: #E1D3CB
+}
+
+#bt-Des{
+  background-color: #DFE5DC;;
+  color: #3B4733;
+  border: 1px solid #3B4733;
+}
+
+#bt-Des:hover{
+  background-color: #E1D3CB
+}
+
+.gap-2{
+  padding-right: 40px;
+}
+
+/* Colores específicos para los botones tarjetas y publicación */
+.badge-recomendacion {
+  background-color: #6C825E;
+  color: #fff;
+  margin: auto;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.badge-advertencia {
+  background-color: #B72E2A;
+  color: #fff;
+  margin: auto;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.badge-resena {
+  background-color: #D49521;
+  color: #fff;
+  margin: auto;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* tipo de viaje y publicacion en la misma linea*/
+.viajePublicacion{
+  display: flex;
+  gap: 10px; 
+  align-items: center; 
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin: 0;
+}
+
+/* Botones de conexión ambos */
+/* seguir leyendo */
+button.bn-sl {
+  background-color: transparent;
+  border: none;
+  color: #F49D7B;
+  margin-inline: 5px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+}
+
+button.bn-sl:hover {
+  background-color: #F49D7B;
+}
+
+/* me gusta */
+button.bn-mg {
+  background-color: transparent;
+  border: none;
+  color: #E75723;
+  margin-inline: 5px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+}
+
+button.bn-mg:hover {
+  background-color: #E75723;
+}
+
+#bn-Adjunto {
+  background-color: transparent;
+  border: none;
+  color: #809871;
+  margin-inline: 5px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+}
+
+#bn-Adjunto:hover {
+  background-color: #809871;
+  color: white;
+}
+
+/* dropdown */
+button.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  color: #D23D37;
+  font-family: "IBM Plex Sans", sans-serif;
+  margin-inline: 5px;
+}
+
+button.dropdown-toggle:focus{
+  background-color: #D23D37;
+}
+
+button.dropdown-toggle:hover {
+  background-color: #D23D37;
+}
+
+/* menu desplegable de este dropdown*/ 
+#drop-Post {
+  background-color: #fbfbfb;
+}
+
+#drop-Post .dropdown-item {
+  color: #000; 
+}
+
+#drop-Post .dropdown-item:hover {
+  background-color: #f5e2be59; 
+  color: #000; 
+}
+
+#drop-Post .dropdown-item.active {
+  background-color: #F9EFDC; 
+  color: #000;
+}
+
+/* tarjetas */
+/* Estilos para contenedores de tarjetas */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* profilePhoto de las cards */
+.card-profile-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+/* imágenes en el card */
+.card-img-top {
+  height: 250px;
+  width: 10%;
+}
+
+/* Estilos para las etiquetas de tarjetas.js */
+span.badge-secondary {
+  background-color: #CBB2A4;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-inline: 5px;
+  border-radius: 10px;
+  color: white;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* recomendacion y tipo en la misma linea*/
+.reco-tags-container {
+  display: inline-flex;
+  flex-direction: left;
+  margin-inline: 5px;
+}
+
+
+/* especifico para borradores */
+#draftPub{
+  background-color: transparent;
+  border-color: #6D825E;
+  color: #6D825E;
+}
+
+#draftPub:hover{
+  background-color: #C0CCB8 ;
+}
+
+#draftDel{
+  background-color: transparent;
+  border-color: #B72E2A;
+  color: #85221E;
+}
+
+#draftDel:hover{
+  background-color: #ECAEAC;
+}
+
+.finalCard{
+  background-color: #f5e2be59;
+  text-align: right;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 0 0 10px 10px;
+}
+
+
+/*Estilos para el footer*/
+
+footer{
+  background-color: #c76a67;
+}
+
+
+#FooterRibbon{
+  background-image: linear-gradient(to left, #e0c89a, #e07A76);
+}
+
+#Copyright{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#FooterLine{
+  background-color: #f4e2b3;
+  height: 3px;
+  width: 60px;                    
+}
+
+.my-5{
+  margin: 0%;
+}
+/* hola a las 8:42:) */

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head class="Mi-perfil">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Link a boostrap-->
+              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!--Link a todas las fuentes de Google-->
+              <link rel="preconnect" href="https://fonts.googleapis.com">
+              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+              <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+              <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  
+    <!--Link a nuestro archivo de estilos-->
+              <link rel="stylesheet" href="../css/global.css">
+              <link rel="stylesheet" href="../css/Mi-Perfil.css">
+              <link rel="icon" href="../public/Favicon.png">
+    <title>Mi perfil / FemTrek</title>
+  </head>
+
+  
+  <body>
+
+    <!--Empeiza la sección del NavBar-->
+    <section class="header">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary ms-auto">
+          <div class="container-fluid">
+              <!-- Logo -->
+              <a class="navbar-brand" href="#">
+                  <img src="../public/logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
+              </a>
+              <!-- Toggler -->
+              <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <!-- NavBar list -->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" href="../html/Conecta.html">Conectar Viajes</a>
+                  </li>  
+                    <li class="nav-item">
+                          <a class="nav-link" href="../html/Comunidad.html">Comunidad</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Mi Cuenta
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="../html/Mi-Perfil.html">Visitar Perfil</a>
+                              <a class="dropdown-item" href="../html/Configurar-Perfil.html">Configurar</a>
+                              <a class="dropdown-item" href="../html/Quizz.html">Quizz</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="../html/Home.html">Cerrar sesión</a>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </section>
+  
+
+
+
+<!--Comienzo con el wrapper que va a ser mi fondo de usuario-->
+<div class="header__wrapper">
+  <header></header>
+  </div>
+
+<!--Div para colocar la imagen de perfil-->
+<div class="row" style="margin-bottom: 180px;"> 
+  <div class="imgLeft">
+    <div class="imgContainer">
+      <img src="../public/Ojos-Mujer.jpg" alt="Anna Smith" />
+      </div>
+    </div>    
+</div>
+
+
+
+
+  <!--Contenedor para el input y la información-->
+<div class="container">
+    <div class="row">
+              <div class="col-md-5">
+
+                <!--Carta de perfil-->
+                <div class="MyProfileCard">
+                  <h1 id="userName"> Laura Vargas</h1>
+                  <p id="userId">@traveler11</p>
+                  <ul class="Stats"> 
+                    <li><span class="NumStats"> 4,350</span> Seguidores</li>
+                    <li><span class="NumStats"> 350</span> Siguiendo</li>
+                  </ul>  
+
+                  <p id="userDesc">"Me gustan las jícamas y los elotes con chile del que no pica"</p>
+                  <button type="button" class="btn btn-center">Seguir</button>
+              </div>
+              
+              <!--Carrousel de preferencias-->
+              <div id="UserCharsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="icon-circle"><i class="bi bi-geo-fill"></i></div>
+                    <p class="Intereses"> Estoy en: Ciudad de México</p>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="icon-circle"><i class="bi bi-airplane-engines-fill"></i></div>
+                    <p class="Intereses">Próximo destino: Bolivia</p>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="icon-circle"><i class="bi bi-bookmark-heart"></i></div>
+                    <p class="Intereses"> Intereses: Comida, baile, jícamas, elotes</p>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#UserCharsCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#UserCharsCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              
+
+              <!--Foros en los que participo-->
+                 <div id="Foros"> 
+                  <h3>Mis foros</h3>
+                  <p> <i class="bi bi-suitcase"></i> Mexicanas en Colombia</p>
+                  <p> <i class="bi bi-shield-fill-plus"></i></i> Tips de autodefensa</p>
+                  <p> <i class="bi bi-shield-fill-plus"></i></i> Viaja segura: Transmilenio</p>
+              </div>
+              </div>
+ 
+
+
+<!--Para la columna larga-->
+      <div class="col-md-7">
+        <div class="post-input-container mb-3">
+          <textarea id="postContent" class="form-control" rows="3" placeholder="¿Deseas compartir algo hoy?"></textarea>
+          <div class="form-check form-switch mt-3">
+              <input class="form-check-input" type="checkbox" id="includeImageSwitch" onclick="toggleImageInput()">
+              <label class="form-check-label" for="includeImageSwitch">Incluir Imagen</label>
+          </div>
+          <input type="file" id="postImage" class="form-control mt-3" style="display: none;">
+          <select id="postType" class="form-control mt-3">
+              <option value="Recomendaciones de viaje">Recomendaciones de viaje</option>
+              <option value="Advertencia de seguridad">Advertencia de seguridad</option>
+              <option value="Reseña de viaje">Reseña de viaje</option>
+          </select>
+          <!-- Subir publicaciones -->
+          <div class="add-post mt-3">
+              <button id="post-btn" type="button" class="btn btn-primary" onclick="addPost()" alt="Button to post" class="me-2">
+                  Publicar
+              </button>
+          </div>
+      </div>
+           <!--Crea el container para cada div-->
+           <div id="blog-container"></div>
+    </div>
+</div>          
+      </div>
+      </div>
+  </div>
+
+
+
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-white">
+
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between p-4" id="FooterRibbon">
+      <!-- Left -->
+      <div class="me-5">
+        <p>Conecta con nosotras en redes sociales:</p>
+      </div>
+      <!-- Left -->
+
+      <!-- Iconos para redes sociales -->
+      <div>
+        <a href="" class="text-white me-4">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="bi bi-twitter-x"></i>
+        </a>
+      </div>
+      <!-- Sección derecha -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section>
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">FemTrek</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+            <p>
+              De mujeres para mujeres. Generemos una comunidad de apoyo para no restringirnos de una vida plena.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Carreras</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+            <p>
+              <a href="#!" class="text-white">Unete a nuestro equipo</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">carreras@femtrek.com</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Media</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+                <p>Para entrevistas y colaboraciones</p>
+             <p>empresarial@femtrek.com prensa@femtrek.com</p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contacto</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" id="FooterLine"/>
+            <p><i class="fas fa-home mr-3"></i> Plaza de la constitución, Col. Centro. Ciudad de México, México</p>
+            <p><i class="fas fa-phone mr-3"></i> contacto@femtrek.com</p>
+            <p><i class="fas fa-print mr-3"></i> +52 55 1234 1234</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" id="Copyright">
+      © 2024 Copyright: <a class="text-white" href="../html/About-Us.html"> Team Jacarandas</a>
+    </div>
+
+  </footer>
+  <!-- Footer -->
+
+
+  <script src="../js/Mi-Perfil.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+

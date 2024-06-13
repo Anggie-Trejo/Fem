@@ -1,0 +1,131 @@
+/*Estilos para la Navbar*/
+.header .navbar-brand {
+    color: white !important;
+}
+
+.header .nav-link {
+    color: white !important;
+    font-size: 16.5px;
+}
+
+.header .nav-link:hover {
+    color: rgb(99, 56, 56) !important;
+}
+
+@media(max-width: 700px){
+    .nav-link{text-align: center;}
+}
+
+.header .navbar {
+    background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+}
+
+
+
+    body {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    h1,h2 {
+        font-family: "Hammersmith One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding: 20px;
+    }
+
+h3 {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+
+.card {
+    background-color: #f8d0c0;
+    height: 300px;
+}
+
+
+
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.mb-auto{
+    margin-bottom: auto;
+
+}
+
+.mt-auto{
+    margin-top: auto;
+}
+
+.card-title{
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.container img {
+    width: 100%; /* Asegura que la imagen se estire para ocupar el ancho completo */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina cualquier espacio extra debajo de la imagen */
+}
+
+.form-select {
+    background-color: white; /* Un tono de rosa */
+    color: #e07A76; /* Color del texto */
+    border: 1px solid #f8d0c0; /* Borde rosa más oscuro */
+}
+
+/* Estilo para el select cuando está activo o en foco */
+.form-select:focus {
+    background-color: white; /* Un rosa más oscuro para el estado activo */
+    border-color: #f8d0c0; /* Un rosa aún más oscuro para el borde */
+    
+}
+
+/* Estilo para las opciones del menú desplegable */
+.form-select option {
+    background-color: #ffffff; /* Fondo blanco para las opciones */
+    color: #e07A76 ; /* Texto negro para las opciones */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centra los botones en el contenedor */
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 20px; /* Espacio encima del contenedor de botones */
+}
+
+.btn {
+    padding: 10px 20px; /* Ajusta el tamaño del texto y el relleno según sea necesario */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor en forma de mano al pasar el mouse */
+    font-weight: bold; /* Texto en negrita */
+    color: white; /* Texto blanco */
+    font-size: 16px; /* Tamaño de letra */
+    outline: none; /* Elimina el contorno al enfocar */
+}
+
+.btn-save {
+    background-color: #f8d0c0; /* Color rosa para el botón guardar */
+}
+
+.btn-later {
+    background-color: #f8d0c0; /* Un tono más claro de rosa para el botón en otro momento */
+}
+
+.btn:hover {
+    opacity: 0.8; /* Efecto al pasar el mouse */
+}
+
+
+

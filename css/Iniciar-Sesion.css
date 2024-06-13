@@ -1,0 +1,104 @@
+/*Estilos para la Navbar*/
+.header .navbar-brand {
+    color: white !important;
+}
+
+.header .nav-link {
+    color: white !important;
+    font-size: 16.5px;
+}
+
+.header .nav-link:hover {
+    color: rgb(99, 56, 56) !important;
+}
+
+.header .navbar {
+    background-image: linear-gradient(to right, #F5E2BE, #e07A76);
+}
+
+
+/*Estilos en general para todo nuestro documento, incluye las fuentes que se usaran en todos los elementos*/
+    body {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    h1,h2 {
+        font-family: "Hammersmith One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding: 20px;
+    }
+
+    p{text-align: justify;}
+
+
+/* Estilos para inicio de sesión*/
+
+#left {
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+}
+
+#aventura{
+    margin-top: 30px;
+    text-align: center;   
+}
+
+@media screen and (min-width: 576px){
+
+    #img-woman{
+        max-width: 100%; /*La imagen no puede ser más ancha que el contenedor */
+        height: auto; /* La imagen no puede ser más alta que el contenedor */
+        margin-top: 4%;
+        margin-bottom: 4%;
+        margin-right: 5%;
+        border-radius: 2%;
+    }
+    #welcome{
+        margin-top: 30px;
+        align-items: center;  
+    }
+}
+
+@media (max-width: 576px) {
+
+    #img-woman{
+        max-width: 70%; /*Reducir el tamaño en pantallas pequeñas*/
+        margin-top: 20px;
+        margin-bottom: 20px; 
+        border-radius: 2%;
+    }
+
+}
+
+.btn{
+    background-color: #7C946C;
+    border: #7C946C;
+    color: white !important;
+    text-align: center;
+}
+
+.btn:hover{
+    background-color: #e07a76;
+    border: #e07a76;
+    border-radius: 10%;
+}
+
+a:link {
+    color: #7C946C;
+}
+
+a:visited {
+    color:#e07A76;
+}
+
+a:hover {
+    background: #f9efd9;
+    border-radius: 6%;
+  }
