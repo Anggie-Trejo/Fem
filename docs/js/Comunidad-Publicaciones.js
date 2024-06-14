@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <img src="${post.image}" class="card-img-top" alt="Imagen adjunta" style="display: ${post.image ? 'block' : 'none'};">
     <div class="card-body">
         <div class="user-profile d-flex align-items-center mb-3">
-            <img src="../public/Ojos-Mujer.jpg" alt="Perfil" class="rounded-circle me-3" width="50">
+            <img src="public/Ojos-Mujer.jpg" alt="Perfil" class="rounded-circle me-3" width="50">
             <div>
                 <p class="mb-0">Laura Vargas</p>
                 <p class="mb-0">@traveler11</p>
