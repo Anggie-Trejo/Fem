@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
      <!--Link a nuestro archivo de estilos-->
-    <link rel="stylesheet" href="../css/Configurar-Perfil.css">
+    <link rel="stylesheet" href="css/Configurar-Perfil.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
           <div class="container-fluid">
               <!-- Logo -->
               <a class="navbar-brand" href="#">
-                  <img src="../public/logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
+                  <img src="public/logo-vectorizado.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top">
               </a>
               <!-- Toggler -->
               <button class="navbar-toggler bg-dark-outline" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,20 +33,20 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                      <a class="nav-link" href="../html/Conecta.html">Conectar Viajes</a>
+                      <a class="nav-link" href="Conecta.html">Conectar Viajes</a>
                   </li>  
                     <li class="nav-item">
-                          <a class="nav-link" href="../html/Comunidad.html">Comunidad</a>
+                          <a class="nav-link" href="Comunidad.html">Comunidad</a>
                       </li>
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Mi Cuenta
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../html/Mi-Perfil.html">Visitar Perfil</a>
-                            <a class="dropdown-item" href="../html/Quizz.html">Quizz</a>
+                            <a class="dropdown-item" href="Mi-Perfil.html">Visitar Perfil</a>
+                            <a class="dropdown-item" href="Quizz.html">Quizz</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../html/Home.html">Cerrar sesión</a>
+                            <a class="dropdown-item" href="index.html">Cerrar sesión</a>
                         </div>
                     </li>
                   </ul>
@@ -64,14 +64,14 @@
       <form method="post" action="#" onctype="multipart/form-data"> <!-- para permitir la subida de archivos--> 
          <!-- Cambiar foto de perfil -->         
         <div class="profile-pic-container">
-          <img src="../public/Ojos-Mujer.jpg" alt="avatar" id="img"/>
+          <img src="public/Ojos-Mujer.jpg" alt="avatar" id="img"/>
           <input type="file" name="profilePic" id="profilePic" accept="image/*" />
           <label for="profilePic">Cambiar foto de perfil</label>
       
         </div>
 <!-- Cambiar foto de portada -->
         <div class="portada-pic-container">
-          <img src="../public/Conecta/Chile.jpg" alt="avatar" id="portadaImg"/>
+          <img src="Conecta/Chile.jpg" alt="avatar" id="portadaImg"/>
           <input type="file" name="portadaPic" id="portadaPic" accept="image/*" />
           <label for="portadaPic">Cambiar foto de portada</label>
       
@@ -96,7 +96,7 @@
             <button type="submit">Guardar cambios</button>
         </form>
         <a href="Mi-Perfil.html">Volver a mi perfil</a>
-        <script src="Configurar-Perfil.js"></script>
+        <script src="js/Configurar-Perfil.js"></script>
 
 
 
@@ -108,5 +108,5 @@
      
   </div>
 
-<script src="../js/Configurar-Perfil.js"></script>
+<script src="js/Configurar-Perfil.js"></script>
 </body>      
