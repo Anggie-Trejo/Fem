@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("password", passwordInput);
 
         // Redirigir al usuario a la página "Mi Perfil"
-        window.location.href = "../html/Mi-Perfil.html";
+        window.location.href = "Mi-Perfil.html";
     });
 });
 
