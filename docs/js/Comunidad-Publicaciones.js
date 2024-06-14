@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i class="bi bi-three-dots-vertical"></i>
             </button>
             <ul class="dropdown-menu dropdown-menu-dark" id="drop-Post">
-                <li><a class="dropdown-item active" href="#"><i class="bi bi-bookmark-plus"></i> Editar publicación</a></li>
+                <li><a class="dropdown-item active" href="#"><i class="bi bi-pencil-square"></i> Editar publicación</a></li>
                 <li><a class="dropdown-item" id="btnDelete"><i class="bi bi-trash3"></i> Eliminar publicación</a></li>
                 <li><a class="dropdown-item" href="#"><i class="bi bi-exclamation-circle"></i> Reportar publicación</a></li>
                 <li><hr class="dropdown-divider"></li>
