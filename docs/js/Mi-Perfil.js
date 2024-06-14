@@ -3,9 +3,9 @@ const MyPosts = [
     id: "@traveler11",
     userName: "Laura",
     userLastName: "Vargas",
-    profilePhoto: "./assets/bogota_transmilenio.jpg",
+    profilePhoto: "public/bogota_transmilenio.jpg",
     travelAdvice: "La aplicación de tecnologías para mejorar la seguridad pública en Bogotá está en constante desarrollo. Existen aplicaciones móviles que te permiten reportar incidentes y recibir alertas de seguridad en tiempo real. Además, muchas zonas están vigiladas por cámaras de seguridad. Utiliza estos recursos para mantenerte informado y seguro.",
-    travelPhotos:"./assets/transmilenio.jpeg",
+    travelPhotos:"public/transmilenio.jpeg",
     location: "Bogotá, Colombia",
     tags: ["Tecnología", "Seguridad Pública", "Apps"]
   },
